@@ -206,3 +206,43 @@ export const BASH_TOOL = {
     required: ["command"],
   },
 }
+
+// --- Stream Helpers ---
+
+/** Read full response body from a streaming Response (replaces duplicated implementations) */
+export async function readStreamFull(response: Response): Promise<string> {
+  if (!response.body) {
+    return ""
+  }
+  const reader = response.body.getReader()
+  const decoder = new TextDecoder()
+  let result = ""
+  while (true) {
+    const { done, value } = await reader.read()
+    if (done) break
+    result += decoder.decode(value, { stream: true })
+  }
+  return result
+}
+
+/** Post a streaming request to proxy and return parsed SSE events (replaces duplicated postStream) */
+export async function postStream(
+  app: any, 
+  content: string, 
+  overrides: Record<string, unknown> = {}
+): Promise<Array<{ event: string; data: Record<string, unknown> }>> {
+  const req = new Request("http://localhost/v1/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: "claude-sonnet-4-5",
+      max_tokens: 1024,
+      stream: true,
+      messages: [{ role: "user", content }],
+      ...overrides,
+    }),
+  })
+  const response = await app.fetch(req)
+  const text = await readStreamFull(response)
+  return parseSSE(text)
+}
