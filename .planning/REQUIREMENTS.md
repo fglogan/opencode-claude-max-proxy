@@ -24,7 +24,7 @@ Total v1 requirements: 7
 |-------------|-------|--------|
 | ANAL-01 | Phase 1 | Completed |
 | ARCH-01 | Phase 1 | Completed |
-| FRAME-01 | Phase 2 | Pending |
+| FRAME-01 | Phase 2 | Complete |
 | DOC-01 | Phase 4 | Pending |
 | MAINT-01 | Phase 4 | Pending |
 | GROK-01 | Phase 3 | Pending |

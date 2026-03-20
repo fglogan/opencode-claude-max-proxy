@@ -21,3 +21,10 @@
 - **Patterns that worked well:** Loading all context files (PROJECT.md, source files, AGENTS.md) before writing analysis docs; comprehensive coverage of PreToolUse and MCP patterns; Mermaid diagrams for architecture
 - **Change next time:** Pre-compute line counts or include grep verification output directly in SUMMARY.md for better metrics tracking
 
+## 02-modular-global-framework-01 (2026-03-20)
+- **User interventions/checkpoints:** None (autonomous execution, no checkpoints)
+- **Errors/warnings encountered:** LSP diagnostics on new provider modules and import resolution (resolved automatically)
+- **Mistakes corrected during execution:** Registry recursion bug in getProviderAdapter; incorrect function call on mcpServer const; query import removal handled via adapter wrapper
+- **Patterns that worked well:** Task-by-task atomic commits, running full test suite after refactor, using deviation rules for minor TS fixes without user input
+- **Change next time:** Include providers/ in tsconfig include explicitly if new dirs cause module resolution issues; run nsp phase complete immediately after SUMMARY creation
+
