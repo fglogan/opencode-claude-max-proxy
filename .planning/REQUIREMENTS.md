@@ -18,7 +18,9 @@
 
 **ROUTE-01**: Implement dynamic provider selection, model mapping, and cost-aware routing for multi-provider support including Claude and Grok.
 
-Total v1 requirements: 8
+**DEPLOY-01**: Package the proxy for standalone deployment with Docker support, production configuration (host binding, env vars), and comprehensive deployment documentation for cloud/self-hosted use.
+
+Total v1 requirements: 9
 
 ## Traceability
 
@@ -27,16 +29,18 @@ Total v1 requirements: 8
 | ANAL-01 | Phase 1 | Completed |
 | ARCH-01 | Phase 1 | Completed |
 | FRAME-01 | Phase 2 | Complete |
-| DOC-01 | Phase 5 | Completed |
+| DOC-01 | Phase 5,6 | Completed |
 | MAINT-01 | Phase 4 | Pending |
 | GROK-01 | Phase 3 | Complete |
 | PARITY-01 | Phase 3 | Complete |
 | ROUTE-01 | Phase 3 | Complete |
+| DEPLOY-01 | Phase 6 | Pending |
 
-Mapped: 7/7 ✓
+Mapped: 8/9 ✓
 
 ## Categories
 - Analysis: ANAL-01, ARCH-01
 - Framework: FRAME-01, DOC-01
 - Maintenance: MAINT-01
 - Integration: GROK-01, PARITY-01, ROUTE-01
+- Deployment: DEPLOY-01

@@ -86,12 +86,13 @@ Phases execute in numeric order.
 | 3. Parity Hardening and Grok Integration | 1/1 | Complete    | 2026-03-20 |
 | 4. Automated Maintenance and Documentation | 0/1 | Complete    | 2026-03-20 |
 | 5. Multi-Provider Proxy and Dashboard | 1/1 | Complete | 2026-03-20 |
+| 6. Standalone Proxy Deployment | 0/1 | In Progress | - |
 
 *Last updated: 2026-03-20*
 
 ## Coverage
 
-All 8 v1 requirements mapped:
+All 9 v1 requirements mapped:
 - ANAL-01 → Phase 1
 - ARCH-01 → Phase 1
 - FRAME-01 → Phase 2
@@ -99,6 +100,19 @@ All 8 v1 requirements mapped:
 - GROK-01 → Phase 3
 - ROUTE-01 → Phase 3
 - MAINT-01 → Phase 4
-- DOC-01 → Phase 4
+- DOC-01 → Phase 4,6
+- DEPLOY-01 → Phase 6
 
 ✓ 100% coverage. No orphans. This is a parity/migration milestone with dedicated hardening in Phase 3.
+### Phase 6: Standalone Proxy Deployment
+**Goal**: The proxy is packaged for easy standalone deployment as a production service using Docker (and optionally Vercel/serverless), with production configuration, security considerations, and complete deployment documentation.
+**Depends on**: Phase 5
+**Requirements**: DEPLOY-01, DOC-01
+**Success Criteria** (what must be TRUE):
+  1. A working Dockerfile and docker-compose.yml allow one-command containerized deployment.
+  2. Server correctly binds to configurable host (0.0.0.0 in prod) and all endpoints (including dashboard) are accessible remotely.
+  3. README.md contains a full "Deployment" section covering local, Docker, global npm, and cloud options with env var examples.
+  4. Authentication and credential handling for deployed environments is documented (volume mounts for claude auth, or API key support).
+  5. Production logging, health checks, and basic security (CORS, rate limiting if applicable) are configured.
+**Plans**: 1 plan
+- [ ] 06-standalone-proxy-deployment-01-PLAN.md — Create Dockerfile, update server for prod host binding, add deployment docs to README (completed upon execution)
