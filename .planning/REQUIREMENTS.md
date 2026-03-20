@@ -16,7 +16,9 @@
 
 **PARITY-01**: Maintain 100% functional parity with the existing Claude proxy throughout the migration to global framework (no capability loss).
 
-Total v1 requirements: 7
+**ROUTE-01**: Implement dynamic provider selection, model mapping, and cost-aware routing for multi-provider support including Claude and Grok.
+
+Total v1 requirements: 8
 
 ## Traceability
 
@@ -29,6 +31,7 @@ Total v1 requirements: 7
 | MAINT-01 | Phase 4 | Pending |
 | GROK-01 | Phase 3 | Complete |
 | PARITY-01 | Phase 3 | Complete |
+| ROUTE-01 | Phase 3 | Complete |
 
 Mapped: 7/7 ✓
 
@@ -36,4 +39,4 @@ Mapped: 7/7 ✓
 - Analysis: ANAL-01, ARCH-01
 - Framework: FRAME-01, DOC-01
 - Maintenance: MAINT-01
-- Integration: GROK-01, PARITY-01
+- Integration: GROK-01, PARITY-01, ROUTE-01

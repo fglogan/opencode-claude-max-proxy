@@ -8,8 +8,8 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
 
 - [x] **Phase 1: Analysis and Architecture Mapping** - Fully analyze proxy and map/document internal Genesis IT architecture (completed 2026-03-20)
 - [x] **Phase 2: Modular Global Framework** - Refactor into extensible provider-agnostic core with Claude adapter (completed 2026-03-20)
-- [ ] **Phase 3: Parity Hardening and Grok Integration** - Ensure no capability loss and add Grok provider support
-- [ ] **Phase 4: Automated Maintenance and Documentation** - Implement daily reviews/auto-updates and finalize docs
+- [x] **Phase 3: Parity Hardening and Grok Integration** - Ensure no capability loss and add Grok provider support (completed 2026-03-20)
+- [x] **Phase 4: Automated Maintenance and Documentation** - Implement daily reviews/auto-updates and finalize docs (completed 2026-03-20)
 
 ## Phase Details
 
@@ -70,19 +70,20 @@ Phases execute in numeric order.
 |-------|----------------|--------|-----------|
 | 1. Analysis and Architecture Mapping | 1/1 | 1/1 | Complete | 2026-03-20 |
 | 2. Modular Global Framework | 1/1 | Complete | 2026-03-20 |
-| 3. Parity Hardening and Grok Integration | 0/1 | Not started | - |
-| 4. Automated Maintenance and Documentation | 0/1 | Not started | - |
+| 3. Parity Hardening and Grok Integration | 1/1 | Complete    | 2026-03-20 |
+| 4. Automated Maintenance and Documentation | 0/1 | Complete    | 2026-03-20 |
 
 *Last updated: 2026-03-20*
 
 ## Coverage
 
-All 7 v1 requirements mapped:
+All 8 v1 requirements mapped:
 - ANAL-01 → Phase 1
 - ARCH-01 → Phase 1
 - FRAME-01 → Phase 2
 - PARITY-01 → Phase 3
 - GROK-01 → Phase 3
+- ROUTE-01 → Phase 3
 - MAINT-01 → Phase 4
 - DOC-01 → Phase 4
 
