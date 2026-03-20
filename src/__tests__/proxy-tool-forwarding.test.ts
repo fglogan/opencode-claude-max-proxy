@@ -26,6 +26,7 @@ import {
   parseSSE,
   READ_TOOL,
   makeToolRequest,
+  readStreamFull,
 } from "./helpers"
 
 // --- Mock the Claude SDK ---
@@ -72,18 +73,6 @@ async function postMessages(app: any, body: Record<string, unknown>, endpoint = 
     body: JSON.stringify(body),
   })
   return app.fetch(req)
-}
-
-async function readStreamFull(response: Response): Promise<string> {
-  const reader = response.body!.getReader()
-  const decoder = new TextDecoder()
-  let result = ""
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    result += decoder.decode(value, { stream: true })
-  }
-  return result
 }
 
 // ============================================================

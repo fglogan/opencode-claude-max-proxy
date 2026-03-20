@@ -12,7 +12,7 @@
  */
 
 import { describe, it, expect, mock, beforeEach } from "bun:test"
-import { assistantMessage, messageStart, textBlockStart, textDelta, blockStop, messageDelta, messageStop } from "./helpers"
+import { assistantMessage } from "./helpers"
 
 let mockMessages: any[] = []
 let capturedQueryParams: any = null

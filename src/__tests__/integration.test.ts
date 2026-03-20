@@ -8,7 +8,7 @@
  * But they test the full Hono HTTP stack, SSE parsing, etc.
  */
 
-import { describe, it, expect, mock, beforeAll, afterAll, beforeEach } from "bun:test"
+import { describe, it, expect, mock, beforeAll, beforeEach } from "bun:test"
 import {
   messageStart,
   textBlockStart,
@@ -20,6 +20,7 @@ import {
   messageStop,
   assistantMessage,
   parseSSE,
+  readStreamFull,
 } from "./helpers"
 
 // --- Mock SDK ---
@@ -65,18 +66,6 @@ async function post(app: any, body: any) {
     headers: { "Content-Type": "application/json", "x-api-key": "dummy" },
     body: JSON.stringify(body),
   }))
-}
-
-async function readStream(response: Response): Promise<string> {
-  const reader = response.body!.getReader()
-  const decoder = new TextDecoder()
-  let result = ""
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    result += decoder.decode(value, { stream: true })
-  }
-  return result
 }
 
 // ============================================================
@@ -230,7 +219,7 @@ describe("Integration: Streaming tool loop", () => {
     expect(response.status).toBe(200)
     expect(response.headers.get("content-type")).toContain("text/event-stream")
 
-    const text = await readStream(response)
+    const text = await readStreamFull(response)
     const events = parseSSE(text)
 
     // Should have message_start

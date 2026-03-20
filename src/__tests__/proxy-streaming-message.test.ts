@@ -23,6 +23,7 @@ import {
   messageStop,
   parseSSE,
   streamEvent,
+  postStream,
 } from "./helpers"
 
 let mockMessages: any[] = []
@@ -50,29 +51,6 @@ const { createProxyServer, clearSessionCache } = await import("../proxy/server")
 function createTestApp() {
   const { app } = createProxyServer({ port: 0, host: "127.0.0.1" })
   return app
-}
-
-async function postStream(app: any, content: string) {
-  const req = new Request("http://localhost/v1/messages", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-5",
-      max_tokens: 1024,
-      stream: true,
-      messages: [{ role: "user", content }],
-    }),
-  })
-  const response = await app.fetch(req)
-  const reader = response.body!.getReader()
-  const decoder = new TextDecoder()
-  let result = ""
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    result += decoder.decode(value, { stream: true })
-  }
-  return parseSSE(result)
 }
 
 describe("Streaming: single message per response", () => {

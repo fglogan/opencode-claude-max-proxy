@@ -13,7 +13,7 @@
  * 4. Does Task tool_use get forwarded to OpenCode (not handled internally)?
  */
 
-import { describe, it, expect, mock, beforeEach } from "bun:test"
+import { describe, it, expect } from "bun:test"
 
 // Simulated SDK messages for maxTurns:1 scenarios
 const toolUseMessage = {
