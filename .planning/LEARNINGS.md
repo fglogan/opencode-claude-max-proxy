@@ -49,3 +49,10 @@
 - **Patterns that worked well:** Using nsp doctor/verify/status for health gating; proactive requirement ID fixes; following execute-phase workflow even with zero plans by scaffolding minimal artifacts
 - **Change next time:** Always ensure phase has at least one PLAN.md before marking complete; include automated daily CI job in maintenance plan rather than manual docs
 
+## 05-multi-provider-proxy-and-dashboard-01 (2026-03-20)
+- **User interventions/checkpoints:** None (fully autonomous execution, no checkpoints hit)
+- **Errors/warnings encountered:** Pre-existing LSP errors in providers/registry (out of scope); git identity warning on commits
+- **Mistakes corrected during execution:** None major; expanded reference doc to meet 100+ lines criteria (Rule 3 auto-fix for verification)
+- **Patterns that worked well:** Large structured edits to HTML for multiple views; incremental git adds/commits per task; reusing existing CSS/JS patterns for tabs and cards
+- **Change next time:** Run browser test or Bun serve test before final commit for dashboard JS; connect real provider data in APIs instead of only mocks; use nsp state commands earlier to avoid manual STATE edits
+
