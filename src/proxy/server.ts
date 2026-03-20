@@ -249,11 +249,16 @@ function resolveClaudeExecutable(): string {
 
 const claudeExecutable = resolveClaudeExecutable()
 
-function mapModelToClaudeModel(model: string): "sonnet" | "opus" | "haiku" {
-  if (model.includes("opus")) return "opus"
-  if (model.includes("haiku")) return "haiku"
-  if (model.includes("grok") || model.includes("xai")) return "sonnet"
-  return "sonnet"
+function mapModel(model: string, provider: string = "claude"): string {
+  // Generalized model mapping per provider (parity hardening)
+  if (provider === "grok" || provider.includes("xai")) {
+    return model.includes("grok") ? model : "grok-beta";
+  }
+  // Claude models
+  if (model.includes("opus")) return "opus";
+  if (model.includes("haiku")) return "haiku";
+  if (model.includes("grok") || model.includes("xai")) return "sonnet";
+  return "sonnet";
 }
 
 function isClosedControllerError(error: unknown): boolean {
@@ -316,7 +321,8 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
     return withClaudeLogContext({ requestId: requestMeta.requestId, endpoint: requestMeta.endpoint }, async () => {
       try {
         const body = await c.req.json()
-        const model = mapModelToClaudeModel(body.model || "sonnet")
+        const provider = finalConfig.provider || body.provider || "claude"
+        const model = mapModel(body.model || "sonnet", provider)
         const stream = body.stream ?? true
         const workingDirectory = process.env.CLAUDE_PROXY_WORKDIR || process.cwd()
 

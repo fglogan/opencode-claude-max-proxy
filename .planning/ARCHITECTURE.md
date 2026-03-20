@@ -145,4 +145,23 @@ This architecture enables the full power of Genesis agent systems while using Cl
 
 Fulfills ARCH-01 and all must_haves truths. Enables quick onboarding to "why" of passthrough for multi-model support.
 
+## Parity Matrix & Provider Support (Phase 3)
+
+**Core Paths (Zero Regressions):**
+- [x] Anthropic-compatible `/v1/messages` endpoint
+- [x] Session resume via x-opencode-session header + fingerprint fallback
+- [x] Streaming & non-streaming responses
+- [x] MCP tool forwarding & passthrough mode
+- [x] PreToolUse hook for agent delegation
+- [x] Error classification and logging
+- [x] Concurrency control / queueing
+
+**Provider Support:**
+- Claude: Full feature parity (SDK + MCP + tools)
+- Grok/xAI: Basic translation layer via OpenAI-compatible client + stream mapping to expected message shapes. Limited MCP/tool support (supportsPassthrough=false). Uses XAI_API_KEY.
+
+**Divergences:** None intentional for core proxy paths. Grok uses OpenAI client translation (see GrokAdapter.createQueryHandler). Model mapping generalized to `mapModel(provider)`.
+
+**Structural Notes:** Adapter pattern enables vertical slice for new providers without breaking Claude flow. Prepares for OmniRoute cost routing in Phase 4.
+
 Last updated: 2026-03-20
