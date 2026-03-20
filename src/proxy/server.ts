@@ -30,8 +30,8 @@ export function clearSessionCache() {
   fingerprintCache.clear()
 }
 
-// Clean stale sessions every 30 minutes
-const SESSION_TTL_MS = 60 * 60 * 1000 // 1 hour
+// Clean stale sessions every hour — sessions survive a full workday
+const SESSION_TTL_MS = 24 * 60 * 60 * 1000 // 24 hours
 setInterval(() => {
   const now = Date.now()
   for (const [key, val] of sessionCache) {
@@ -40,7 +40,7 @@ setInterval(() => {
   for (const [key, val] of fingerprintCache) {
     if (now - val.lastAccess > SESSION_TTL_MS) fingerprintCache.delete(key)
   }
-}, 30 * 60 * 1000)
+}, 60 * 60 * 1000)
 
 /** Hash the first user message to fingerprint a conversation */
 function getConversationFingerprint(messages: Array<{ role: string; content: any }>): string {
