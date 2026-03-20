@@ -13,6 +13,12 @@ export function getProviderAdapter(name: string = "claude"): ProviderAdapter {
     return providers.get(key)!;
   }
   
+  if (key === "grok" || key === "xai") {
+    const grok = getGrokAdapter();
+    registerProvider(key, grok);
+    return grok;
+  }
+  
   // Default to Claude if not registered or unknown
   if (key !== "claude") {
     console.warn(`Provider ${name} not found, falling back to Claude`);
@@ -46,3 +52,16 @@ export function initializeProviders(): void {
 }
 
 export type { ClaudeAdapter } from "./claude";
+export type { GrokAdapter } from "./grok";
+
+// Lazy load Grok adapter
+let grokAdapterInstance: ProviderAdapter | null = null;
+
+export function getGrokAdapter(): ProviderAdapter {
+  if (!grokAdapterInstance) {
+    // Use import for class (TS will handle)
+    const GrokAdapterClass = require("./grok").GrokAdapter as new () => ProviderAdapter;
+    grokAdapterInstance = new GrokAdapterClass();
+  }
+  return grokAdapterInstance!;
+}
