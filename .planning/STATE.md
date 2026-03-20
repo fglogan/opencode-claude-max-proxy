@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated for global milestone) and .planning/REQUIREME
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | improve phantom imports and duplicates in Dominant TS code. Fixes improved score meaningfully. Naming and complexity are judgment calls. | 2026-03-20 | caed367 | [1-improve-phantom-imports-and-duplicates-i](./quick/1-improve-phantom-imports-and-duplicates-i/) |
-| 2 | investigate https://github.com/router-for-me/CLIProxyAPI for expansion, consolidation, integration or not - determine where this fits | 2026-03-20 | TBD | [2-investigate-https-github-com-router-for-](./quick/2-investigate-https-github-com-router-for-/) |
+| 2 | investigate https://github.com/router-for-me/CLIProxyAPI for expansion, consolidation, integration or not - determine where this fits | 2026-03-20 | 954eff1 | [2-investigate-https-github-com-router-for-](./quick/2-investigate-https-github-com-router-for-/) |
 
 ## Performance Metrics
 
