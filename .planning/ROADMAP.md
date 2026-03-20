@@ -37,16 +37,18 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
 **Plans**: 1 plan
 - [x] 02-modular-global-framework-01-PLAN.md — Create ProviderAdapter interface, Claude adapter, and refactor server.ts for modular multi-provider support (completed 2026-03-20)
 
-### Phase 3: Parity Hardening and Grok Integration
-**Goal**: Claude functionality is fully preserved (parity) while Grok support is added, allowing users to spin up multiple Grok instances seamlessly.
+### Phase 3: Parity Hardening and Grok Integration + OmniRoute Routing
+**Goal**: Claude functionality is fully preserved (parity) while Grok support is added, allowing users to spin up multiple Grok instances seamlessly. Integrate OmniRoute concepts for cost-optimized any-model routing, Gemini OAuth, fuzzy/mlua rules, memory fabric with NSP V2.
 **Depends on**: Phase 2
-**Requirements**: PARITY-01, GROK-01
+**Requirements**: PARITY-01, GROK-01, ROUTE-01
 **Success Criteria** (what must be TRUE):
   1. All original tests pass and users observe identical Claude Max + OpenCode behavior as before the refactor.
   2. Users can start Grok proxies using analogous environment variables and commands, with passthrough agent delegation working for xAI models.
   3. Multi-provider setups (Claude + Grok in same ecosystem) function correctly with OpenCode's model routing.
-  4. A parity audit report (including call-graph/API comparison) confirms no regressions in tool forwarding, error handling, streaming, or concurrency.
-**Plans**: TBD
+  4. OmniRoute-inspired cost-optimized routing, Gemini OAuth, fuzzy logic, mlua rules integrated with memory fabric and NSP V2.
+  5. A parity audit report (including call-graph/API comparison) confirms no regressions in tool forwarding, error handling, streaming, or concurrency.
+**Plans**: 1 plan
+- [ ] 03-parity-hardening-and-grok-integration-01-PLAN.md — Parity audit, GrokAdapter implementation, registry updates, model routing hardening, and as-built docs
 
 ### Phase 4: Automated Maintenance and Documentation
 **Goal**: The global proxy stays current automatically and is fully documented for long-term maintainability.
