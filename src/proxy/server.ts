@@ -182,11 +182,12 @@ function classifyError(errMsg: string): { status: number; type: string; message:
   }
 }
 
-// Block SDK built-in tools so Claude only uses MCP tools (which have correct param names)
+// Block SDK built-in tools so Claude only uses MCP tools (which have correct param names).
+// TodoWrite is excluded here now that we support mapping to OpenCode's todowrite (with priority field).
 const BLOCKED_BUILTIN_TOOLS = [
   "Read", "Write", "Edit", "MultiEdit",
   "Bash", "Glob", "Grep", "NotebookEdit",
-  "WebFetch", "WebSearch", "TodoWrite"
+  "WebFetch", "WebSearch"
 ]
 
 // Claude Code SDK tools that have NO equivalent in OpenCode.
@@ -208,10 +209,9 @@ const CLAUDE_CODE_ONLY_TOOLS = [
   "EnterWorktree",     // Claude Code git worktree management
   "ExitWorktree",      // Claude Code git worktree management
   "NotebookEdit",      // Jupyter notebook editing
-  // Schema-incompatible: SDK tool name differs from OpenCode's.
-  // If Claude calls the SDK version, OpenCode won't recognize it.
-  // Block the SDK's so Claude only sees OpenCode's definitions.
-  "TodoWrite",         // OpenCode: todowrite (requires 'priority' field)
+// Schema-incompatible tools where SDK name/schema differs from OpenCode's.
+// We block most to ensure Claude uses OpenCode's version. TodoWrite is now
+// supported via mapping to OpenCode's "todowrite" (which requires 'priority' field).
   "AskUserQuestion",   // OpenCode: question
   "Skill",             // OpenCode: skill / skill_mcp / slashcommand
   "Agent",             // OpenCode: delegate_task / task
@@ -253,6 +253,7 @@ const claudeExecutable = resolveClaudeExecutable()
 function mapModelToClaudeModel(model: string): "sonnet" | "opus" | "haiku" {
   if (model.includes("opus")) return "opus"
   if (model.includes("haiku")) return "haiku"
+  if (model.includes("grok") || model.includes("xai")) return "sonnet"
   return "sonnet"
 }
 
