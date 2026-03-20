@@ -10,6 +10,7 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
 - [x] **Phase 2: Modular Global Framework** - Refactor into extensible provider-agnostic core with Claude adapter (completed 2026-03-20)
 - [x] **Phase 3: Parity Hardening and Grok Integration** - Ensure no capability loss and add Grok provider support (completed 2026-03-20)
 - [x] **Phase 4: Automated Maintenance and Documentation** - Implement daily reviews/auto-updates and finalize docs (completed 2026-03-20)
+- [ ] **Phase 5: Multi-Provider Dashboard** - Design opencode multi-provider proxy dashboard based on OmniRoute patterns (in progress)
 
 ## Phase Details
 
@@ -23,7 +24,7 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
   3. All key design decisions, tradeoffs, and limitations from the original implementation are cataloged in LEARNINGS.md or dedicated architecture docs.
   4. Developers can quickly onboard and understand the "why" behind passthrough delegation for multi-model support.
 **Plans**: 1 plan
-- [ ] 01-analysis-01-PLAN.md — Full analysis of current proxy implementation and creation of Genesis IT architecture map
+- [x] 01-analysis-01-PLAN.md — Full analysis of current proxy implementation and creation of Genesis IT architecture map (completed 2026-03-20)
 
 ### Phase 2: Modular Global Framework
 **Goal**: A clean, maintainable global proxy framework exists that decouples core proxy logic from specific AI providers.
@@ -48,7 +49,7 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
   4. OmniRoute-inspired cost-optimized routing, Gemini OAuth, fuzzy logic, mlua rules integrated with memory fabric and NSP V2.
   5. A parity audit report (including call-graph/API comparison) confirms no regressions in tool forwarding, error handling, streaming, or concurrency.
 **Plans**: 1 plan
-- [ ] 03-parity-hardening-and-grok-integration-01-PLAN.md — Parity audit, GrokAdapter implementation, registry updates, model routing hardening, and as-built docs
+- [x] 03-parity-hardening-and-grok-integration-01-PLAN.md — Parity audit, GrokAdapter implementation, registry updates, model routing hardening, and as-built docs (completed 2026-03-20)
 
 ### Phase 4: Automated Maintenance and Documentation
 **Goal**: The global proxy stays current automatically and is fully documented for long-term maintainability.
@@ -60,6 +61,18 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
   3. Complete documentation covers architecture, all providers, configuration, troubleshooting, and extension points.
   4. The project is structured for easy ongoing maintenance with clear module boundaries and tests.
 **Plans**: TBD
+
+### Phase 5: Multi-Provider Proxy and Dashboard
+**Goal**: Design and implement a comprehensive dashboard for the opencode multi-provider proxy inspired by OmniRoute for better observability and management of providers, routing, logs and health.
+**Depends on**: Phase 4
+**Requirements**: ROUTE-01, DOC-01
+**Success Criteria** (what must be TRUE):
+  1. Users can access a dashboard at /dashboard with sections for providers, routing, analytics, health.
+  2. Dashboard integrates with the proxy server providing real-time data.
+  3. UI follows similar patterns to OmniRoute but remains lightweight single-file HTML/JS.
+  4. Documentation updated with dashboard usage.
+**Plans**: 1 plan
+- [ ] 05-multi-provider-proxy-and-dashboard-01-PLAN.md — Research OmniRoute patterns, enhance dashboard HTML, integrate with server (in progress)
 
 ## Progress
 
