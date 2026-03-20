@@ -329,6 +329,19 @@ src/
     └── proxy-working-directory.test.ts
 ```
 
+## Extending with New Providers
+
+The modular framework uses a `ProviderAdapter` interface. To add support for a new provider (e.g. Grok/xAI in Phase 3):
+
+1. Implement `ProviderAdapter` in `src/providers/<name>.ts`
+2. Register it in `registry.ts` via `registerProvider("grok", new GrokAdapter())`
+3. Update `getProviderAdapter()` fallback logic if needed
+4. Configure via `provider` option in ProxyConfig or env var
+
+See `src/providers/base.ts` for the interface contract and `claude.ts` for example implementation.
+
+This ensures shared logic (session management, streaming, MCP, error handling) stays in `server.ts` while provider-specific SDK integration is isolated.
+
 ## License
 
 MIT

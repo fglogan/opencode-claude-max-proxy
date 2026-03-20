@@ -1,17 +1,16 @@
 import { Hono } from "hono"
 import { cors } from "hono/cors"
-import { query } from "@anthropic-ai/claude-agent-sdk"
 import type { Context } from "hono"
 import type { ProxyConfig } from "./types"
 import { DEFAULT_PROXY_CONFIG } from "./types"
-import { claudeLog } from "../logger"
+import { claudeLog, withClaudeLogContext } from "../logger"
+import { getProviderAdapter, initializeProviders, type ProviderAdapter } from "../providers"
 import { execSync } from "child_process"
 import { existsSync } from "fs"
 import { fileURLToPath } from "url"
 import { join, dirname } from "path"
 import { opencodeMcpServer } from "../mcpTools"
 import { randomUUID, createHash } from "crypto"
-import { withClaudeLogContext } from "../logger"
 import { fuzzyMatchAgentName } from "./agentMatch"
 import { buildAgentDefinitions } from "./agentDefs"
 import { createPassthroughMcpServer, stripMcpPrefix, PASSTHROUGH_MCP_NAME, PASSTHROUGH_MCP_PREFIX } from "./passthroughTools"
@@ -264,6 +263,9 @@ function isClosedControllerError(error: unknown): boolean {
 
 export function createProxyServer(config: Partial<ProxyConfig> = {}) {
   const finalConfig = { ...DEFAULT_PROXY_CONFIG, ...config }
+  initializeProviders()
+  const adapter: ProviderAdapter = getProviderAdapter(finalConfig.provider || "claude")
+  const queryHandler = adapter.createQueryHandler(finalConfig)
   const app = new Hono()
 
   app.use("*", cors())
@@ -480,7 +482,7 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
           claudeLog("upstream.start", { mode: "non_stream", model })
 
           try {
-            const response = query({
+            const response = queryHandler({
               prompt,
               options: {
                 maxTurns: passthrough ? 1 : 100,
@@ -653,7 +655,7 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
 
             try {
               let currentSessionId: string | undefined
-              const response = query({
+              const response = queryHandler({
                 prompt,
                 options: {
                   maxTurns: passthrough ? 1 : 100,

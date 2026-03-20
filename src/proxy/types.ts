@@ -3,6 +3,7 @@ export interface ProxyConfig {
   host: string
   debug: boolean
   idleTimeoutSeconds: number
+  provider?: string
 }
 
 export const DEFAULT_PROXY_CONFIG: ProxyConfig = {

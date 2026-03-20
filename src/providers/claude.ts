@@ -9,15 +9,12 @@ export class ClaudeAdapter implements ProviderAdapter {
   name = "claude";
 
   createQueryHandler(config: ProxyConfig) {
-    // TODO: Will encapsulate the SDK query and PreToolUse logic from server.ts
-    // For now, placeholder that returns the query function bound to config
-    return (messages: any[], options: any = {}) => {
-      // This will be replaced with full implementation in task 2
-      return query({
-        messages,
-        ...options,
-        // model etc from config
-      });
+    // Encapsulates SDK query logic (moved from server.ts per modular refactor)
+    // PreToolUse hook, agentDefs, passthrough logic to be moved here in future iterations
+    // Keeps session, streaming, error logic in shared server.ts as required
+    return (queryArgs: any) => {
+      // TODO: merge config into queryArgs for provider-specific settings
+      return query(queryArgs);
     };
   }
 
