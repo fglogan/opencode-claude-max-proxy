@@ -35,3 +35,10 @@
 - **Patterns that worked well:** Quick webfetch + roadmap comparison for rapid external project evaluation; clear decision criteria based on tech stack and phase alignment
 - **Change next time:** When investigating similar proxy projects, also check their handling of streaming edge cases and MCP/tool forwarding compatibility specifically
 
+## 03-parity-hardening-and-grok-integration-01 (2026-03-20)
+- **User interventions/checkpoints:** Decision checkpoint on Grok implementation approach (Option 1 translation layer approved)
+- **Errors/warnings encountered:** LSP errors on dynamic requires and missing names (fixed via imports); bun test grep matched 0 tests
+- **Mistakes corrected during execution:** Missing logger import in grok.ts; model mapping not generalized initially
+- **Patterns that worked well:** Deviation rules for dep addition and bug fixes; structured checkpoint for architectural decisions; per-task git commits with detailed messages
+- **Change next time:** Add basic smoke test for new providers in plan verification; run full test suite (not just grep) after provider changes; include provider-specific env validation in adapter
+
