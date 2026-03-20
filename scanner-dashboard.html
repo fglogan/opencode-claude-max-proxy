@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Opencode Multi-Provider Proxy Dashboard</title>
+<style>
+:root {
+  --bg: #060608;
+  --s1: #0e0e12;
+  --s2: #17171d;
+  --s3: #222228;
+  --border: #26262e;
+  --text: #f0f0f4;
+  --text-2: #9898a8;
+  --green: #22c55e;
+  --blue: #60a5fa;
+  --red: #f87171;
+  --font: system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body { background: var(--bg); color: var(--text); font-family: var(--font); padding: 24px; }
+.tabs { display: flex; gap: 4px; margin-left: auto; }
+.tab { padding: 8px 16px; background: var(--s2); border: 1px solid var(--border); border-radius: 5px; cursor: pointer; font-size: 13px; }
+.tab.active { background: var(--blue); color: white; border-color: var(--blue); }
+.view { margin-top: 24px; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+h1 { font-size: 28px; font-weight: 800; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.card { background: var(--s1); border: 1px solid var(--border); border-radius: 9px; padding: 20px; }
+.score { font-size: 48px; font-weight: 900; line-height: 1; }
+.label { font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.08em; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-size: 11px; font-weight: 700; color: var(--text-2); }
+.status { padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+.green { background: rgba(34,197,94,0.12); color: var(--green); }
+.red { background: rgba(248,113,113,0.12); color: var(--red); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Opencode Proxy Dashboard</h1>
+  <div class="tabs">
+    <button onclick="switchTab(0)" class="tab active">Gaps</button>
+    <button onclick="switchTab(1)" class="tab">Static Analyzer</button>
+    <button onclick="switchTab(2)" class="tab">Providers</button>
+    <button onclick="switchTab(3)" class="tab">Routing</button>
+    <button onclick="switchTab(4)" class="tab">Health</button>
+    <button onclick="switchTab(5)" class="tab">Analytics</button>
+  </div>
+</header>
+<div id="view-gaps" class="view">
+  <div class="grid">
+    <div class="card">
+      <div class="label">Overall Score</div>
+      <div class="score" id="gaps-score">87.5</div>
+    </div>
+    <div class="card">
+      <div class="label">Findings</div>
+      <div class="score" id="gaps-findings">91</div>
+    </div>
+  </div>
+  <h2>Top Findings (Gaps)</h2>
+  <table>
+    <thead><tr><th>File</th><th>Issue</th><th>Severity</th></tr></thead>
+    <tbody>
+      <tr><td>src/proxy/server.ts:1034</td><td>god object (1034 LOC)</td><td class="status red">High</td></tr>
+      <tr><td>src/proxy/server.ts:239</td><td>empty catch block</td><td class="status red">High</td></tr>
+    </tbody>
+  </table>
+</div>
+<div id="view-static" class="view" style="display:none">
+  <div class="grid">
+    <div class="card">
+      <div class="label">Overall Score</div>
+      <div class="score" id="static-score">87.5</div>
+    </div>
+    <div class="card">
+      <div class="label">Findings</div>
+      <div class="score" id="static-findings">757</div>
+    </div>
+  </div>
+  <h2>Top Findings (Static Analyzer)</h2>
+  <table>
+    <thead><tr><th>File</th><th>Issue</th><th>Severity</th></tr></thead>
+    <tbody>
+      <tr><td>src/proxy/server.ts:1031</td><td>sensitive api_key log</td><td class="status red">Critical</td></tr>
+      <tr><td>src/proxy/server.ts:865</td><td>empty catch</td><td class="status red">High</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="view-providers" class="view" style="display:none">
+  <div class="grid">
+    <div class="card">
+      <div class="label">Active Providers</div>
+      <div class="score" id="active-providers">3</div>
+    </div>
+    <div class="card">
+      <div class="label">Avg Latency</div>
+      <div class="score" id="avg-latency">187</div>
+    </div>
+    <div class="card">
+      <div class="label">Uptime</div>
+      <div class="score" id="system-uptime">99.2</div>
+    </div>
+  </div>
+  <h2>Provider Status</h2>
+  <table>
+    <thead><tr><th>Provider</th><th>Status</th><th>Latency (ms)</th><th>Uptime %</th><th>Last Used</th></tr></thead>
+    <tbody id="providers-body">
+    </tbody>
+  </table>
+</div>
+
+<div id="view-routing" class="view" style="display:none">
+  <div class="grid">
+    <div class="card">
+      <div class="label">Active Rules</div>
+      <div class="score" id="active-rules">5</div>
+    </div>
+    <div class="card">
+      <div class="label">Combos</div>
+      <div class="score" id="routing-combos">2</div>
+    </div>
+    <div class="card">
+      <div class="label">Cost Savings</div>
+      <div class="score" id="cost-savings">24%</div>
+    </div>
+  </div>
+  <h2>Routing Rules & Combos</h2>
+  <table>
+    <thead><tr><th>Rule</th><th>Condition</th><th>Target</th><th>Priority</th></tr></thead>
+    <tbody>
+      <tr><td>Cost Optimize</td><td>cost &lt; $0.01</td><td>Grok</td><td>High</td></tr>
+      <tr><td>Quality First</td><td>model=sonnet</td><td>Claude</td><td>Medium</td></tr>
+      <tr><td>Fallback</td><td>error or timeout</td><td>Passthrough</td><td>Low</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="view-health" class="view" style="display:none">
+  <div class="grid">
+    <div class="card">
+      <div class="label">Proxy Health</div>
+      <div class="score" id="health-score">96.8</div>
+    </div>
+    <div class="card">
+      <div class="label">MCP Status</div>
+      <div class="score" id="mcp-status">OK</div>
+    </div>
+    <div class="card">
+      <div class="label">Sessions</div>
+      <div class="score" id="active-sessions">4</div>
+    </div>
+  </div>
+  <h2>Health Checks</h2>
+  <table>
+    <thead><tr><th>Component</th><th>Status</th><th>Details</th></tr></thead>
+    <tbody id="health-body">
+      <tr><td>Claude Adapter</td><td class="status green">Healthy</td><td>Low latency, no errors</td></tr>
+      <tr><td>Grok Adapter</td><td class="status green">Healthy</td><td>Connected via xAI</td></tr>
+      <tr><td>Passthrough Mode</td><td class="status green">Active</td><td>Multi-provider routing enabled</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="view-analytics" class="view" style="display:none">
+  <div class="grid">
+    <div class="card">
+      <div class="label">Total Requests</div>
+      <div class="score" id="total-reqs">1243</div>
+    </div>
+    <div class="card">
+      <div class="label">Error Rate</div>
+      <div class="score" id="error-rate">0.8</div>
+    </div>
+    <div class="card">
+      <div class="label">Avg Tokens</div>
+      <div class="score" id="avg-tokens">245</div>
+    </div>
+  </div>
+  <h2>Recent Activity Log</h2>
+  <table>
+    <thead><tr><th>Time</th><th>Provider</th><th>Duration</th><th>Status</th></tr></thead>
+    <tbody id="logs-body">
+    </tbody>
+  </table>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="label">Overall Score</div>
+    <div class="score" id="score">87.5</div>
+  </div>
+  <div class="card">
+    <div class="label">Findings</div>
+    <div class="score" id="findings">91</div>
+  </div>
+  <div class="card">
+    <div class="label">Critical</div>
+    <div class="score" id="critical">0</div>
+  </div>
+</div>
+
+<h2 style="margin: 32px 0 16px">Top Findings</h2>
+<table id="findings-table">
+<thead><tr><th>File</th><th>Issue</th><th>Severity</th></tr></thead>
+<tbody>
+  <tr><td>src/proxy/server.ts:239</td><td>empty catch block</td><td class="status red">High</td></tr>
+  <tr><td>src/proxy/server.ts:1034</td><td>god object (1034 LOC)</td><td class="status red">High</td></tr>
+  <tr><td>src/proxy/server.ts:1031</td><td>sensitive api_key log</td><td class="status red">Critical</td></tr>
+  <tr><td>src/proxy/passthroughTools.ts:23</td><td>complexity (17)</td><td class="status">Medium</td></tr>
+</tbody>
+</table>
+
+<script>
+function switchTab(n) {
+  document.querySelectorAll('.view').forEach(v => v.style.display = 'none');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  
+  const viewIds = ['view-gaps', 'view-static', 'view-providers', 'view-routing', 'view-health', 'view-analytics'];
+  const viewId = viewIds[n] || 'view-gaps';
+  const view = document.getElementById(viewId);
+  if (view) view.style.display = 'block';
+  
+  const tabs = document.querySelectorAll('.tab');
+  if (tabs[n]) tabs[n].classList.add('active');
+  
+  // Load data for the tab if applicable
+  if (n === 2) loadProviders();
+  if (n === 3) loadRouting();
+  if (n === 4) loadHealth();
+  if (n === 5) loadAnalytics();
+}
+
+async function runScan(type) {
+  const res = await fetch('/scan_report', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({scanner: type})
+  });
+  const data = await res.json();
+  console.log(data);
+  // update active view...
+}
+
+// Mock data and load functions for multi-provider dashboard
+const mockProviders = [
+  { name: "Claude", status: "healthy", latency: 145, uptime: "99.8", lastUsed: "just now" },
+  { name: "Grok", status: "healthy", latency: 87, uptime: "99.5", lastUsed: "2m ago" },
+  { name: "Passthrough", status: "active", latency: 210, uptime: "98.9", lastUsed: "now" }
+];
+
+const mockLogs = [
+  { time: "14:32", provider: "Grok", duration: "245ms", status: "200" },
+  { time: "14:31", provider: "Claude", duration: "189ms", status: "200" },
+  { time: "14:30", provider: "Claude", duration: "320ms", status: "200" }
+];
+
+function loadProviders() {
+  const tbody = document.getElementById('providers-body');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  mockProviders.forEach(p => {
+    const row = document.createElement('tr');
+    const statusClass = p.status === 'healthy' || p.status === 'active' ? 'green' : 'red';
+    row.innerHTML = `
+      <td>${p.name}</td>
+      <td><span class="status ${statusClass}">${p.status}</span></td>
+      <td>${p.latency}</td>
+      <td>${p.uptime}</td>
+      <td>${p.lastUsed}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+function loadRouting() {
+  console.log('Routing data loaded (mock from OmniRoute patterns)');
+  // Could populate dynamic rules from /api/routing in future
+}
+
+function loadHealth() {
+  // Could fetch real data from /api/health in future
+  console.log('Health data loaded (mock)');
+  const healthEl = document.getElementById('health-score');
+  if (healthEl) healthEl.textContent = '96.8';
+}
+
+function loadAnalytics() {
+  const tbody = document.getElementById('logs-body');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  mockLogs.forEach(log => {
+    const row = document.createElement('tr');
+    const statusClass = log.status === '200' ? 'green' : 'red';
+    row.innerHTML = `
+      <td>${log.time}</td>
+      <td>${log.provider}</td>
+      <td>${log.duration}</td>
+      <td><span class="status ${statusClass}">${log.status}</span></td>
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+// Initialize dashboard
+function initDashboard() {
+  // Set initial tab to Gaps (0)
+  switchTab(0);
+  
+  // Auto refresh every 30s
+  setInterval(() => {
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) {
+      const tabIndex = Array.from(document.querySelectorAll('.tab')).indexOf(activeTab);
+      if (tabIndex >= 2) switchTab(tabIndex);
+    }
+  }, 30000);
+  
+  console.log('Opencode Proxy Dashboard initialized with multi-provider views');
+}
+
+// Run init on load
+window.onload = initDashboard;
+</script>
+</body>
+</html>
