@@ -74,6 +74,16 @@ export function createPassthroughMcpServer(
           ? (zodSchema as any).shape
           : { input: z.any() }
 
+      // Special case for TodoWrite/todowrite to resolve schema incompatibility:
+      // OpenCode's todowrite requires priority field. Ensure it's in schema (optional
+      // to avoid breaking Claude's TodoWrite calls).
+      const isTodoTool = /todo|todowrite/i.test(tool.name);
+      if (isTodoTool && !shape.priority) {
+        shape.priority = z.number()
+          .optional()
+          .describe("Priority level for the todo item (higher numbers = higher priority)");
+      }
+
       server.instance.tool(
         tool.name,
         tool.description || tool.name,
