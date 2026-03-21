@@ -1,5 +1,7 @@
 import type { ProviderAdapter } from "./base";
 import type { ProxyConfig } from "../proxy/types";
+import { ClaudeAdapter } from "./claude";
+import { GrokAdapter } from "./grok";
 
 const providers = new Map<string, ProviderAdapter>();
 
@@ -14,7 +16,7 @@ export function getProviderAdapter(name: string = "claude"): ProviderAdapter {
   }
   
   if (key === "grok" || key === "xai") {
-    const grok = getGrokAdapter();
+    const grok = new GrokAdapter();
     registerProvider(key, grok);
     return grok;
   }
@@ -24,44 +26,16 @@ export function getProviderAdapter(name: string = "claude"): ProviderAdapter {
     console.warn(`Provider ${name} not found, falling back to Claude`);
   }
   
-  // Lazy init Claude
-  const claude = getClaudeAdapter();
+  const claude = new ClaudeAdapter();
   registerProvider("claude", claude);
   return claude;
 }
 
-import type { ClaudeAdapter } from "./claude";
-
-// Lazy load Claude adapter 
-let claudeAdapterInstance: ProviderAdapter | null = null;
-
-export function getClaudeAdapter(): ProviderAdapter {
-  if (!claudeAdapterInstance) {
-    // Use import for class (TS will handle)
-    const ClaudeAdapterClass = require("./claude").ClaudeAdapter as new () => ProviderAdapter;
-    claudeAdapterInstance = new ClaudeAdapterClass();
-  }
-  return claudeAdapterInstance!;
-}
-
-// Register default on first use
 export function initializeProviders(): void {
   if (!providers.has("claude")) {
-    registerProvider("claude", getClaudeAdapter());
+    registerProvider("claude", new ClaudeAdapter());
   }
 }
 
-export type { ClaudeAdapter } from "./claude";
-export type { GrokAdapter } from "./grok";
-
-// Lazy load Grok adapter
-let grokAdapterInstance: ProviderAdapter | null = null;
-
-export function getGrokAdapter(): ProviderAdapter {
-  if (!grokAdapterInstance) {
-    // Use import for class (TS will handle)
-    const GrokAdapterClass = require("./grok").GrokAdapter as new () => ProviderAdapter;
-    grokAdapterInstance = new GrokAdapterClass();
-  }
-  return grokAdapterInstance!;
-}
+// Clean imports and no more require() hacks or duplicate type exports
+// Adapters are lightweight with no internal state, so new instances are fine and types resolve cleanly
