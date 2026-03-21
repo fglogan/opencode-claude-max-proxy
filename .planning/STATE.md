@@ -1,7 +1,7 @@
 ---
 progress:
   total_phases: 7
-  completed_phases: 6
+  completed_phases: 7
   total_plans: 1
   completed_plans: 1
 ---
