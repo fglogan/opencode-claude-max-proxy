@@ -1,6 +1,7 @@
 import { Hono } from "hono"
 import { cors } from "hono/cors"
-import { serveStatic } from "hono/bun"
+import { serve } from "@hono/node-server"
+import type { Server } from "node:http"
 import type { Context } from "hono"
 import type { ProxyConfig } from "./types"
 import { DEFAULT_PROXY_CONFIG } from "./types"
@@ -15,6 +16,7 @@ import { randomUUID, createHash } from "crypto"
 import { fuzzyMatchAgentName } from "./agentMatch"
 import { buildAgentDefinitions } from "./agentDefs"
 import { createPassthroughMcpServer, stripMcpPrefix, PASSTHROUGH_MCP_NAME, PASSTHROUGH_MCP_PREFIX } from "./passthroughTools"
+import { lookupSharedSession, storeSharedSession, clearSharedSessions } from "./sessionStore"
 
 // --- Session Tracking ---
 // Maps OpenCode session ID (or fingerprint) → Claude SDK session ID
@@ -31,6 +33,8 @@ const fingerprintCache = new Map<string, SessionState>()
 export function clearSessionCache() {
   sessionCache.clear()
   fingerprintCache.clear()
+  // Also clear shared file store
+  try { clearSharedSessions() } catch {}
 }
 
 // Clean stale sessions every hour — sessions survive a full workday
@@ -63,13 +67,41 @@ function lookupSession(
   opencodeSessionId: string | undefined,
   messages: Array<{ role: string; content: any }>
 ): SessionState | undefined {
-  // Primary: use x-opencode-session header
+  // When a session ID is provided, only match by that ID — don't fall through
+  // to fingerprint. A different session ID means a different session.
   if (opencodeSessionId) {
-    return sessionCache.get(opencodeSessionId)
+    const cached = sessionCache.get(opencodeSessionId)
+    if (cached) return cached
+    // Check shared file store
+    const shared = lookupSharedSession(opencodeSessionId)
+    if (shared) {
+      const state: SessionState = {
+        claudeSessionId: shared.claudeSessionId,
+        lastAccess: shared.lastUsedAt,
+        messageCount: 0,
+      }
+      sessionCache.set(opencodeSessionId, state)
+      return state
+    }
+    return undefined
   }
-  // Fallback: fingerprint (only when no header is present)
+
+  // No session ID — use fingerprint fallback
   const fp = getConversationFingerprint(messages)
-  if (fp) return fingerprintCache.get(fp)
+  if (fp) {
+    const cached = fingerprintCache.get(fp)
+    if (cached) return cached
+    const shared = lookupSharedSession(fp)
+    if (shared) {
+      const state: SessionState = {
+        claudeSessionId: shared.claudeSessionId,
+        lastAccess: shared.lastUsedAt,
+        messageCount: 0,
+      }
+      fingerprintCache.set(fp, state)
+      return state
+    }
+  }
   return undefined
 }
 
@@ -81,9 +113,13 @@ function storeSession(
 ) {
   if (!claudeSessionId) return
   const state: SessionState = { claudeSessionId, lastAccess: Date.now(), messageCount: messages?.length || 0 }
+  // In-memory cache
   if (opencodeSessionId) sessionCache.set(opencodeSessionId, state)
   const fp = getConversationFingerprint(messages)
   if (fp) fingerprintCache.set(fp, state)
+  // Shared file store (cross-proxy resume)
+  const key = opencodeSessionId || fp
+  if (key) storeSharedSession(key, claudeSessionId, state.messageCount)
 }
 
 /** Extract only the last user message (for resume — SDK already has history) */
@@ -317,7 +353,6 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
       activeSessions++
       return
     }
-    // Wait for a slot
     return new Promise<void>((resolve) => {
       sessionQueue.push({ resolve })
     })
@@ -400,34 +435,134 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
 
 
 
-      // When resuming, only send the last user message (SDK already has history)
-      const messagesToConvert = isResume
-        ? getLastUserMessage(body.messages || [])
-        : body.messages
+      // When resuming, only send new messages the SDK doesn't have.
+      const allMessages = body.messages || []
+      let messagesToConvert: typeof allMessages
 
-      // Convert messages to a text prompt, preserving all content types
-      const conversationParts = messagesToConvert
-        ?.map((m: { role: string; content: string | Array<{ type: string; text?: string; content?: string; tool_use_id?: string; name?: string; input?: unknown; id?: string }> }) => {
-          const role = m.role === "assistant" ? "Assistant" : "Human"
-          let content: string
-          if (typeof m.content === "string") {
-            content = m.content
-          } else if (Array.isArray(m.content)) {
-            content = m.content
-              .map((block: any) => {
-                if (block.type === "text" && block.text) return block.text
-                if (block.type === "tool_use") return `[Tool Use: ${block.name}(${JSON.stringify(block.input)})]`
-                if (block.type === "tool_result") return `[Tool Result for ${block.tool_use_id}: ${typeof block.content === "string" ? block.content : JSON.stringify(block.content)}]`
-                return ""
-              })
-              .filter(Boolean)
-              .join("\n")
-          } else {
-            content = String(m.content)
+      if (isResume && cachedSession) {
+        const knownCount = cachedSession.messageCount || 0
+        if (knownCount > 0 && knownCount < allMessages.length) {
+          messagesToConvert = allMessages.slice(knownCount)
+        } else {
+          messagesToConvert = getLastUserMessage(allMessages)
+        }
+      } else {
+        messagesToConvert = allMessages
+      }
+
+      // Check if any messages contain multimodal content (images, documents, files)
+      const MULTIMODAL_TYPES = new Set(["image", "document", "file"])
+      const hasMultimodal = messagesToConvert?.some((m: any) =>
+        Array.isArray(m.content) && m.content.some((b: any) => MULTIMODAL_TYPES.has(b.type))
+      )
+
+      // Strip cache_control from content blocks — the SDK manages its own caching
+      // and OpenCode's ttl='1h' blocks conflict with the SDK's ttl='5m' blocks
+      function stripCacheControl(content: any): any {
+        if (!Array.isArray(content)) return content
+        return content.map((block: any) => {
+          if (block.cache_control) {
+            const { cache_control, ...rest } = block
+            return rest
           }
-          return `${role}: ${content}`
+          return block
         })
-        .join("\n\n") || ""
+      }
+
+      // Build the prompt — either structured (multimodal) or text
+      let prompt: string | AsyncIterable<any>
+
+      if (hasMultimodal) {
+        // Structured messages preserve image/document/file blocks for Claude to see.
+        // On resume, only send user messages (SDK has assistant context already).
+        // On first request, include everything.
+        const structured: Array<{ type: "user"; message: { role: string; content: any }; parent_tool_use_id: null }> = []
+
+        if (isResume) {
+          // Resume: only send user messages from the delta (SDK has the rest)
+          for (const m of messagesToConvert) {
+            if (m.role === "user") {
+              structured.push({
+                type: "user" as const,
+                message: { role: "user" as const, content: stripCacheControl(m.content) },
+                parent_tool_use_id: null,
+              })
+            }
+          }
+        } else {
+          // First request: include system context + all messages
+          if (systemContext) {
+            structured.push({
+              type: "user" as const,
+              message: { role: "user", content: systemContext },
+              parent_tool_use_id: null,
+            })
+          }
+          for (const m of messagesToConvert) {
+            if (m.role === "user") {
+              structured.push({
+                type: "user" as const,
+                message: { role: "user" as const, content: stripCacheControl(m.content) },
+                parent_tool_use_id: null,
+              })
+            } else {
+              // Convert assistant messages to text summaries
+              let text: string
+              if (typeof m.content === "string") {
+                text = `[Assistant: ${m.content}]`
+              } else if (Array.isArray(m.content)) {
+                text = m.content.map((b: any) => {
+                  if (b.type === "text" && b.text) return `[Assistant: ${b.text}]`
+                  if (b.type === "tool_use") return `[Tool Use: ${b.name}(${JSON.stringify(b.input)})]`
+                  if (b.type === "tool_result") return `[Tool Result: ${typeof b.content === "string" ? b.content : JSON.stringify(b.content)}]`
+                  return ""
+                }).filter(Boolean).join("\n")
+              } else {
+                text = `[Assistant: ${String(m.content)}]`
+              }
+              structured.push({
+                type: "user" as const,
+                message: { role: "user" as const, content: text },
+                parent_tool_use_id: null,
+              })
+            }
+          }
+        }
+
+        prompt = (async function* () { for (const msg of structured) yield msg })()
+      } else {
+        // Text prompt — convert messages to string
+        const conversationParts = messagesToConvert
+          ?.map((m: { role: string; content: string | Array<{ type: string; text?: string; content?: string; tool_use_id?: string; name?: string; input?: unknown; id?: string }> }) => {
+            const role = m.role === "assistant" ? "Assistant" : "Human"
+            let content: string
+            if (typeof m.content === "string") {
+              content = m.content
+            } else if (Array.isArray(m.content)) {
+              content = m.content
+                .map((block: any) => {
+                  if (block.type === "text" && block.text) return block.text
+                  if (block.type === "tool_use") return `[Tool Use: ${block.name}(${JSON.stringify(block.input)})]`
+                  if (block.type === "tool_result") return `[Tool Result for ${block.tool_use_id}: ${typeof block.content === "string" ? block.content : JSON.stringify(block.content)}]`
+                  if (block.type === "image") return "[Image attached]"
+                  if (block.type === "document") return "[Document attached]"
+                  if (block.type === "file") return "[File attached]"
+                  return ""
+                })
+                .filter(Boolean)
+                .join("\n")
+            } else {
+              content = String(m.content)
+            }
+            return `${role}: ${content}`
+          })
+          .join("\n\n") || ""
+
+        // On resume, skip system context (SDK already has it)
+        prompt = (!isResume && systemContext)
+          ? `${systemContext}\n\n${conversationParts}`
+          : conversationParts
+      }
 
       // --- Passthrough mode ---
       // When enabled, ALL tool execution is forwarded to OpenCode instead of
@@ -484,10 +619,7 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
             }
           : undefined
 
-      // Combine system context with conversation
-      const prompt = systemContext
-        ? `${systemContext}\n\n${conversationParts}`
-        : conversationParts
+
 
         if (!stream) {
           const contentBlocks: Array<Record<string, unknown>> = []
@@ -984,19 +1116,21 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
     })
   }
 
-  app.post("/v1/messages", async (c) => {
+  const handleWithQueue = async (c: Context, endpoint: string) => {
     const requestId = c.req.header("x-request-id") || randomUUID()
-    const startedAt = Date.now()
-    claudeLog("request.enter", { requestId, endpoint: "/v1/messages" })
-    return handleMessages(c, { requestId, endpoint: "/v1/messages", queueEnteredAt: startedAt, queueStartedAt: startedAt })
-  })
+    const queueEnteredAt = Date.now()
+    claudeLog("request.enter", { requestId, endpoint })
+    await acquireSession()
+    const queueStartedAt = Date.now()
+    try {
+      return await handleMessages(c, { requestId, endpoint, queueEnteredAt, queueStartedAt })
+    } finally {
+      releaseSession()
+    }
+  }
 
-  app.post("/messages", async (c) => {
-    const requestId = c.req.header("x-request-id") || randomUUID()
-    const startedAt = Date.now()
-    claudeLog("request.enter", { requestId, endpoint: "/messages" })
-    return handleMessages(c, { requestId, endpoint: "/messages", queueEnteredAt: startedAt, queueStartedAt: startedAt })
-  })
+  app.post("/v1/messages", (c) => handleWithQueue(c, "/v1/messages"))
+  app.post("/messages", (c) => handleWithQueue(c, "/messages"))
 
   // Health check endpoint — verifies auth status
   app.get("/health", (c) => {
@@ -1028,40 +1162,10 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
     }
   })
 
-  // Multi-provider dashboard and API endpoints (inspired by OmniRoute patterns)
-  app.get("/dashboard", serveStatic({ path: "./scanner-dashboard.html" }))
-
-  app.get("/api/providers", (c) => {
-    return c.json({
-      providers: [
-        { name: "claude", status: "healthy", latency: 145, uptime: "99.8%", lastUsed: "just now" },
-        { name: "grok", status: "healthy", latency: 87, uptime: "99.5%", lastUsed: "2m ago" },
-        { name: "passthrough", status: "active", latency: 210, uptime: "98.9%", lastUsed: "now" }
-      ],
-      timestamp: new Date().toISOString(),
-      total: 3
-    })
-  })
-
-  app.get("/api/logs", (c) => {
-    return c.json({
-      logs: [
-        { timestamp: "14:32", provider: "grok", duration: "245ms", status: "200", model: "grok-4" },
-        { timestamp: "14:31", provider: "claude", duration: "189ms", status: "200", model: "claude-sonnet" }
-      ],
-      count: 42
-    })
-  })
-
-  app.get("/api/health", (c) => {
-    return c.json({
-      overall: "healthy",
-      providers: 3,
-      uptime: "99.2%",
-      activeSessions: 2,
-      mode: process.env.CLAUDE_PROXY_PASSTHROUGH ? "passthrough" : "internal",
-      timestamp: new Date().toISOString()
-    })
+  // Catch-all: log unhandled requests
+  app.all("*", (c) => {
+    console.error(`[PROXY] UNHANDLED ${c.req.method} ${c.req.url}`)
+    return c.json({ error: { type: "not_found", message: `Endpoint not supported: ${c.req.method} ${new URL(c.req.url).pathname}` } }, 404)
   })
 
   return { app, config: finalConfig }
@@ -1070,40 +1174,33 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
 export async function startProxyServer(config: Partial<ProxyConfig> = {}) {
   const { app, config: finalConfig } = createProxyServer(config)
 
-  let server
-  let currentPort = finalConfig.port
-  const maxAttempts = 5
-  let success = false
-  for (let i = 0; i < maxAttempts; i++) {
-    try {
-      server = Bun.serve({
-        port: currentPort,
-        hostname: finalConfig.host,
-        idleTimeout: finalConfig.idleTimeoutSeconds,
-        fetch: app.fetch
-      })
-      finalConfig.port = currentPort
-      success = true
-      break
-    } catch (error: unknown) {
-      if (error instanceof Error && "code" in error && error.code === "EADDRINUSE") {
-        currentPort++
-        continue
-      }
-      throw error
-    }
-  }
-  if (!success) {
-    console.error(`\nError: Ports ${finalConfig.port} to ${finalConfig.port + maxAttempts - 1} are in use.`)
-    console.error(`  Check with: lsof -i :${finalConfig.port}`)
-    console.error(`  Or set CLAUDE_PROXY_PORT=xxxx bun run proxy`)
-    process.exit(1)
-  }
+  const server = serve({
+    fetch: app.fetch,
+    port: finalConfig.port,
+    hostname: finalConfig.host,
+  }, (info: { port: number }) => {
+    console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${info.port}`)
+    console.log(`Environment: NODE_ENV=${process.env.NODE_ENV || 'development'}, PASSTHROUGH=${!!process.env.CLAUDE_PROXY_PASSTHROUGH}`)
+    console.log(`\nTo use with OpenCode, run:`)
+    console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${info.port} opencode`)
+  }) as Server
 
-  console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port} (bound to ${finalConfig.host})`)
-  console.log(`Environment: NODE_ENV=${process.env.NODE_ENV || 'development'}, PASSTHROUGH=${!!process.env.CLAUDE_PROXY_PASSTHROUGH}`)
-  console.log(`\nTo use with OpenCode, run:`)
-  console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)
+  const idleMs = finalConfig.idleTimeoutSeconds * 1000
+  server.keepAliveTimeout = idleMs
+  server.headersTimeout = idleMs + 1000
+
+  server.on("error", (error: NodeJS.ErrnoException) => {
+    if (error.code === "EADDRINUSE") {
+      console.error(`\nError: Port ${finalConfig.port} is already in use.`)
+      console.error(`\nIs another instance of the proxy already running?`)
+      console.error(`  Check with: lsof -i :${finalConfig.port}`)
+      console.error(`  Kill it with: kill $(lsof -ti :${finalConfig.port})`)
+      console.error(`\nOr use a different port:`)
+      console.error(`  CLAUDE_PROXY_PORT=4567 claude-max-proxy`)
+      process.exit(1)
+    }
+    throw error
+  })
 
   return server
 }

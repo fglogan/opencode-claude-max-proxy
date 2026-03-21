@@ -1,33 +1,41 @@
-FROM oven/bun:1
+# ---- Build stage ----
+FROM oven/bun:1 AS build
 
 WORKDIR /app
-
-# Copy dependency files first for caching
-COPY package.json ./
-
-# Install dependencies (production focused but includes all for proxy)
-RUN bun install
-
-# Copy source and runtime files
-COPY src/ ./src/
+COPY package.json bun.lock* tsconfig.json ./
 COPY bin/ ./bin/
-COPY README.md ./
-COPY scanner-dashboard.html ./
+COPY src/ ./src/
 
-# For npm package compatibility
-COPY --chmod=755 bin/claude-proxy-supervisor.sh /usr/local/bin/claude-proxy-supervisor
+RUN bun install
+# Run bun build directly (not "bun run build") to skip postbuild hook,
+# which calls "node --check" — unavailable in oven/bun image
+RUN rm -rf dist && bun build bin/cli.ts src/proxy/server.ts --outdir dist --target node --splitting --external @anthropic-ai/claude-agent-sdk --entry-naming '[name].js'
+
+# ---- Runtime stage ----
+FROM node:22-alpine
+
+RUN deluser --remove-home node 2>/dev/null; \
+    adduser -D -u 1000 claude \
+    && mkdir -p /home/claude/.claude \
+    && chown -R claude:claude /home/claude
+
+RUN npm install -g @anthropic-ai/claude-code \
+    && npm cache clean --force
+
+USER claude
+WORKDIR /app
+
+COPY --from=build --chown=claude:claude /app/node_modules ./node_modules
+COPY --from=build --chown=claude:claude /app/dist ./dist
+COPY --from=build --chown=claude:claude /app/package.json ./
+COPY --chown=claude:claude bin/docker-entrypoint.sh bin/claude-proxy-supervisor.sh ./bin/
 
 EXPOSE 3456
 
-# Production defaults - overridden by env
-ENV NODE_ENV=production
-ENV CLAUDE_PROXY_PASSTHROUGH=1
-ENV CLAUDE_PROXY_HOST=0.0.0.0
-ENV CLAUDE_PROXY_PORT=3456
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+    CMD node -e "const r=await fetch('http://127.0.0.1:3456/health');process.exit(r.ok?0:1)"
 
-# Healthcheck using the proxy's /health endpoint
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:3456/health || exit 1
-
-# Use supervisor for auto-restart on crashes
+ENV CLAUDE_PROXY_PASSTHROUGH=1 \
+    CLAUDE_PROXY_HOST=0.0.0.0
+ENTRYPOINT ["./bin/docker-entrypoint.sh"]
 CMD ["./bin/claude-proxy-supervisor.sh"]
