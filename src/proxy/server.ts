@@ -95,82 +95,92 @@ function getLastUserMessage(messages: Array<{ role: string; content: any }>): Ar
 }
 
 // --- Error Classification ---
-// Detect specific SDK errors and return helpful messages to the client
+// Detect specific SDK errors and return helpful messages to the client.
+// Refactored to rule-based approach to reduce cyclomatic complexity.
+type ErrorRule = {
+  test: (lower: string, errMsg: string) => boolean
+  getResult: (lower: string, errMsg: string) => { status: number; type: string; message: string }
+}
+
 function classifyError(errMsg: string): { status: number; type: string; message: string } {
   const lower = errMsg.toLowerCase()
 
-  // Authentication failures
-  if (lower.includes("401") || lower.includes("authentication") || lower.includes("invalid auth") || lower.includes("credentials")) {
-    return {
-      status: 401,
-      type: "authentication_error",
-      message: "Claude authentication expired or invalid. Run 'claude login' in your terminal to re-authenticate, then restart the proxy."
-    }
-  }
-
-  // Rate limiting
-  if (lower.includes("429") || lower.includes("rate limit") || lower.includes("too many requests")) {
-    return {
-      status: 429,
-      type: "rate_limit_error",
-      message: "Claude Max rate limit reached. Wait a moment and try again."
-    }
-  }
-
-  // Billing / subscription
-  if (lower.includes("402") || lower.includes("billing") || lower.includes("subscription") || lower.includes("payment")) {
-    return {
-      status: 402,
-      type: "billing_error",
-      message: "Claude Max subscription issue. Check your subscription status at https://claude.ai/settings/subscription"
-    }
-  }
-
-  // SDK process crash
-  if (lower.includes("exited with code") || lower.includes("process exited")) {
-    const codeMatch = errMsg.match(/exited with code (\d+)/)
-    const code = codeMatch ? codeMatch[1] : "unknown"
-
-    // Code 1 with no other info is usually auth
-    if (code === "1" && !lower.includes("tool") && !lower.includes("mcp")) {
-      return {
+  const rules: ErrorRule[] = [
+    {
+      test: (l) => l.includes("401") || l.includes("authentication") || l.includes("invalid auth") || l.includes("credentials"),
+      getResult: () => ({
         status: 401,
         type: "authentication_error",
-        message: "Claude Code process crashed (exit code 1). This usually means authentication expired. Run 'claude login' in your terminal to re-authenticate, then restart the proxy."
+        message: "Claude authentication expired or invalid. Run 'claude login' in your terminal to re-authenticate, then restart the proxy."
+      })
+    },
+    {
+      test: (l) => l.includes("429") || l.includes("rate limit") || l.includes("too many requests"),
+      getResult: () => ({
+        status: 429,
+        type: "rate_limit_error",
+        message: "Claude Max rate limit reached. Wait a moment and try again."
+      })
+    },
+    {
+      test: (l) => l.includes("402") || l.includes("billing") || l.includes("subscription") || l.includes("payment"),
+      getResult: () => ({
+        status: 402,
+        type: "billing_error",
+        message: "Claude Max subscription issue. Check your subscription status at https://claude.ai/settings/subscription"
+      })
+    },
+    {
+      test: (l, m) => l.includes("exited with code") || l.includes("process exited"),
+      getResult: (l, m) => {
+        const codeMatch = m.match(/exited with code (\d+)/)
+        const code = codeMatch ? codeMatch[1] : "unknown"
+
+        // Code 1 with no other info is usually auth
+        if (code === "1" && !l.includes("tool") && !l.includes("mcp")) {
+          return {
+            status: 401,
+            type: "authentication_error",
+            message: "Claude Code process crashed (exit code 1). This usually means authentication expired. Run 'claude login' in your terminal to re-authenticate, then restart the proxy."
+          }
+        }
+
+        return {
+          status: 502,
+          type: "api_error",
+          message: `Claude Code process exited unexpectedly (code ${code}). Check proxy logs for details. If this persists, try 'claude login' to refresh authentication.`
+        }
       }
-    }
+    },
+    {
+      test: (l) => l.includes("timeout") || l.includes("timed out"),
+      getResult: () => ({
+        status: 504,
+        type: "timeout_error",
+        message: "Request timed out. The operation may have been too complex. Try a simpler request."
+      })
+    },
+    {
+      test: (l) => l.includes("500") || l.includes("server error") || l.includes("internal error"),
+      getResult: () => ({
+        status: 502,
+        type: "api_error",
+        message: "Claude API returned a server error. This is usually temporary — try again in a moment."
+      })
+    },
+    {
+      test: (l) => l.includes("503") || l.includes("overloaded"),
+      getResult: () => ({
+        status: 503,
+        type: "overloaded_error",
+        message: "Claude is temporarily overloaded. Try again in a few seconds."
+      })
+    },
+  ]
 
-    return {
-      status: 502,
-      type: "api_error",
-      message: `Claude Code process exited unexpectedly (code ${code}). Check proxy logs for details. If this persists, try 'claude login' to refresh authentication.`
-    }
-  }
-
-  // Timeout
-  if (lower.includes("timeout") || lower.includes("timed out")) {
-    return {
-      status: 504,
-      type: "timeout_error",
-      message: "Request timed out. The operation may have been too complex. Try a simpler request."
-    }
-  }
-
-  // Server errors from Anthropic
-  if (lower.includes("500") || lower.includes("server error") || lower.includes("internal error")) {
-    return {
-      status: 502,
-      type: "api_error",
-      message: "Claude API returned a server error. This is usually temporary — try again in a moment."
-    }
-  }
-
-  // Overloaded
-  if (lower.includes("503") || lower.includes("overloaded")) {
-    return {
-      status: 503,
-      type: "overloaded_error",
-      message: "Claude is temporarily overloaded. Try again in a few seconds."
+  for (const rule of rules) {
+    if (rule.test(lower, errMsg)) {
+      return rule.getResult(lower, errMsg)
     }
   }
 
