@@ -30,11 +30,11 @@ Total v1 requirements: 9
 | ARCH-01 | Phase 1 | Completed |
 | FRAME-01 | Phase 2 | Complete |
 | DOC-01 | Phase 5,6 | Completed |
-| MAINT-01 | Phase 4 | Pending |
+| MAINT-01 | Phase 4 | Completed |
 | GROK-01 | Phase 3 | Complete |
 | PARITY-01 | Phase 3 | Complete |
 | ROUTE-01 | Phase 3 | Complete |
-| DEPLOY-01 | Phase 6 | Pending |
+| DEPLOY-01 | Phase 6 | Complete |
 
 Mapped: 8/9 ✓
 

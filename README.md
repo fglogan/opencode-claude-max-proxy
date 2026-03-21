@@ -338,6 +338,14 @@ curl http://127.0.0.1:3456/health
 
 Returns auth status, subscription type, and proxy mode. Use this to verify the proxy is running and authenticated before connecting OpenCode.
 
+## Maintenance
+
+Run `npm run maintain` daily to review upstream changes in the Claude Agent SDK, xAI APIs, OpenCode, and Bun. This invokes the NSP upstream review process which generates review matrices and action items for keeping the proxy current.
+
+See MAINTENANCE.md for the full executable daily process, including gap detection with `nsp doctor` and `nsp verify`, handling gaps via `/nsp:plan-phase --gaps`, parity testing, and release policy.
+
+This ensures the proxy remains synchronized without manual intervention for routine upstream updates.
+
 ## Architecture
 
 ```
