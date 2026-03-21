@@ -10,13 +10,15 @@
   "exports": {
     ".": "./src/proxy/server.ts"
   },
-  "scripts": {
+    "scripts": {
     "start": "./bin/claude-proxy-supervisor.sh",
     "proxy": "./bin/claude-proxy-supervisor.sh",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
-    "proxy:direct": "bun run ./bin/claude-proxy.ts"
+    "proxy:direct": "bun run ./bin/claude-proxy.ts",
+    "maintain": "nsp review-upstream"
   },
+
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.2.80",
     "glob": "^13.0.0",
