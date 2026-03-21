@@ -46,8 +46,8 @@ Total v1.1 requirements: 2
 
 Mapped: 9/9 ✓
 
-| SYNC-01 | Phase 7 | In Progress |
-| PARITY-02 | Phase 7 | In Progress |
+| SYNC-01 | Phase 7 | Complete |
+| PARITY-02 | Phase 7 | Complete |
 
 v1.1 Mapped: 2/2 ✓
 

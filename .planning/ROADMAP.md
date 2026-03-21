@@ -86,7 +86,7 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
   4. All tests pass (existing + upstream new tests).
   5. STATE.md updated with merge log.
 **Plans**: 1 plan
-- [ ] 07-01-PLAN.md — Merge upstream v1.12.0 with conflict resolution, parity verification, and state update
+- [x] 07-01-PLAN.md — Merge upstream v1.12.0 with conflict resolution, parity verification, and state update (completed 2026-03-21)
 
 ## Progress
 
@@ -101,7 +101,7 @@ Phases execute in numeric order.
 | 4. Automated Maintenance and Documentation | 1/1 | Complete | 2026-03-20 |
 | 5. Multi-Provider Proxy and Dashboard | 1/1 | Complete | 2026-03-20 |
 | 6. Standalone Proxy Deployment | 1/1 | Complete | 2026-03-20 |
-| 7. Upstream Sync and Stabilization | 0/1 | In Progress | — |
+| 7. Upstream Sync and Stabilization | 1/1 | Complete | 2026-03-21 |
 
 *Last updated: 2026-03-21*
 
