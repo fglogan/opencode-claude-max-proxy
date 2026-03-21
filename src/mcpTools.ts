@@ -180,6 +180,37 @@ export const opencodeMcpServer = createSdkMcpServer({
           }
         }
       }
+    ),
+
+    tool(
+      "scan_report",
+      "Run gaps or genesis-static-analyzer and return formatted report for dashboard",
+      {
+        scanner: z.enum(["gaps", "static"]).default("gaps").describe("Which scanner to use"),
+        path: z.string().optional().default(".").describe("Target directory"),
+        profile: z.string().optional().default("quality").describe("Profile for static analyzer"),
+        format: z.enum(["json", "text"]).default("json").describe("Output format")
+      },
+      async (args) => {
+        try {
+          const targetPath = args.path || getCwd()
+          let cmd: string
+          if (args.scanner === "gaps") {
+            cmd = `gaps scan --path "${targetPath}" --format ${args.format} --min-tier 2`
+          } else {
+            cmd = `genesis-static-analyzer scan --target "${targetPath}" --profile ${args.profile} --format json`
+          }
+          const { stdout } = await execAsync(cmd, { maxBuffer: 50 * 1024 * 1024 })
+          return {
+            content: [{ type: "text", text: stdout }]
+          }
+        } catch (error) {
+          return {
+            content: [{ type: "text", text: `Error: ${error instanceof Error ? error.message : String(error)}` }],
+            isError: true
+          }
+        }
+      }
     )
   ]
 })
