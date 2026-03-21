@@ -22,6 +22,14 @@
 
 Total v1 requirements: 9
 
+## v1.1 Requirements for Upstream Stabilization
+
+**SYNC-01**: Merge upstream origin/main changes (v1.8.0 through v1.12.0) into local fork, resolving all conflicts while preserving local customizations (provider routing, circuit breaker, MCP scan_report, agent matching).
+
+**PARITY-02**: Verify post-merge parity — all existing tests pass, all local features remain functional, all upstream additions (Docker, multimodal, session store, resume fixes) are present and working.
+
+Total v1.1 requirements: 2
+
 ## Traceability
 
 | Requirement | Phase | Status |
@@ -36,7 +44,12 @@ Total v1 requirements: 9
 | ROUTE-01 | Phase 3 | Complete |
 | DEPLOY-01 | Phase 6 | Complete |
 
-Mapped: 8/9 ✓
+Mapped: 9/9 ✓
+
+| SYNC-01 | Phase 7 | In Progress |
+| PARITY-02 | Phase 7 | In Progress |
+
+v1.1 Mapped: 2/2 ✓
 
 ## Categories
 - Analysis: ANAL-01, ARCH-01

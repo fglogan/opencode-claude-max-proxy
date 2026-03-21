@@ -75,6 +75,19 @@ This roadmap evolves the Claude-specific proxy into a permanent, global, multi-p
 **Plans**: 1 plan
 - [x] 05-multi-provider-proxy-and-dashboard-01-PLAN.md — Research OmniRoute patterns, enhance dashboard HTML, integrate with server (completed)
 
+### Phase 7: Upstream Sync and Stabilization
+**Goal**: Merge upstream v1.12.0 changes (Docker, multimodal, session store, resume fixes, CLI rename) into local fork while preserving all local customizations, then verify parity and stabilize.
+**Depends on**: Phase 6
+**Requirements**: SYNC-01, PARITY-02
+**Success Criteria** (what must be TRUE):
+  1. All upstream v1.12.0 features are present in the codebase.
+  2. All local customizations (provider routing, circuit breaker, scan_report, agent matching) are preserved.
+  3. TypeScript compiles with zero errors.
+  4. All tests pass (existing + upstream new tests).
+  5. STATE.md updated with merge log.
+**Plans**: 1 plan
+- [ ] 07-01-PLAN.md — Merge upstream v1.12.0 with conflict resolution, parity verification, and state update
+
 ## Progress
 
 **Execution Order:**
@@ -82,14 +95,15 @@ Phases execute in numeric order.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Analysis and Architecture Mapping | 1/1 | 1/1 | Complete | 2026-03-20 |
+| 1. Analysis and Architecture Mapping | 1/1 | Complete | 2026-03-20 |
 | 2. Modular Global Framework | 1/1 | Complete | 2026-03-20 |
-| 3. Parity Hardening and Grok Integration | 1/1 | Complete    | 2026-03-20 |
-| 4. Automated Maintenance and Documentation | 1/1 | 1/1 | Complete | 2026-03-20 |
+| 3. Parity Hardening and Grok Integration | 1/1 | Complete | 2026-03-20 |
+| 4. Automated Maintenance and Documentation | 1/1 | Complete | 2026-03-20 |
 | 5. Multi-Provider Proxy and Dashboard | 1/1 | Complete | 2026-03-20 |
-| 6. Standalone Proxy Deployment | 1/1 | 1/1 | Complete | 2026-03-20 |
+| 6. Standalone Proxy Deployment | 1/1 | Complete | 2026-03-20 |
+| 7. Upstream Sync and Stabilization | 0/1 | In Progress | — |
 
-*Last updated: 2026-03-20*
+*Last updated: 2026-03-21*
 
 ## Coverage
 
