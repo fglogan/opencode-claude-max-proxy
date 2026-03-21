@@ -19,34 +19,52 @@ export const PASSTHROUGH_MCP_PREFIX = `mcp__${PASSTHROUGH_MCP_NAME}__`
 /**
  * Convert a JSON Schema object to a Zod schema (simplified).
  * Handles the common types OpenCode sends. Falls back to z.any() for complex types.
+ * Refactored to reduce cyclomatic complexity using type-specific helpers.
  */
+function handleStringSchema(schema: any): z.ZodTypeAny {
+  let s = z.string()
+  if (schema.description) s = s.describe(schema.description)
+  if (schema.enum) return z.enum(schema.enum as [string, ...string[]])
+  return s
+}
+
+function handleNumberSchema(schema: any): z.ZodTypeAny {
+  let n = z.number()
+  if (schema.description) n = n.describe(schema.description)
+  return n
+}
+
+function handleArraySchema(schema: any): z.ZodTypeAny {
+  const items = schema.items ? jsonSchemaToZod(schema.items) : z.any()
+  return z.array(items)
+}
+
+function handleObjectSchema(schema: any): z.ZodTypeAny {
+  const shape: Record<string, z.ZodTypeAny> = {}
+  const required = new Set(schema.required || [])
+  for (const [key, propSchema] of Object.entries(schema.properties || {})) {
+    const zodProp = jsonSchemaToZod(propSchema as any)
+    shape[key] = required.has(key) ? zodProp : zodProp.optional()
+  }
+  return z.object(shape)
+}
+
 function jsonSchemaToZod(schema: any): z.ZodTypeAny {
   if (!schema || typeof schema !== "object") return z.any()
 
-  if (schema.type === "string") {
-    let s = z.string()
-    if (schema.description) s = s.describe(schema.description)
-    if (schema.enum) return z.enum(schema.enum as [string, ...string[]])
-    return s
+  const type = schema.type
+  if (type === "string") {
+    return handleStringSchema(schema)
   }
-  if (schema.type === "number" || schema.type === "integer") {
-    let n = z.number()
-    if (schema.description) n = n.describe(schema.description)
-    return n
+  if (type === "number" || type === "integer") {
+    return handleNumberSchema(schema)
   }
-  if (schema.type === "boolean") return z.boolean()
-  if (schema.type === "array") {
-    const items = schema.items ? jsonSchemaToZod(schema.items) : z.any()
-    return z.array(items)
+  if (type === "boolean") return z.boolean()
+  if (type === "array") {
+    return handleArraySchema(schema)
   }
-  if (schema.type === "object" && schema.properties) {
-    const shape: Record<string, z.ZodTypeAny> = {}
-    const required = new Set(schema.required || [])
-    for (const [key, propSchema] of Object.entries(schema.properties)) {
-      const zodProp = jsonSchemaToZod(propSchema as any)
-      shape[key] = required.has(key) ? zodProp : zodProp.optional()
-    }
-    return z.object(shape)
+  if (type === "object" && schema.properties) {
+    return handleObjectSchema(schema)
   }
 
   return z.any()
