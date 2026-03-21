@@ -17,6 +17,8 @@ import { fuzzyMatchAgentName } from "./agentMatch"
 import { buildAgentDefinitions } from "./agentDefs"
 import { createPassthroughMcpServer, stripMcpPrefix, PASSTHROUGH_MCP_NAME, PASSTHROUGH_MCP_PREFIX } from "./passthroughTools"
 import { lookupSharedSession, storeSharedSession, clearSharedSessions } from "./sessionStore"
+import { initObservability, tracer, recordRequest, incrementActiveSessions, decrementActiveSessions } from "../observability/index.js"
+import { SpanStatusCode } from "@opentelemetry/api"
 
 // --- Session Tracking ---
 // Maps OpenCode session ID (or fingerprint) → Claude SDK session ID
@@ -320,6 +322,7 @@ function isClosedControllerError(error: unknown): boolean {
 export function createProxyServer(config: Partial<ProxyConfig> = {}) {
   const finalConfig = { ...DEFAULT_PROXY_CONFIG, ...config }
   initializeProviders()
+  initObservability()
   const adapter: ProviderAdapter = getProviderAdapter(finalConfig.provider || "claude")
   const queryHandler = adapter.createQueryHandler(finalConfig)
   const app = new Hono()
@@ -627,10 +630,15 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
           const upstreamStartAt = Date.now()
           let firstChunkAt: number | undefined
           let currentSessionId: string | undefined
+          let sdkSpan: ReturnType<typeof tracer.startSpan> | null = null
 
           claudeLog("upstream.start", { mode: "non_stream", model })
 
           try {
+            sdkSpan = tracer.startSpan("sdk.chat")
+            sdkSpan.span.setAttribute("model", model)
+            if (resumeSessionId) sdkSpan.span.setAttribute("session_id", resumeSessionId)
+
             const response = queryHandler({
               prompt,
               options: {
@@ -664,6 +672,7 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
             })
 
             for await (const message of response) {
+              sdkSpan.span.setAttribute("stream", "false")
               // Capture session ID from SDK messages
               if ((message as any).session_id) {
                 currentSessionId = (message as any).session_id
@@ -691,6 +700,8 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
               }
             }
 
+            sdkSpan.end({ "assistant_messages": assistantMessages })
+
             claudeLog("upstream.completed", {
               mode: "non_stream",
               model,
@@ -698,6 +709,10 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
               durationMs: Date.now() - upstreamStartAt
             })
           } catch (error) {
+            if (sdkSpan) {
+              sdkSpan.recordException(error as Error)
+              sdkSpan.end()
+            }
             claudeLog("upstream.failed", {
               mode: "non_stream",
               model,
@@ -778,6 +793,7 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
             let textEventsForwarded = 0
             let bytesSent = 0
             let streamClosed = false
+            let sdkSpan: ReturnType<typeof tracer.startSpan> | null = null
 
             claudeLog("upstream.start", { mode: "stream", model })
 
@@ -804,6 +820,12 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
 
             try {
               let currentSessionId: string | undefined
+
+              sdkSpan = tracer.startSpan("sdk.chat")
+              sdkSpan.span.setAttribute("model", model)
+              if (resumeSessionId) sdkSpan.span.setAttribute("session_id", resumeSessionId)
+              sdkSpan.span.setAttribute("stream", "true")
+
               const response = queryHandler({
                 prompt,
                 options: {
@@ -951,6 +973,12 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
                 clearInterval(heartbeat)
               }
 
+              sdkSpan.end({
+                "stream_events_seen": streamEventsSeen,
+                "events_forwarded": eventsForwarded,
+                "text_events_forwarded": textEventsForwarded
+              })
+
               claudeLog("upstream.completed", {
                 mode: "stream",
                 model,
@@ -1049,6 +1077,10 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
                 }
               }
             } catch (error) {
+              if (sdkSpan) {
+                sdkSpan.recordException(error as Error)
+                sdkSpan.end()
+              }
               if (isClosedControllerError(error)) {
                 streamClosed = true
                 claudeLog("stream.client_closed", {
@@ -1119,12 +1151,26 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
   const handleWithQueue = async (c: Context, endpoint: string) => {
     const requestId = c.req.header("x-request-id") || randomUUID()
     const queueEnteredAt = Date.now()
+    const mode = process.env.CLAUDE_PROXY_PASSTHROUGH ? "passthrough" : "internal"
+    const span = tracer.startSpan("proxy.request")
+    span.span.setAttribute("http.method", c.req.method)
+    span.span.setAttribute("http.url", c.req.url)
+    span.span.setAttribute("session.mode", mode)
+
     claudeLog("request.enter", { requestId, endpoint })
     await acquireSession()
+    incrementActiveSessions(mode)
     const queueStartedAt = Date.now()
     try {
-      return await handleMessages(c, { requestId, endpoint, queueEnteredAt, queueStartedAt })
+      const result = await handleMessages(c, { requestId, endpoint, queueEnteredAt, queueStartedAt })
+      span.end({ "http.status_code": 200 })
+      return result
+    } catch (error) {
+      span.recordException(error as Error)
+      span.end({ "http.status_code": 500 })
+      throw error
     } finally {
+      decrementActiveSessions(mode)
       releaseSession()
     }
   }
@@ -1159,6 +1205,29 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
         error: "Could not verify auth status",
         mode: process.env.CLAUDE_PROXY_PASSTHROUGH ? "passthrough" : "internal",
       })
+    }
+  })
+
+  app.get("/metrics", async (c) => {
+    try {
+      const { metrics } = await import("@opentelemetry/api")
+      const serviceName = process.env.OTEL_SERVICE_NAME || "opencode-claude-max-proxy"
+      const meter = metrics.getMeter(serviceName)
+      const instruments = (meter as any)._instrumentationLibrary?._instruments || []
+      let output = ""
+
+      for (const instrument of instruments) {
+        const name = instrument?.name || "unknown"
+        const description = instrument?.description || ""
+        const unit = instrument?.unit || ""
+        output += `# HELP ${name} ${description}\n`
+        output += `# TYPE ${name} gauge\n`
+        output += `${name} 0\n`
+      }
+
+      return c.text(output || "# No metrics available\n", 200, { "Content-Type": "text/plain; charset=utf-8" })
+    } catch (error) {
+      return c.text("# Error collecting metrics\n", 500)
     }
   })
 

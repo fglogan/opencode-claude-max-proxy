@@ -4,6 +4,8 @@ export interface ProxyConfig {
   debug: boolean
   idleTimeoutSeconds: number
   provider?: string
+  baseURL?: string
+  apiKey?: string
 }
 
 export const DEFAULT_PROXY_CONFIG: ProxyConfig = {

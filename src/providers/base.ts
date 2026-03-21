@@ -9,4 +9,6 @@ export interface ProviderAdapter {
 
 export interface ProviderConfig extends ProxyConfig {
   provider?: string;
+  baseURL?: string;
+  apiKey?: string;
 }

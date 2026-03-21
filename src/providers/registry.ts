@@ -2,6 +2,9 @@ import type { ProviderAdapter } from "./base";
 import type { ProxyConfig } from "../proxy/types";
 import { ClaudeAdapter } from "./claude";
 import { GrokAdapter } from "./grok";
+import { OpenAICompatibleAdapter } from "./openaiCompatible";
+
+export { OpenAICompatibleAdapter };
 
 const providers = new Map<string, ProviderAdapter>();
 
@@ -19,6 +22,12 @@ export function getProviderAdapter(name: string = "claude"): ProviderAdapter {
     const grok = new GrokAdapter();
     registerProvider(key, grok);
     return grok;
+  }
+
+  if (key === "openai" || key === "groq" || key === "ollama" || key === "bedrock") {
+    const adapter = new OpenAICompatibleAdapter();
+    registerProvider(key, adapter);
+    return adapter;
   }
   
   // Default to Claude if not registered or unknown
