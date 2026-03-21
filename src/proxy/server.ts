@@ -274,7 +274,12 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
   const queryHandler = adapter.createQueryHandler(finalConfig)
   const app = new Hono()
 
-  app.use("*", cors())
+  // CORS allows remote access for deployed containers (0.0.0.0 binding)
+  app.use("*", cors({
+    origin: "*",
+    allowMethods: ["GET", "POST", "OPTIONS"],
+    allowHeaders: ["Content-Type", "Authorization", "X-Opencode-Session", "X-Request-ID"],
+  }))
 
   app.get("/", (c) => {
     return c.json({
@@ -1052,27 +1057,37 @@ export async function startProxyServer(config: Partial<ProxyConfig> = {}) {
   const { app, config: finalConfig } = createProxyServer(config)
 
   let server
-  try {
-    server = Bun.serve({
-      port: finalConfig.port,
-      hostname: finalConfig.host,
-      idleTimeout: finalConfig.idleTimeoutSeconds,
-      fetch: app.fetch
-    })
-  } catch (error: unknown) {
-    if (error instanceof Error && "code" in error && error.code === "EADDRINUSE") {
-      console.error(`\nError: Port ${finalConfig.port} is already in use.`)
-      console.error(`\nIs another instance of the proxy already running?`)
-      console.error(`  Check with: lsof -i :${finalConfig.port}`)
-      console.error(`  Kill it with: kill $(lsof -ti :${finalConfig.port})`)
-      console.error(`\nOr use a different port:`)
-      console.error(`  CLAUDE_PROXY_PORT=4567 bun run proxy`)
-      process.exit(1)
+  let currentPort = finalConfig.port
+  const maxAttempts = 5
+  let success = false
+  for (let i = 0; i < maxAttempts; i++) {
+    try {
+      server = Bun.serve({
+        port: currentPort,
+        hostname: finalConfig.host,
+        idleTimeout: finalConfig.idleTimeoutSeconds,
+        fetch: app.fetch
+      })
+      finalConfig.port = currentPort
+      success = true
+      break
+    } catch (error: unknown) {
+      if (error instanceof Error && "code" in error && error.code === "EADDRINUSE") {
+        currentPort++
+        continue
+      }
+      throw error
     }
-    throw error
+  }
+  if (!success) {
+    console.error(`\nError: Ports ${finalConfig.port} to ${finalConfig.port + maxAttempts - 1} are in use.`)
+    console.error(`  Check with: lsof -i :${finalConfig.port}`)
+    console.error(`  Or set CLAUDE_PROXY_PORT=xxxx bun run proxy`)
+    process.exit(1)
   }
 
-  console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port}`)
+  console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port} (bound to ${finalConfig.host})`)
+  console.log(`Environment: NODE_ENV=${process.env.NODE_ENV || 'development'}, PASSTHROUGH=${!!process.env.CLAUDE_PROXY_PASSTHROUGH}`)
   console.log(`\nTo use with OpenCode, run:`)
   console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)
 
