@@ -247,13 +247,17 @@ function resolveClaudeExecutable(): string {
     const sdkPath = fileURLToPath(import.meta.resolve("@anthropic-ai/claude-agent-sdk"))
     const sdkCliJs = join(dirname(sdkPath), "cli.js")
     if (existsSync(sdkCliJs)) return sdkCliJs
-  } catch {}
+  } catch {
+    // ignore and fallback to next method (expected if import.meta.resolve fails in some envs)
+  }
 
   // 2. Try the system-installed claude binary
   try {
     const claudePath = execSync("which claude", { encoding: "utf-8" }).trim()
     if (claudePath && existsSync(claudePath)) return claudePath
-  } catch {}
+  } catch {
+    // ignore and fallback to throwing error below
+  }
 
   throw new Error("Could not find Claude Code executable. Install via: npm install -g @anthropic-ai/claude-code")
 }
@@ -350,15 +354,6 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
         const cachedSession = lookupSession(opencodeSessionId, body.messages || [])
         const resumeSessionId = cachedSession?.claudeSessionId
         const isResume = Boolean(resumeSessionId)
-
-        // Debug: log request details
-        const msgSummary = body.messages?.map((m: any) => {
-          const contentTypes = Array.isArray(m.content)
-            ? m.content.map((b: any) => b.type).join(",")
-            : "string"
-          return `${m.role}[${contentTypes}]`
-        }).join(" → ")
-        console.error(`[PROXY] ${requestMeta.requestId} model=${model} stream=${stream} tools=${body.tools?.length ?? 0} resume=${isResume} active=${activeSessions}/${MAX_CONCURRENT_SESSIONS} msgs=${msgSummary}`)
 
         claudeLog("request.received", {
           model,
@@ -887,7 +882,11 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
                   safeEnqueue(encoder.encode(`event: message_stop\ndata: {"type":"message_stop"}\n\n`), "final_message_stop")
                 }
 
-                try { controller.close() } catch {}
+                try {
+                  controller.close()
+                } catch {
+                  // ignore - controller may already be closed (common during stream cleanup)
+                }
                 streamClosed = true
 
                 claudeLog("stream.ended", {
@@ -940,14 +939,19 @@ export function createProxyServer(config: Partial<ProxyConfig> = {}) {
               })
               const streamErr = classifyError(error instanceof Error ? error.message : String(error))
               claudeLog("proxy.anthropic.error", { error: error instanceof Error ? error.message : String(error), classified: streamErr.type })
-              safeEnqueue(encoder.encode(`event: error\ndata: ${JSON.stringify({
-                type: "error",
-                error: { type: streamErr.type, message: streamErr.message }
-              })}\n\n`), "error_event")
-              if (!streamClosed) {
-                try { controller.close() } catch {}
-                streamClosed = true
-              }
+               safeEnqueue(encoder.encode(`event: error\ndata: ${JSON.stringify({
+                 type: "error",
+                 error: { type: streamErr.type, message: streamErr.message }
+               })}\n\n`), "error_event")
+               if (!streamClosed) {
+                 try {
+                   controller.close()
+                 } catch {
+                   // ignore - controller may already be closed (common during stream cleanup)
+                 }
+                 streamClosed = true
+               }
+
             }
           }
         })
