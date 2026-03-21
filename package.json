@@ -33,7 +33,10 @@
     "bin/",
     "src/proxy/",
     "src/logger.ts",
-    "README.md"
+    "README.md",
+    "Dockerfile",
+    "docker-compose.yml",
+    "scanner-dashboard.html"
   ],
   "keywords": [
     "opencode",

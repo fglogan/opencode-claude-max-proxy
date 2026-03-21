@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  proxy:
+    build: .
+    ports:
+      - "3456:3456"
+    environment:
+      - NODE_ENV=production
+      - CLAUDE_PROXY_PASSTHROUGH=1
+      - CLAUDE_PROXY_HOST=0.0.0.0
+      - CLAUDE_PROXY_PORT=3456
+    # For auth: mount claude config from host
+    volumes:
+      - ~/.config/claude:/root/.config/claude
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3456/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    driver: bridge
