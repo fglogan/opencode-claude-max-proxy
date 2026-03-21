@@ -56,3 +56,10 @@
 - **Patterns that worked well:** Large structured edits to HTML for multiple views; incremental git adds/commits per task; reusing existing CSS/JS patterns for tabs and cards
 - **Change next time:** Run browser test or Bun serve test before final commit for dashboard JS; connect real provider data in APIs instead of only mocks; use nsp state commands earlier to avoid manual STATE edits
 
+## 06-standalone-proxy-deployment-01 (2026-03-20)
+- **User interventions/checkpoints:** None (fully autonomous, no checkpoints)
+- **Errors/warnings encountered:** Docker daemon unavailable (colima not started); git identity config warnings on commits; pre-existing LSP errors in providers (out of scope)
+- **Mistakes corrected during execution:** None
+- **Patterns that worked well:** Following deviation rules strictly for scope (only task-related files); using explicit template for SUMMARY; proactive inclusion of package.json updates
+- **Change next time:** Start docker/colima before deployment phases or use build verification alternatives; run nsp state commands before manual edits to STATE.md
+
