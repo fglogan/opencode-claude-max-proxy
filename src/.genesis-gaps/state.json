@@ -1,0 +1,1466 @@
+{
+  "version": 2,
+  "scan_count": 2,
+  "created": "2026-03-20T16:26:06.770851Z",
+  "last_scan": "2026-03-20T16:26:13.877607Z",
+  "scores": {
+    "overall": 83.5,
+    "objective": 83.5,
+    "strict": 83.5,
+    "verified_strict": 83.5,
+    "score_confidence": "low"
+  },
+  "typed_findings": {
+    "complexity::proxy/passthroughTools.ts::func-jsonSchemaToZod-L23": {
+      "id": "complexity::proxy/passthroughTools.ts::func-jsonSchemaToZod-L23",
+      "detector": "complexity",
+      "file": "proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `jsonSchemaToZod` has cyclomatic complexity 17 (threshold: 15)",
+      "detail": {
+        "complexity": 17,
+        "end_line": 53,
+        "function": "jsonSchemaToZod",
+        "language": "TypeScript",
+        "line": 23,
+        "loc": 31,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::proxy/server.ts::func-classifyError-L99": {
+      "id": "complexity::proxy/server.ts::func-classifyError-L99",
+      "detector": "complexity",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `classifyError` has cyclomatic complexity 26 (threshold: 15)",
+      "detail": {
+        "complexity": 26,
+        "end_line": 183,
+        "function": "classifyError",
+        "language": "TypeScript",
+        "line": 99,
+        "loc": 85,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::proxy/server.ts::func-createProxyServer-L265": {
+      "id": "complexity::proxy/server.ts::func-createProxyServer-L265",
+      "detector": "complexity",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 131 (threshold: 15)",
+      "detail": {
+        "complexity": 131,
+        "end_line": 1004,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 265,
+        "loc": 740,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::proxy/server.ts::func-handleMessages-L308": {
+      "id": "complexity::proxy/server.ts::func-handleMessages-L308",
+      "detector": "complexity",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 122 (threshold: 15)",
+      "detail": {
+        "complexity": 122,
+        "end_line": 957,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 308,
+        "loc": 650,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::proxy/server.ts::func-start-L621": {
+      "id": "complexity::proxy/server.ts::func-start-L621",
+      "detector": "complexity",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 928,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 621,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dupes::proxy/server.ts::proxy/server.ts::createProxyServer::proxy/server.ts::handleMessages": {
+      "id": "dupes::proxy/server.ts::proxy/server.ts::createProxyServer::proxy/server.ts::handleMessages",
+      "detector": "dupes",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Near dupe: createProxyServer (proxy/server.ts:265) <-> handleMessages (proxy/server.ts:308) [93%]",
+      "detail": {
+        "cluster": [
+          {
+            "file": "proxy/server.ts",
+            "line": 265,
+            "loc": 740,
+            "name": "createProxyServer"
+          },
+          {
+            "file": "proxy/server.ts",
+            "line": 308,
+            "loc": 650,
+            "name": "handleMessages"
+          }
+        ],
+        "cluster_size": 2,
+        "fn_a": {
+          "file": "proxy/server.ts",
+          "line": 265,
+          "loc": 740,
+          "name": "createProxyServer"
+        },
+        "fn_b": {
+          "file": "proxy/server.ts",
+          "line": 308,
+          "loc": 650,
+          "name": "handleMessages"
+        },
+        "kind": "near-duplicate",
+        "similarity": 0.932
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::proxy/server.ts::line-240": {
+      "id": "empty_catch::proxy/server.ts::line-240",
+      "detector": "empty_catch",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 240
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::proxy/server.ts::line-246": {
+      "id": "empty_catch::proxy/server.ts::line-246",
+      "detector": "empty_catch",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 246
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::proxy/server.ts::line-866": {
+      "id": "empty_catch::proxy/server.ts::line-866",
+      "detector": "empty_catch",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 866
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::proxy/server.ts::line-924": {
+      "id": "empty_catch::proxy/server.ts::line-924",
+      "detector": "empty_catch",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 924
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "gods::proxy/server.ts::fn-16-loc-1035": {
+      "id": "gods::proxy/server.ts::fn-16-loc-1035",
+      "detector": "gods",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "God object: 16 functions and 1035 lines — consider splitting",
+      "detail": {
+        "detection_mode": "legacy_file_level",
+        "function_count": 16,
+        "line_count": 1035,
+        "min_functions": 10,
+        "min_lines": 300
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "large::proxy/server.ts::loc-threshold": {
+      "id": "large::proxy/server.ts::loc-threshold",
+      "detector": "large",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "File exceeds large-file threshold",
+      "detail": {
+        "loc": 1035,
+        "threshold": 500
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::proxy/server.ts::line-1030": {
+      "id": "logs::proxy/server.ts::line-1030",
+      "detector": "logs",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port}`)",
+        "line": 1030
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::proxy/server.ts::line-1031": {
+      "id": "logs::proxy/server.ts::line-1031",
+      "detector": "logs",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`\\nTo use with OpenCode, run:`)",
+        "line": 1031
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::proxy/server.ts::line-1032": {
+      "id": "logs::proxy/server.ts::line-1032",
+      "detector": "logs",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1032
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:106:50": {
+      "id": "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:106:50",
+      "detector": "magic_numbers",
+      "file": "__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 5 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 10, output_tokens: 50 },",
+        "is_test": true,
+        "line": 106,
+        "repeat_count": 5,
+        "value": "50"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:171:7": {
+      "id": "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:171:7",
+      "detector": "magic_numbers",
+      "file": "__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 7 on line 171 — consider extracting to a named constant",
+      "detail": {
+        "context": "currentEvent = line.slice(7)",
+        "is_test": true,
+        "line": 171,
+        "repeat_count": 1,
+        "value": "7"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:173:6": {
+      "id": "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:173:6",
+      "detector": "magic_numbers",
+      "file": "__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 6 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "currentData = line.slice(6)",
+        "is_test": true,
+        "line": 173,
+        "repeat_count": 3,
+        "value": "6"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:86:50": {
+      "id": "magic_numbers::__tests__/helpers.ts::magic_numbers:__tests__/helpers.ts:86:50",
+      "detector": "magic_numbers",
+      "file": "__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 5 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { output_tokens: 50 },",
+        "is_test": true,
+        "line": 86,
+        "repeat_count": 5,
+        "value": "50"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/integration.test.ts::magic_numbers:__tests__/integration.test.ts:285:3": {
+      "id": "magic_numbers::__tests__/integration.test.ts::magic_numbers:__tests__/integration.test.ts:285:3",
+      "detector": "magic_numbers",
+      "file": "__tests__/integration.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 3 on line 285 — consider extracting to a named constant",
+      "detail": {
+        "context": "for (let i = 0; i < 3; i++) {",
+        "is_test": true,
+        "line": 285,
+        "repeat_count": 2,
+        "value": "3"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-agent-definitions.test.ts::magic_numbers:__tests__/proxy-agent-definitions.test.ts:153:3": {
+      "id": "magic_numbers::__tests__/proxy-agent-definitions.test.ts::magic_numbers:__tests__/proxy-agent-definitions.test.ts:153:3",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-agent-definitions.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 3 on line 153 — consider extracting to a named constant",
+      "detail": {
+        "context": "expect(Object.keys(agents)).toHaveLength(3)",
+        "is_test": true,
+        "line": 153,
+        "repeat_count": 2,
+        "value": "3"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-agent-definitions.test.ts::magic_numbers:__tests__/proxy-agent-definitions.test.ts:27:6": {
+      "id": "magic_numbers::__tests__/proxy-agent-definitions.test.ts::magic_numbers:__tests__/proxy-agent-definitions.test.ts:27:6",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-agent-definitions.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 6 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "expect(agents.size).toBe(6)",
+        "is_test": true,
+        "line": 27,
+        "repeat_count": 3,
+        "value": "6"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-agent-definitions.test.ts::magic_numbers:__tests__/proxy-agent-definitions.test.ts:54:6": {
+      "id": "magic_numbers::__tests__/proxy-agent-definitions.test.ts::magic_numbers:__tests__/proxy-agent-definitions.test.ts:54:6",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-agent-definitions.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 6 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "expect(Object.keys(defs)).toHaveLength(6)",
+        "is_test": true,
+        "line": 54,
+        "repeat_count": 3,
+        "value": "6"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-error-handling.test.ts::magic_numbers:__tests__/proxy-error-handling.test.ts:115:402": {
+      "id": "magic_numbers::__tests__/proxy-error-handling.test.ts::magic_numbers:__tests__/proxy-error-handling.test.ts:115:402",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-error-handling.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 402 on line 115 — consider extracting to a named constant",
+      "detail": {
+        "context": "expect(res.status).toBe(402)",
+        "is_test": true,
+        "line": 115,
+        "repeat_count": 2,
+        "value": "402"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-error-handling.test.ts::magic_numbers:__tests__/proxy-error-handling.test.ts:30:5": {
+      "id": "magic_numbers::__tests__/proxy-error-handling.test.ts::magic_numbers:__tests__/proxy-error-handling.test.ts:30:5",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-error-handling.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 5 on line 30 — consider extracting to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 10, output_tokens: 5 },",
+        "is_test": true,
+        "line": 30,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:36:50": {
+      "id": "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:36:50",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 5 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 100, output_tokens: 50 },",
+        "is_test": true,
+        "line": 36,
+        "repeat_count": 5,
+        "value": "50"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:64:50": {
+      "id": "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:64:50",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 5 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 100, output_tokens: 50 },",
+        "is_test": true,
+        "line": 64,
+        "repeat_count": 5,
+        "value": "50"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:80:20": {
+      "id": "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:80:20",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 20 on line 80 — consider extracting to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 50, output_tokens: 20 },",
+        "is_test": true,
+        "line": 80,
+        "repeat_count": 1,
+        "value": "20"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:80:50": {
+      "id": "magic_numbers::__tests__/proxy-passthrough-concept.test.ts::magic_numbers:__tests__/proxy-passthrough-concept.test.ts:80:50",
+      "detector": "magic_numbers",
+      "file": "__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 5 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 50, output_tokens: 20 },",
+        "is_test": true,
+        "line": 80,
+        "repeat_count": 5,
+        "value": "50"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::mcpTools.ts::magic_numbers:mcpTools.ts:113:120000": {
+      "id": "magic_numbers::mcpTools.ts::magic_numbers:mcpTools.ts:113:120000",
+      "detector": "magic_numbers",
+      "file": "mcpTools.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 120000 on line 113 — consider extracting to a named constant",
+      "detail": {
+        "context": "timeout: 120000",
+        "is_test": false,
+        "line": 113,
+        "repeat_count": 1,
+        "value": "120000"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:123:402": {
+      "id": "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:123:402",
+      "detector": "magic_numbers",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 402 on line 123 — consider extracting to a named constant",
+      "detail": {
+        "context": "status: 402,",
+        "is_test": false,
+        "line": 123,
+        "repeat_count": 2,
+        "value": "402"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:46:60": {
+      "id": "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:46:60",
+      "detector": "magic_numbers",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 60 on line 46 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 60 * 60 * 1000)",
+        "is_test": false,
+        "line": 46,
+        "repeat_count": 2,
+        "value": "60"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:58:2000": {
+      "id": "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:58:2000",
+      "detector": "magic_numbers",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 2000 on line 58 — consider extracting to a named constant",
+      "detail": {
+        "context": "return createHash(\"sha256\").update(text.slice(0, 2000)).digest(\"hex\").slice(0, 16)",
+        "is_test": false,
+        "line": 58,
+        "repeat_count": 1,
+        "value": "2000"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:695:5": {
+      "id": "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:695:5",
+      "detector": "magic_numbers",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 695 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 695,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:705:15_000": {
+      "id": "magic_numbers::proxy/server.ts::magic_numbers:proxy/server.ts:705:15_000",
+      "detector": "magic_numbers",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 705 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 705,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::proxy/types.ts::magic_numbers:proxy/types.ts:12:120": {
+      "id": "magic_numbers::proxy/types.ts::magic_numbers:proxy/types.ts:12:120",
+      "detector": "magic_numbers",
+      "file": "proxy/types.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 120 on line 12 — consider extracting to a named constant",
+      "detail": {
+        "context": "idleTimeoutSeconds: 120",
+        "is_test": false,
+        "line": 12,
+        "repeat_count": 1,
+        "value": "120"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/integration.test.ts::": {
+      "id": "orphaned::__tests__/integration.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/integration.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 290 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/integration.test.ts",
+        "import_count": 1,
+        "loc": 290
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-agent-definitions.test.ts::": {
+      "id": "orphaned::__tests__/proxy-agent-definitions.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-agent-definitions.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 219 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-agent-definitions.test.ts",
+        "import_count": 1,
+        "loc": 219
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-agent-fuzzy-match.test.ts::": {
+      "id": "orphaned::__tests__/proxy-agent-fuzzy-match.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-agent-fuzzy-match.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 91 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-agent-fuzzy-match.test.ts",
+        "import_count": 1,
+        "loc": 91
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-error-handling.test.ts::": {
+      "id": "orphaned::__tests__/proxy-error-handling.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-error-handling.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 156 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-error-handling.test.ts",
+        "import_count": 0,
+        "loc": 156
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-mcp-filtering.test.ts::": {
+      "id": "orphaned::__tests__/proxy-mcp-filtering.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-mcp-filtering.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 150 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-mcp-filtering.test.ts",
+        "import_count": 1,
+        "loc": 150
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-passthrough-concept.test.ts::": {
+      "id": "orphaned::__tests__/proxy-passthrough-concept.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 245 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-passthrough-concept.test.ts",
+        "import_count": 0,
+        "loc": 245
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-pretooluse-hook.test.ts::": {
+      "id": "orphaned::__tests__/proxy-pretooluse-hook.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 300 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-pretooluse-hook.test.ts",
+        "import_count": 1,
+        "loc": 300
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-session-resume.test.ts::": {
+      "id": "orphaned::__tests__/proxy-session-resume.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-session-resume.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 366 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-session-resume.test.ts",
+        "import_count": 1,
+        "loc": 366
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-streaming-message.test.ts::": {
+      "id": "orphaned::__tests__/proxy-streaming-message.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-streaming-message.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 192 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-streaming-message.test.ts",
+        "import_count": 1,
+        "loc": 192
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-subagent-support.test.ts::": {
+      "id": "orphaned::__tests__/proxy-subagent-support.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-subagent-support.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 305 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-subagent-support.test.ts",
+        "import_count": 1,
+        "loc": 305
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-tool-forwarding.test.ts::": {
+      "id": "orphaned::__tests__/proxy-tool-forwarding.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-tool-forwarding.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 330 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-tool-forwarding.test.ts",
+        "import_count": 1,
+        "loc": 330
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-transparent-tools.test.ts::": {
+      "id": "orphaned::__tests__/proxy-transparent-tools.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-transparent-tools.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 195 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-transparent-tools.test.ts",
+        "import_count": 1,
+        "loc": 195
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::__tests__/proxy-working-directory.test.ts::": {
+      "id": "orphaned::__tests__/proxy-working-directory.test.ts::",
+      "detector": "orphaned",
+      "file": "__tests__/proxy-working-directory.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 111 lines, not imported by any module",
+      "detail": {
+        "file": "__tests__/proxy-working-directory.test.ts",
+        "import_count": 1,
+        "loc": 111
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::plugin/claude-max-headers.ts::": {
+      "id": "orphaned::plugin/claude-max-headers.ts::",
+      "detector": "orphaned",
+      "file": "plugin/claude-max-headers.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 52 lines, not imported by any module",
+      "detail": {
+        "file": "plugin/claude-max-headers.ts",
+        "import_count": 0,
+        "loc": 52
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::proxy/server.ts::": {
+      "id": "orphaned::proxy/server.ts::",
+      "detector": "orphaned",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 1035 lines, not imported by any module",
+      "detail": {
+        "file": "proxy/server.ts",
+        "import_count": 6,
+        "loc": 1035
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "security::proxy/server.ts::sensitive_log-line-1032": {
+      "id": "security::proxy/server.ts::sensitive_log-line-1032",
+      "detector": "security",
+      "file": "proxy/server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1032
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "signature::__tests__/proxy-subagent-support.test.ts::signature_variance::postMessages": {
+      "id": "signature::__tests__/proxy-subagent-support.test.ts::signature_variance::postMessages",
+      "detector": "signature",
+      "file": "__tests__/proxy-subagent-support.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Signature variance: 'postMessages' has 2 param signatures across 3 files",
+      "detail": {
+        "file_count": 3,
+        "files": [
+          "__tests__/proxy-subagent-support.test.ts",
+          "__tests__/proxy-tool-forwarding.test.ts",
+          "__tests__/proxy-transparent-tools.test.ts"
+        ],
+        "group_type": "name",
+        "has_param_variance": true,
+        "has_return_variance": false,
+        "name": "postMessages",
+        "occurrences": 3,
+        "return_signature_count": 0,
+        "signature_count": 2
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::logger.ts::sanitize-line-25": {
+      "id": "smells::logger.ts::sanitize-line-25",
+      "detector": "smells",
+      "file": "logger.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'sanitize': deep nesting (5 > 4)",
+      "detail": {
+        "end_line": 58,
+        "function": "sanitize",
+        "line": 25,
+        "loc": 34,
+        "nesting": 5,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (5 > 4)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::proxy/server.ts::classifyError-line-99": {
+      "id": "smells::proxy/server.ts::classifyError-line-99",
+      "detector": "smells",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'classifyError': excessive length (85 > 55)",
+      "detail": {
+        "end_line": 183,
+        "function": "classifyError",
+        "line": 99,
+        "loc": 85,
+        "nesting": 3,
+        "param_count": 1,
+        "smells": [
+          "excessive length (85 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::proxy/server.ts::createProxyServer-line-265": {
+      "id": "smells::proxy/server.ts::createProxyServer-line-265",
+      "detector": "smells",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (740 > 55)",
+      "detail": {
+        "end_line": 1004,
+        "function": "createProxyServer",
+        "line": 265,
+        "loc": 740,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (740 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::proxy/server.ts::handleMessages-line-308": {
+      "id": "smells::proxy/server.ts::handleMessages-line-308",
+      "detector": "smells",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (650 > 55)",
+      "detail": {
+        "end_line": 957,
+        "function": "handleMessages",
+        "line": 308,
+        "loc": 650,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (650 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::proxy/server.ts::start-line-621": {
+      "id": "smells::proxy/server.ts::start-line-621",
+      "detector": "smells",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (308 > 55)",
+      "detail": {
+        "end_line": 928,
+        "function": "start",
+        "line": 621,
+        "loc": 308,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (308 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::proxy/passthroughTools.ts::fn-createPassthroughMcpServer-line-58": {
+      "id": "stubs::proxy/passthroughTools.ts::fn-createPassthroughMcpServer-line-58",
+      "detector": "stubs",
+      "file": "proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "createPassthroughMcpServer",
+        "language": "javascript",
+        "line": 58,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::proxy/server.ts::fn-lookupSession-line-62": {
+      "id": "stubs::proxy/server.ts::fn-lookupSession-line-62",
+      "detector": "stubs",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "lookupSession",
+        "language": "javascript",
+        "line": 62,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::proxy/server.ts::fn-storeSession-line-77": {
+      "id": "stubs::proxy/server.ts::fn-storeSession-line-77",
+      "detector": "stubs",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "storeSession",
+        "language": "javascript",
+        "line": 77,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::logger.ts::no-test-evidence": {
+      "id": "test_coverage::logger.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "logger.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "logger.ts",
+        "source_stem": "logger"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::mcpTools.ts::no-test-evidence": {
+      "id": "test_coverage::mcpTools.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "mcpTools.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "mcpTools.ts",
+        "source_stem": "mcpTools"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::plugin/claude-max-headers.ts::no-test-evidence": {
+      "id": "test_coverage::plugin/claude-max-headers.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "plugin/claude-max-headers.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "plugin/claude-max-headers.ts",
+        "source_stem": "claude-max-headers"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::proxy/passthroughTools.ts::no-test-evidence": {
+      "id": "test_coverage::proxy/passthroughTools.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "proxy/passthroughTools.ts",
+        "source_stem": "passthroughTools"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::proxy/server.ts::no-test-evidence": {
+      "id": "test_coverage::proxy/server.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "proxy/server.ts",
+        "source_stem": "server"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::proxy/types.ts::no-test-evidence": {
+      "id": "test_coverage::proxy/types.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "proxy/types.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "proxy/types.ts",
+        "source_stem": "types"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::proxy/server.ts::fn-acquireSession-line-288": {
+      "id": "uncalled::proxy/server.ts::fn-acquireSession-line-288",
+      "detector": "uncalled",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 288 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 288
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::proxy/server.ts::fn-releaseSession-line-299": {
+      "id": "uncalled::proxy/server.ts::fn-releaseSession-line-299",
+      "detector": "uncalled",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 299 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 299
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::proxy/server.ts::fn-startProxyServer-line-1006": {
+      "id": "uncalled::proxy/server.ts::fn-startProxyServer-line-1006",
+      "detector": "uncalled",
+      "file": "proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `startProxyServer` at line 1006 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "startProxyServer",
+        "line": 1006
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:26:06.770851Z",
+      "last_seen": "2026-03-20T16:26:13.877607Z",
+      "reopen_count": 0,
+      "suppressed": false
+    }
+  },
+  "scan_history": [
+    {
+      "timestamp": "2026-03-20T16:26:06.770851Z",
+      "total_findings": 71,
+      "new_findings": 70,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 83.5,
+        "objective": 83.5,
+        "strict": 83.5,
+        "verified_strict": 83.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-20T16:26:13.877607Z",
+      "total_findings": 71,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 83.5,
+        "objective": 83.5,
+        "strict": 83.5,
+        "verified_strict": 83.5,
+        "score_confidence": "low"
+      }
+    }
+  ]
+}

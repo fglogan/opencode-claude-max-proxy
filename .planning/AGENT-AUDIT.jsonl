@@ -1,0 +1,39 @@
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T15:45:51Z","phase":"","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T15:45:55Z","phase":"","agent_type":"nsp-roadmapper","model":"sonnet","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T15:46:28Z","phase":"01","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T15:46:34Z","outcome":"broken","notes":"4 errors, 3 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T15:46:45Z","outcome":"broken","notes":"4 errors, 1 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T15:53:26Z","phase":"","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T16:07:06Z","outcome":"broken","notes":"4 errors, 2 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T16:07:07Z","outcome":"broken","notes":"4 errors, 2 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T16:44:03Z","outcome":"broken","notes":"4 errors, 2 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T16:44:04Z","outcome":"broken","notes":"4 errors, 2 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T16:45:05Z","outcome":"broken","notes":"1 errors, 1 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T17:43:24Z","phase":"01","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T17:45:48Z","phase":"01","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T17:50:31Z","phase":"","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T17:56:17Z","phase":"02","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T18:00:57Z","phase":"","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T18:09:14Z","phase":"","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T18:09:18Z","outcome":"broken","notes":"1 errors, 6 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T18:09:19Z","outcome":"broken","notes":"1 errors, 5 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T18:11:22Z","phase":"03","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T20:08:10Z","phase":"","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T20:08:31Z","outcome":"degraded","notes":"0 errors, 3 warnings, 0 info"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T20:08:35Z","outcome":"degraded","notes":"0 errors, 3 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T20:09:33Z","phase":"04","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T20:09:58Z","outcome":"healthy","notes":"0 errors, 0 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T20:34:46Z","phase":"","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T23:44:48Z","phase":"","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T23:45:16Z","outcome":"broken","notes":"1 errors, 4 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T23:45:29Z","phase":"06","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-20T23:45:30Z","outcome":"broken","notes":"1 errors, 4 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-20T23:59:29Z","phase":"06","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-21T00:12:49Z","outcome":"healthy","notes":"0 errors, 0 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-21T00:12:55Z","phase":"04","agent_type":"nsp-planner","model":"opus","provider":"unknown","stage":"planning","profile":"balanced"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-21T00:15:39Z","phase":"04","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-21T00:42:45Z","outcome":"healthy","notes":"0 errors, 0 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-21T00:49:05Z","phase":"","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-21T02:32:45Z","outcome":"healthy","notes":"0 errors, 0 warnings, 0 info"}
+{"event_type":"phase_init","timestamp_utc":"2026-03-21T02:33:49Z","phase":"","agent_type":"nsp-executor","model":"sonnet","provider":"unknown","stage":"execution","profile":"balanced"}
+{"event_type":"health_check","timestamp_utc":"2026-03-21T02:34:30Z","outcome":"healthy","notes":"0 errors, 0 warnings, 0 info"}

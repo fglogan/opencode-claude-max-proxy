@@ -1,0 +1,1586 @@
+{
+  "version": 2,
+  "scan_count": 4,
+  "created": "2026-03-20T16:25:00.481866Z",
+  "last_scan": "2026-03-20T16:29:44.207943Z",
+  "scores": {
+    "overall": 82.5,
+    "objective": 82.5,
+    "strict": 82.5,
+    "verified_strict": 82.5,
+    "score_confidence": "low"
+  },
+  "typed_findings": {
+    "complexity::passthroughTools.ts::func-jsonSchemaToZod-L23": {
+      "id": "complexity::passthroughTools.ts::func-jsonSchemaToZod-L23",
+      "detector": "complexity",
+      "file": "passthroughTools.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `jsonSchemaToZod` has cyclomatic complexity 17 (threshold: 15)",
+      "detail": {
+        "complexity": 17,
+        "end_line": 53,
+        "function": "jsonSchemaToZod",
+        "language": "TypeScript",
+        "line": 23,
+        "loc": 31,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-classifyError-L98": {
+      "id": "complexity::server.ts::func-classifyError-L98",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `classifyError` has cyclomatic complexity 26 (threshold: 15)",
+      "detail": {
+        "complexity": 26,
+        "end_line": 182,
+        "function": "classifyError",
+        "language": "TypeScript",
+        "line": 98,
+        "loc": 85,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-classifyError-L99": {
+      "id": "complexity::server.ts::func-classifyError-L99",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `classifyError` has cyclomatic complexity 26 (threshold: 15)",
+      "detail": {
+        "complexity": 26,
+        "end_line": 183,
+        "function": "classifyError",
+        "language": "TypeScript",
+        "line": 99,
+        "loc": 85,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-createProxyServer-L264": {
+      "id": "complexity::server.ts::func-createProxyServer-L264",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 131 (threshold: 15)",
+      "detail": {
+        "complexity": 131,
+        "end_line": 1003,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 264,
+        "loc": 740,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-createProxyServer-L265": {
+      "id": "complexity::server.ts::func-createProxyServer-L265",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 131 (threshold: 15)",
+      "detail": {
+        "complexity": 131,
+        "end_line": 1004,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 265,
+        "loc": 740,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-handleMessages-L307": {
+      "id": "complexity::server.ts::func-handleMessages-L307",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 122 (threshold: 15)",
+      "detail": {
+        "complexity": 122,
+        "end_line": 956,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 307,
+        "loc": 650,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-handleMessages-L308": {
+      "id": "complexity::server.ts::func-handleMessages-L308",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 122 (threshold: 15)",
+      "detail": {
+        "complexity": 122,
+        "end_line": 957,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 308,
+        "loc": 650,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-start-L620": {
+      "id": "complexity::server.ts::func-start-L620",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 927,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 620,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::server.ts::func-start-L621": {
+      "id": "complexity::server.ts::func-start-L621",
+      "detector": "complexity",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 928,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 621,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dupes::server.ts::server.ts::createProxyServer::server.ts::handleMessages": {
+      "id": "dupes::server.ts::server.ts::createProxyServer::server.ts::handleMessages",
+      "detector": "dupes",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Near dupe: createProxyServer (server.ts:264) <-> handleMessages (server.ts:307) [93%]",
+      "detail": {
+        "cluster": [
+          {
+            "file": "server.ts",
+            "line": 264,
+            "loc": 740,
+            "name": "createProxyServer"
+          },
+          {
+            "file": "server.ts",
+            "line": 307,
+            "loc": 650,
+            "name": "handleMessages"
+          }
+        ],
+        "cluster_size": 2,
+        "fn_a": {
+          "file": "server.ts",
+          "line": 264,
+          "loc": 740,
+          "name": "createProxyServer"
+        },
+        "fn_b": {
+          "file": "server.ts",
+          "line": 307,
+          "loc": 650,
+          "name": "handleMessages"
+        },
+        "kind": "near-duplicate",
+        "similarity": 0.932
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-239": {
+      "id": "empty_catch::server.ts::line-239",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 239
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-240": {
+      "id": "empty_catch::server.ts::line-240",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 240
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-245": {
+      "id": "empty_catch::server.ts::line-245",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 245
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-246": {
+      "id": "empty_catch::server.ts::line-246",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 246
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-865": {
+      "id": "empty_catch::server.ts::line-865",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 865
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-866": {
+      "id": "empty_catch::server.ts::line-866",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 866
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-923": {
+      "id": "empty_catch::server.ts::line-923",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 923
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::server.ts::line-924": {
+      "id": "empty_catch::server.ts::line-924",
+      "detector": "empty_catch",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 924
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "gods::server.ts::fn-16-loc-1034": {
+      "id": "gods::server.ts::fn-16-loc-1034",
+      "detector": "gods",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "God object: 16 functions and 1034 lines — consider splitting",
+      "detail": {
+        "detection_mode": "legacy_file_level",
+        "function_count": 16,
+        "line_count": 1034,
+        "min_functions": 10,
+        "min_lines": 300
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "gods::server.ts::fn-16-loc-1035": {
+      "id": "gods::server.ts::fn-16-loc-1035",
+      "detector": "gods",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "God object: 16 functions and 1035 lines — consider splitting",
+      "detail": {
+        "detection_mode": "legacy_file_level",
+        "function_count": 16,
+        "line_count": 1035,
+        "min_functions": 10,
+        "min_lines": 300
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "large::server.ts::loc-threshold": {
+      "id": "large::server.ts::loc-threshold",
+      "detector": "large",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "File exceeds large-file threshold",
+      "detail": {
+        "loc": 1034,
+        "threshold": 500
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::server.ts::line-1029": {
+      "id": "logs::server.ts::line-1029",
+      "detector": "logs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port}`)",
+        "line": 1029
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::server.ts::line-1030": {
+      "id": "logs::server.ts::line-1030",
+      "detector": "logs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`\\nTo use with OpenCode, run:`)",
+        "line": 1030
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::server.ts::line-1031": {
+      "id": "logs::server.ts::line-1031",
+      "detector": "logs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1031
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::server.ts::line-1032": {
+      "id": "logs::server.ts::line-1032",
+      "detector": "logs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1032
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:122:402": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:122:402",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 402 on line 122 — consider extracting to a named constant",
+      "detail": {
+        "context": "status: 402,",
+        "is_test": false,
+        "line": 122,
+        "repeat_count": 1,
+        "value": "402"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:123:402": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:123:402",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 402 on line 123 — consider extracting to a named constant",
+      "detail": {
+        "context": "status: 402,",
+        "is_test": false,
+        "line": 123,
+        "repeat_count": 1,
+        "value": "402"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:45:60": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:45:60",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 60 on line 45 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 60 * 60 * 1000)",
+        "is_test": false,
+        "line": 45,
+        "repeat_count": 2,
+        "value": "60"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:46:60": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:46:60",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 60 on line 46 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 60 * 60 * 1000)",
+        "is_test": false,
+        "line": 46,
+        "repeat_count": 2,
+        "value": "60"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:57:2000": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:57:2000",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 2000 on line 57 — consider extracting to a named constant",
+      "detail": {
+        "context": "return createHash(\"sha256\").update(text.slice(0, 2000)).digest(\"hex\").slice(0, 16)",
+        "is_test": false,
+        "line": 57,
+        "repeat_count": 1,
+        "value": "2000"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:58:2000": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:58:2000",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 2000 on line 58 — consider extracting to a named constant",
+      "detail": {
+        "context": "return createHash(\"sha256\").update(text.slice(0, 2000)).digest(\"hex\").slice(0, 16)",
+        "is_test": false,
+        "line": 58,
+        "repeat_count": 1,
+        "value": "2000"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:694:5": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:694:5",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 694 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 694,
+        "repeat_count": 1,
+        "value": "5"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:695:5": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:695:5",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 695 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 695,
+        "repeat_count": 1,
+        "value": "5"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:704:15_000": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:704:15_000",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 704 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 704,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::server.ts::magic_numbers:server.ts:705:15_000": {
+      "id": "magic_numbers::server.ts::magic_numbers:server.ts:705:15_000",
+      "detector": "magic_numbers",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 705 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 705,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::types.ts::magic_numbers:types.ts:12:120": {
+      "id": "magic_numbers::types.ts::magic_numbers:types.ts:12:120",
+      "detector": "magic_numbers",
+      "file": "types.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 120 on line 12 — consider extracting to a named constant",
+      "detail": {
+        "context": "idleTimeoutSeconds: 120",
+        "is_test": false,
+        "line": 12,
+        "repeat_count": 1,
+        "value": "120"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::server.ts::": {
+      "id": "orphaned::server.ts::",
+      "detector": "orphaned",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 1034 lines, not imported by any module",
+      "detail": {
+        "file": "server.ts",
+        "import_count": 4,
+        "loc": 1034
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "phantom_imports::server.ts::phantom-line-12": {
+      "id": "phantom_imports::server.ts::phantom-line-12",
+      "detector": "phantom_imports",
+      "file": "server.ts",
+      "tier": 2,
+      "confidence": "high",
+      "summary": "Import '../mcpTools' does not resolve to any file in the project",
+      "detail": {
+        "candidates_checked": [
+          "../mcpTools",
+          "../mcpTools.js",
+          "../mcpTools.jsx",
+          "../mcpTools.ts",
+          "../mcpTools.tsx",
+          "../mcpTools.mjs",
+          "../mcpTools.cjs",
+          "../mcpTools.mts",
+          "../mcpTools.cts",
+          "../mcpTools/index.js",
+          "../mcpTools/index.jsx",
+          "../mcpTools/index.ts",
+          "../mcpTools/index.tsx",
+          "../mcpTools/index.mjs"
+        ],
+        "import_target": "../mcpTools",
+        "language": "js/ts",
+        "line": 12
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "phantom_imports::server.ts::phantom-line-14": {
+      "id": "phantom_imports::server.ts::phantom-line-14",
+      "detector": "phantom_imports",
+      "file": "server.ts",
+      "tier": 2,
+      "confidence": "high",
+      "summary": "Import '../logger' does not resolve to any file in the project",
+      "detail": {
+        "candidates_checked": [
+          "../logger",
+          "../logger.js",
+          "../logger.jsx",
+          "../logger.ts",
+          "../logger.tsx",
+          "../logger.mjs",
+          "../logger.cjs",
+          "../logger.mts",
+          "../logger.cts",
+          "../logger/index.js",
+          "../logger/index.jsx",
+          "../logger/index.ts",
+          "../logger/index.tsx",
+          "../logger/index.mjs"
+        ],
+        "import_target": "../logger",
+        "language": "js/ts",
+        "line": 14
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "phantom_imports::server.ts::phantom-line-7": {
+      "id": "phantom_imports::server.ts::phantom-line-7",
+      "detector": "phantom_imports",
+      "file": "server.ts",
+      "tier": 2,
+      "confidence": "high",
+      "summary": "Import '../logger' does not resolve to any file in the project",
+      "detail": {
+        "candidates_checked": [
+          "../logger",
+          "../logger.js",
+          "../logger.jsx",
+          "../logger.ts",
+          "../logger.tsx",
+          "../logger.mjs",
+          "../logger.cjs",
+          "../logger.mts",
+          "../logger.cts",
+          "../logger/index.js",
+          "../logger/index.jsx",
+          "../logger/index.ts",
+          "../logger/index.tsx",
+          "../logger/index.mjs"
+        ],
+        "import_target": "../logger",
+        "language": "js/ts",
+        "line": 7
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "security::server.ts::sensitive_log-line-1031": {
+      "id": "security::server.ts::sensitive_log-line-1031",
+      "detector": "security",
+      "file": "server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1031
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "security::server.ts::sensitive_log-line-1032": {
+      "id": "security::server.ts::sensitive_log-line-1032",
+      "detector": "security",
+      "file": "server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1032
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "single_use::agentMatch.ts::importer-server.ts-fn-1": {
+      "id": "single_use::agentMatch.ts::importer-server.ts-fn-1",
+      "detector": "single_use",
+      "file": "agentMatch.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Single-use module: 1 function(s), imported only by server.ts — consider inlining",
+      "detail": {
+        "function_count": 1,
+        "importer": "server.ts"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::classifyError-line-98": {
+      "id": "smells::server.ts::classifyError-line-98",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'classifyError': excessive length (85 > 55)",
+      "detail": {
+        "end_line": 182,
+        "function": "classifyError",
+        "line": 98,
+        "loc": 85,
+        "nesting": 3,
+        "param_count": 1,
+        "smells": [
+          "excessive length (85 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::classifyError-line-99": {
+      "id": "smells::server.ts::classifyError-line-99",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'classifyError': excessive length (85 > 55)",
+      "detail": {
+        "end_line": 183,
+        "function": "classifyError",
+        "line": 99,
+        "loc": 85,
+        "nesting": 3,
+        "param_count": 1,
+        "smells": [
+          "excessive length (85 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::createProxyServer-line-264": {
+      "id": "smells::server.ts::createProxyServer-line-264",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (740 > 55)",
+      "detail": {
+        "end_line": 1003,
+        "function": "createProxyServer",
+        "line": 264,
+        "loc": 740,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (740 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::createProxyServer-line-265": {
+      "id": "smells::server.ts::createProxyServer-line-265",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (740 > 55)",
+      "detail": {
+        "end_line": 1004,
+        "function": "createProxyServer",
+        "line": 265,
+        "loc": 740,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (740 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::handleMessages-line-307": {
+      "id": "smells::server.ts::handleMessages-line-307",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (650 > 55)",
+      "detail": {
+        "end_line": 956,
+        "function": "handleMessages",
+        "line": 307,
+        "loc": 650,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (650 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::handleMessages-line-308": {
+      "id": "smells::server.ts::handleMessages-line-308",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (650 > 55)",
+      "detail": {
+        "end_line": 957,
+        "function": "handleMessages",
+        "line": 308,
+        "loc": 650,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (650 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::start-line-620": {
+      "id": "smells::server.ts::start-line-620",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (308 > 55)",
+      "detail": {
+        "end_line": 927,
+        "function": "start",
+        "line": 620,
+        "loc": 308,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (308 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::server.ts::start-line-621": {
+      "id": "smells::server.ts::start-line-621",
+      "detector": "smells",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (308 > 55)",
+      "detail": {
+        "end_line": 928,
+        "function": "start",
+        "line": 621,
+        "loc": 308,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (308 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::passthroughTools.ts::fn-createPassthroughMcpServer-line-58": {
+      "id": "stubs::passthroughTools.ts::fn-createPassthroughMcpServer-line-58",
+      "detector": "stubs",
+      "file": "passthroughTools.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "createPassthroughMcpServer",
+        "language": "javascript",
+        "line": 58,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::server.ts::fn-lookupSession-line-61": {
+      "id": "stubs::server.ts::fn-lookupSession-line-61",
+      "detector": "stubs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "lookupSession",
+        "language": "javascript",
+        "line": 61,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::server.ts::fn-lookupSession-line-62": {
+      "id": "stubs::server.ts::fn-lookupSession-line-62",
+      "detector": "stubs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "lookupSession",
+        "language": "javascript",
+        "line": 62,
+        "stub_kind": "empty_body"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::server.ts::fn-storeSession-line-76": {
+      "id": "stubs::server.ts::fn-storeSession-line-76",
+      "detector": "stubs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "storeSession",
+        "language": "javascript",
+        "line": 76,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::server.ts::fn-storeSession-line-77": {
+      "id": "stubs::server.ts::fn-storeSession-line-77",
+      "detector": "stubs",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "storeSession",
+        "language": "javascript",
+        "line": 77,
+        "stub_kind": "empty_body"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::agentDefs.ts::no-test-evidence": {
+      "id": "test_coverage::agentDefs.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "agentDefs.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "agentDefs.ts",
+        "source_stem": "agentDefs"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::agentMatch.ts::no-test-evidence": {
+      "id": "test_coverage::agentMatch.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "agentMatch.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "agentMatch.ts",
+        "source_stem": "agentMatch"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::passthroughTools.ts::no-test-evidence": {
+      "id": "test_coverage::passthroughTools.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "passthroughTools.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "passthroughTools.ts",
+        "source_stem": "passthroughTools"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::server.ts::no-test-evidence": {
+      "id": "test_coverage::server.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "server.ts",
+        "source_stem": "server"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "test_coverage::types.ts::no-test-evidence": {
+      "id": "test_coverage::types.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "types.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "types.ts",
+        "source_stem": "types"
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::agentDefs.ts::fn-mapModelTier-line-54": {
+      "id": "uncalled::agentDefs.ts::fn-mapModelTier-line-54",
+      "detector": "uncalled",
+      "file": "agentDefs.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `mapModelTier` at line 54 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "mapModelTier",
+        "line": 54
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-acquireSession-line-287": {
+      "id": "uncalled::server.ts::fn-acquireSession-line-287",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 287 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 287
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-acquireSession-line-288": {
+      "id": "uncalled::server.ts::fn-acquireSession-line-288",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 288 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 288
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-clearSessionCache-line-30": {
+      "id": "uncalled::server.ts::fn-clearSessionCache-line-30",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `clearSessionCache` at line 30 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "clearSessionCache",
+        "line": 30
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-clearSessionCache-line-31": {
+      "id": "uncalled::server.ts::fn-clearSessionCache-line-31",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `clearSessionCache` at line 31 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "clearSessionCache",
+        "line": 31
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-releaseSession-line-298": {
+      "id": "uncalled::server.ts::fn-releaseSession-line-298",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 298 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 298
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-releaseSession-line-299": {
+      "id": "uncalled::server.ts::fn-releaseSession-line-299",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 299 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 299
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-startProxyServer-line-1005": {
+      "id": "uncalled::server.ts::fn-startProxyServer-line-1005",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `startProxyServer` at line 1005 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "startProxyServer",
+        "line": 1005
+      },
+      "status": "open",
+      "first_seen": "2026-03-20T16:27:22.849011Z",
+      "last_seen": "2026-03-20T16:29:44.207943Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::server.ts::fn-startProxyServer-line-1006": {
+      "id": "uncalled::server.ts::fn-startProxyServer-line-1006",
+      "detector": "uncalled",
+      "file": "server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `startProxyServer` at line 1006 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "startProxyServer",
+        "line": 1006
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:25:00.481866Z",
+      "last_seen": "2026-03-20T16:25:01.950672Z",
+      "resolved_at": "2026-03-20T16:27:22.849011Z",
+      "reopen_count": 0,
+      "suppressed": false
+    }
+  },
+  "scan_history": [
+    {
+      "timestamp": "2026-03-20T16:25:00.481866Z",
+      "total_findings": 45,
+      "new_findings": 44,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 82.5,
+        "objective": 82.5,
+        "strict": 82.5,
+        "verified_strict": 82.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-20T16:25:01.950672Z",
+      "total_findings": 45,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 82.5,
+        "objective": 82.5,
+        "strict": 82.5,
+        "verified_strict": 82.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-20T16:27:22.849011Z",
+      "total_findings": 44,
+      "new_findings": 26,
+      "resolved_findings": 27,
+      "scores": {
+        "overall": 82.5,
+        "objective": 82.5,
+        "strict": 82.5,
+        "verified_strict": 82.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-20T16:29:44.207943Z",
+      "total_findings": 44,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 82.5,
+        "objective": 82.5,
+        "strict": 82.5,
+        "verified_strict": 82.5,
+        "score_confidence": "low"
+      }
+    }
+  ]
+}

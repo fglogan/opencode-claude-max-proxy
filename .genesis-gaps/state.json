@@ -1,0 +1,4667 @@
+{
+  "version": 2,
+  "scan_count": 33,
+  "created": "2026-03-20T15:51:47.187804Z",
+  "last_scan": "2026-03-21T02:33:16.313727Z",
+  "scores": {
+    "overall": 92.1,
+    "objective": 92.1,
+    "strict": 92.1,
+    "verified_strict": 92.1,
+    "score_confidence": "low"
+  },
+  "typed_findings": {
+    "complexity::src/proxy/passthroughTools.ts::func-jsonSchemaToZod-L23": {
+      "id": "complexity::src/proxy/passthroughTools.ts::func-jsonSchemaToZod-L23",
+      "detector": "complexity",
+      "file": "src/proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `jsonSchemaToZod` has cyclomatic complexity 17 (threshold: 15)",
+      "detail": {
+        "complexity": 17,
+        "end_line": 53,
+        "function": "jsonSchemaToZod",
+        "language": "TypeScript",
+        "line": 23,
+        "loc": 31,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-classifyError-L105": {
+      "id": "complexity::src/proxy/server.ts::func-classifyError-L105",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `classifyError` has cyclomatic complexity 21 (threshold: 15)",
+      "detail": {
+        "complexity": 21,
+        "end_line": 193,
+        "function": "classifyError",
+        "language": "TypeScript",
+        "line": 105,
+        "loc": 89,
+        "threshold": 15
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:51:18.815105Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-classifyError-L98": {
+      "id": "complexity::src/proxy/server.ts::func-classifyError-L98",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `classifyError` has cyclomatic complexity 26 (threshold: 15)",
+      "detail": {
+        "complexity": 26,
+        "end_line": 182,
+        "function": "classifyError",
+        "language": "TypeScript",
+        "line": 98,
+        "loc": 85,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-classifyError-L99": {
+      "id": "complexity::src/proxy/server.ts::func-classifyError-L99",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Function `classifyError` has cyclomatic complexity 26 (threshold: 15)",
+      "detail": {
+        "complexity": 26,
+        "end_line": 183,
+        "function": "classifyError",
+        "language": "TypeScript",
+        "line": 99,
+        "loc": 85,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:50:19.621932Z",
+      "resolved_at": "2026-03-21T00:51:18.815105Z",
+      "reopen_count": 2,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-createProxyServer-L264": {
+      "id": "complexity::src/proxy/server.ts::func-createProxyServer-L264",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 131 (threshold: 15)",
+      "detail": {
+        "complexity": 131,
+        "end_line": 1003,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 264,
+        "loc": 740,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-createProxyServer-L265": {
+      "id": "complexity::src/proxy/server.ts::func-createProxyServer-L265",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 131 (threshold: 15)",
+      "detail": {
+        "complexity": 131,
+        "end_line": 1004,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 265,
+        "loc": 740,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-createProxyServer-L270": {
+      "id": "complexity::src/proxy/server.ts::func-createProxyServer-L270",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 135 (threshold: 15)",
+      "detail": {
+        "complexity": 135,
+        "end_line": 1054,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 270,
+        "loc": 785,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:50:19.621932Z",
+      "resolved_at": "2026-03-21T00:51:18.815105Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-createProxyServer-L280": {
+      "id": "complexity::src/proxy/server.ts::func-createProxyServer-L280",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 135 (threshold: 15)",
+      "detail": {
+        "complexity": 135,
+        "end_line": 1064,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 280,
+        "loc": 785,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:51:18.815105Z",
+      "last_seen": "2026-03-21T00:51:18.815105Z",
+      "resolved_at": "2026-03-21T00:52:25.316006Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-createProxyServer-L284": {
+      "id": "complexity::src/proxy/server.ts::func-createProxyServer-L284",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `createProxyServer` has cyclomatic complexity 134 (threshold: 15)",
+      "detail": {
+        "complexity": 134,
+        "end_line": 1068,
+        "function": "createProxyServer",
+        "language": "TypeScript",
+        "line": 284,
+        "loc": 785,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-handleMessages-L307": {
+      "id": "complexity::src/proxy/server.ts::func-handleMessages-L307",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 122 (threshold: 15)",
+      "detail": {
+        "complexity": 122,
+        "end_line": 956,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 307,
+        "loc": 650,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-handleMessages-L308": {
+      "id": "complexity::src/proxy/server.ts::func-handleMessages-L308",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 122 (threshold: 15)",
+      "detail": {
+        "complexity": 122,
+        "end_line": 957,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 308,
+        "loc": 650,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-handleMessages-L321": {
+      "id": "complexity::src/proxy/server.ts::func-handleMessages-L321",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 124 (threshold: 15)",
+      "detail": {
+        "complexity": 124,
+        "end_line": 971,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 321,
+        "loc": 651,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:50:19.621932Z",
+      "resolved_at": "2026-03-21T00:51:18.815105Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-handleMessages-L331": {
+      "id": "complexity::src/proxy/server.ts::func-handleMessages-L331",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 124 (threshold: 15)",
+      "detail": {
+        "complexity": 124,
+        "end_line": 981,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 331,
+        "loc": 651,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:51:18.815105Z",
+      "last_seen": "2026-03-21T00:51:18.815105Z",
+      "resolved_at": "2026-03-21T00:52:25.316006Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-handleMessages-L335": {
+      "id": "complexity::src/proxy/server.ts::func-handleMessages-L335",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `handleMessages` has cyclomatic complexity 123 (threshold: 15)",
+      "detail": {
+        "complexity": 123,
+        "end_line": 985,
+        "function": "handleMessages",
+        "language": "TypeScript",
+        "line": 335,
+        "loc": 651,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-start-L620": {
+      "id": "complexity::src/proxy/server.ts::func-start-L620",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 927,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 620,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-start-L621": {
+      "id": "complexity::src/proxy/server.ts::func-start-L621",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 928,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 621,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-start-L635": {
+      "id": "complexity::src/proxy/server.ts::func-start-L635",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 942,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 635,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:50:19.621932Z",
+      "resolved_at": "2026-03-21T00:51:18.815105Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-start-L640": {
+      "id": "complexity::src/proxy/server.ts::func-start-L640",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 956,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 640,
+        "loc": 317,
+        "threshold": 15
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "complexity::src/proxy/server.ts::func-start-L645": {
+      "id": "complexity::src/proxy/server.ts::func-start-L645",
+      "detector": "complexity",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function `start` has cyclomatic complexity 56 (threshold: 15)",
+      "detail": {
+        "complexity": 56,
+        "end_line": 952,
+        "function": "start",
+        "language": "TypeScript",
+        "line": 645,
+        "loc": 308,
+        "threshold": 15
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:51:18.815105Z",
+      "last_seen": "2026-03-21T00:51:18.815105Z",
+      "resolved_at": "2026-03-21T00:52:25.316006Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::bun:test": {
+      "id": "dep_drift::.opencode/package.json::undeclared::bun:test",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'bun:test' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "bun:test",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::child_process": {
+      "id": "dep_drift::.opencode/package.json::undeclared::child_process",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'child_process' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "child_process",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::crypto": {
+      "id": "dep_drift::.opencode/package.json::undeclared::crypto",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'crypto' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "crypto",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::fs": {
+      "id": "dep_drift::.opencode/package.json::undeclared::fs",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'fs' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "fs",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::node:async_hooks": {
+      "id": "dep_drift::.opencode/package.json::undeclared::node:async_hooks",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:async_hooks' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "node:async_hooks",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::node:child_process": {
+      "id": "dep_drift::.opencode/package.json::undeclared::node:child_process",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:child_process' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "node:child_process",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::node:fs": {
+      "id": "dep_drift::.opencode/package.json::undeclared::node:fs",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:fs' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "node:fs",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::node:path": {
+      "id": "dep_drift::.opencode/package.json::undeclared::node:path",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:path' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "node:path",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::node:util": {
+      "id": "dep_drift::.opencode/package.json::undeclared::node:util",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:util' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "node:util",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::path": {
+      "id": "dep_drift::.opencode/package.json::undeclared::path",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'path' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "path",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::url": {
+      "id": "dep_drift::.opencode/package.json::undeclared::url",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'url' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "url",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::undeclared::zod": {
+      "id": "dep_drift::.opencode/package.json::undeclared::zod",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'zod' is imported but not declared in .opencode/package.json",
+      "detail": {
+        "dependency": "zod",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::unused::@opencode-ai/plugin": {
+      "id": "dep_drift::.opencode/package.json::unused::@opencode-ai/plugin",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "npm dependency '@opencode-ai/plugin' is declared but never imported in source code",
+      "detail": {
+        "dependency": "@opencode-ai/plugin",
+        "ecosystem": "npm",
+        "kind": "declared_unused",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::unused::@types/bun": {
+      "id": "dep_drift::.opencode/package.json::unused::@types/bun",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "npm dependency '@types/bun' is declared but never imported in source code",
+      "detail": {
+        "dependency": "@types/bun",
+        "ecosystem": "npm",
+        "kind": "declared_unused",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::.opencode/package.json::unused::p-queue": {
+      "id": "dep_drift::.opencode/package.json::unused::p-queue",
+      "detector": "dep_drift",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "npm dependency 'p-queue' is declared but never imported in source code",
+      "detail": {
+        "dependency": "p-queue",
+        "ecosystem": "npm",
+        "kind": "declared_unused",
+        "manifest": ".opencode/package.json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::bun:test": {
+      "id": "dep_drift::package.json::undeclared::bun:test",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'bun:test' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "bun:test",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::child_process": {
+      "id": "dep_drift::package.json::undeclared::child_process",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'child_process' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "child_process",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::crypto": {
+      "id": "dep_drift::package.json::undeclared::crypto",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'crypto' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "crypto",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::fs": {
+      "id": "dep_drift::package.json::undeclared::fs",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'fs' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "fs",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::node:async_hooks": {
+      "id": "dep_drift::package.json::undeclared::node:async_hooks",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:async_hooks' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "node:async_hooks",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::node:child_process": {
+      "id": "dep_drift::package.json::undeclared::node:child_process",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:child_process' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "node:child_process",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::node:fs": {
+      "id": "dep_drift::package.json::undeclared::node:fs",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:fs' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "node:fs",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::node:path": {
+      "id": "dep_drift::package.json::undeclared::node:path",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:path' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "node:path",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::node:util": {
+      "id": "dep_drift::package.json::undeclared::node:util",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'node:util' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "node:util",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::path": {
+      "id": "dep_drift::package.json::undeclared::path",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'path' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "path",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::url": {
+      "id": "dep_drift::package.json::undeclared::url",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'url' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "url",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::undeclared::zod": {
+      "id": "dep_drift::package.json::undeclared::zod",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "npm package 'zod' is imported but not declared in package.json",
+      "detail": {
+        "dependency": "zod",
+        "ecosystem": "npm",
+        "kind": "used_undeclared",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::unused::@types/bun": {
+      "id": "dep_drift::package.json::unused::@types/bun",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "npm dependency '@types/bun' is declared but never imported in source code",
+      "detail": {
+        "dependency": "@types/bun",
+        "ecosystem": "npm",
+        "kind": "declared_unused",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dep_drift::package.json::unused::p-queue": {
+      "id": "dep_drift::package.json::unused::p-queue",
+      "detector": "dep_drift",
+      "file": "package.json",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "npm dependency 'p-queue' is declared but never imported in source code",
+      "detail": {
+        "dependency": "p-queue",
+        "ecosystem": "npm",
+        "kind": "declared_unused",
+        "manifest": "package.json"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dupes::src/__tests__/proxy-mcp-filtering.test.ts::src/__tests__/proxy-mcp-filtering.test.ts::postStream::src/__tests__/proxy-streaming-message.test.ts::postStream": {
+      "id": "dupes::src/__tests__/proxy-mcp-filtering.test.ts::src/__tests__/proxy-mcp-filtering.test.ts::postStream::src/__tests__/proxy-streaming-message.test.ts::postStream",
+      "detector": "dupes",
+      "file": "src/__tests__/proxy-mcp-filtering.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Exact dupe: postStream (src/__tests__/proxy-mcp-filtering.test.ts:50) <-> postStream (src/__tests__/proxy-streaming-message.test.ts:55) [100%]",
+      "detail": {
+        "cluster": [
+          {
+            "file": "src/__tests__/proxy-mcp-filtering.test.ts",
+            "line": 50,
+            "loc": 22,
+            "name": "postStream"
+          },
+          {
+            "file": "src/__tests__/proxy-streaming-message.test.ts",
+            "line": 55,
+            "loc": 22,
+            "name": "postStream"
+          }
+        ],
+        "cluster_size": 2,
+        "fn_a": {
+          "file": "src/__tests__/proxy-mcp-filtering.test.ts",
+          "line": 50,
+          "loc": 22,
+          "name": "postStream"
+        },
+        "fn_b": {
+          "file": "src/__tests__/proxy-streaming-message.test.ts",
+          "line": 55,
+          "loc": 22,
+          "name": "postStream"
+        },
+        "kind": "exact",
+        "similarity": 1.0
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dupes::src/__tests__/proxy-session-resume.test.ts::src/__tests__/proxy-session-resume.test.ts::readStreamFull::src/__tests__/proxy-subagent-support.test.ts::readStreamFull": {
+      "id": "dupes::src/__tests__/proxy-session-resume.test.ts::src/__tests__/proxy-session-resume.test.ts::readStreamFull::src/__tests__/proxy-subagent-support.test.ts::readStreamFull",
+      "detector": "dupes",
+      "file": "src/__tests__/proxy-session-resume.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Exact dupe cluster (4 functions, 100% similar): readStreamFull (src/__tests__/proxy-session-resume.test.ts:78), readStreamFull (src/__tests__/proxy-subagent-support.test.ts:74), ...",
+      "detail": {
+        "cluster": [
+          {
+            "file": "src/__tests__/proxy-session-resume.test.ts",
+            "line": 78,
+            "loc": 11,
+            "name": "readStreamFull"
+          },
+          {
+            "file": "src/__tests__/proxy-subagent-support.test.ts",
+            "line": 74,
+            "loc": 11,
+            "name": "readStreamFull"
+          },
+          {
+            "file": "src/__tests__/proxy-tool-forwarding.test.ts",
+            "line": 77,
+            "loc": 11,
+            "name": "readStreamFull"
+          },
+          {
+            "file": "src/__tests__/proxy-transparent-tools.test.ts",
+            "line": 74,
+            "loc": 11,
+            "name": "readStreamFull"
+          }
+        ],
+        "cluster_size": 4,
+        "fn_a": {
+          "file": "src/__tests__/proxy-session-resume.test.ts",
+          "line": 78,
+          "loc": 11,
+          "name": "readStreamFull"
+        },
+        "fn_b": {
+          "file": "src/__tests__/proxy-subagent-support.test.ts",
+          "line": 74,
+          "loc": 11,
+          "name": "readStreamFull"
+        },
+        "kind": "exact",
+        "similarity": 1.0
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "dupes::src/proxy/server.ts::src/proxy/server.ts::createProxyServer::src/proxy/server.ts::handleMessages": {
+      "id": "dupes::src/proxy/server.ts::src/proxy/server.ts::createProxyServer::src/proxy/server.ts::handleMessages",
+      "detector": "dupes",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Near dupe: createProxyServer (src/proxy/server.ts:284) <-> handleMessages (src/proxy/server.ts:335) [90%]",
+      "detail": {
+        "cluster": [
+          {
+            "file": "src/proxy/server.ts",
+            "line": 284,
+            "loc": 785,
+            "name": "createProxyServer"
+          },
+          {
+            "file": "src/proxy/server.ts",
+            "line": 335,
+            "loc": 651,
+            "name": "handleMessages"
+          }
+        ],
+        "cluster_size": 2,
+        "fn_a": {
+          "file": "src/proxy/server.ts",
+          "line": 284,
+          "loc": 785,
+          "name": "createProxyServer"
+        },
+        "fn_b": {
+          "file": "src/proxy/server.ts",
+          "line": 335,
+          "loc": 651,
+          "name": "handleMessages"
+        },
+        "kind": "near-duplicate",
+        "similarity": 0.902
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-239": {
+      "id": "empty_catch::src/proxy/server.ts::line-239",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 239
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-240": {
+      "id": "empty_catch::src/proxy/server.ts::line-240",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 240
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-245": {
+      "id": "empty_catch::src/proxy/server.ts::line-245",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 245
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-246": {
+      "id": "empty_catch::src/proxy/server.ts::line-246",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {}",
+        "language": "javascript",
+        "line": 246
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-250": {
+      "id": "empty_catch::src/proxy/server.ts::line-250",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {",
+        "language": "javascript",
+        "line": 250
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-258": {
+      "id": "empty_catch::src/proxy/server.ts::line-258",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {",
+        "language": "javascript",
+        "line": 258
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-865": {
+      "id": "empty_catch::src/proxy/server.ts::line-865",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 865
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-866": {
+      "id": "empty_catch::src/proxy/server.ts::line-866",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 866
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-880": {
+      "id": "empty_catch::src/proxy/server.ts::line-880",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 880
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-887": {
+      "id": "empty_catch::src/proxy/server.ts::line-887",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {",
+        "language": "javascript",
+        "line": 887
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-923": {
+      "id": "empty_catch::src/proxy/server.ts::line-923",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 923
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-924": {
+      "id": "empty_catch::src/proxy/server.ts::line-924",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 924
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-938": {
+      "id": "empty_catch::src/proxy/server.ts::line-938",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "try { controller.close() } catch {}",
+        "language": "javascript",
+        "line": 938
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "empty_catch::src/proxy/server.ts::line-949": {
+      "id": "empty_catch::src/proxy/server.ts::line-949",
+      "detector": "empty_catch",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Empty catch block silently swallows errors",
+      "detail": {
+        "content": "} catch {",
+        "language": "javascript",
+        "line": 949
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "gods::src/proxy/server.ts::fn-16-loc-1034": {
+      "id": "gods::src/proxy/server.ts::fn-16-loc-1034",
+      "detector": "gods",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "God object: 16 functions and 1034 lines — consider splitting",
+      "detail": {
+        "detection_mode": "legacy_file_level",
+        "function_count": 16,
+        "line_count": 1034,
+        "min_functions": 10,
+        "min_lines": 300
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "gods::src/proxy/server.ts::fn-16-loc-1035": {
+      "id": "gods::src/proxy/server.ts::fn-16-loc-1035",
+      "detector": "gods",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "God object: 16 functions and 1035 lines — consider splitting",
+      "detail": {
+        "detection_mode": "legacy_file_level",
+        "function_count": 16,
+        "line_count": 1035,
+        "min_functions": 10,
+        "min_lines": 300
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "large::src/proxy/server.ts::loc-threshold": {
+      "id": "large::src/proxy/server.ts::loc-threshold",
+      "detector": "large",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "File exceeds large-file threshold",
+      "detail": {
+        "loc": 1109,
+        "threshold": 500
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "logs::scanner-dashboard.html::line-244": {
+      "id": "logs::scanner-dashboard.html::line-244",
+      "detector": "logs",
+      "file": "scanner-dashboard.html",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(data);",
+        "line": 244
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "logs::scanner-dashboard.html::line-280": {
+      "id": "logs::scanner-dashboard.html::line-280",
+      "detector": "logs",
+      "file": "scanner-dashboard.html",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log('Routing data loaded (mock from OmniRoute patterns)');",
+        "line": 280
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "logs::scanner-dashboard.html::line-286": {
+      "id": "logs::scanner-dashboard.html::line-286",
+      "detector": "logs",
+      "file": "scanner-dashboard.html",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log('Health data loaded (mock)');",
+        "line": 286
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "logs::scanner-dashboard.html::line-322": {
+      "id": "logs::scanner-dashboard.html::line-322",
+      "detector": "logs",
+      "file": "scanner-dashboard.html",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log('Opencode Proxy Dashboard initialized with multi-provider views');",
+        "line": 322
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1029": {
+      "id": "logs::src/proxy/server.ts::line-1029",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port}`)",
+        "line": 1029
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1030": {
+      "id": "logs::src/proxy/server.ts::line-1030",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`\\nTo use with OpenCode, run:`)",
+        "line": 1030
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1031": {
+      "id": "logs::src/proxy/server.ts::line-1031",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1031
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1032": {
+      "id": "logs::src/proxy/server.ts::line-1032",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1032
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1089": {
+      "id": "logs::src/proxy/server.ts::line-1089",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port} (bound to ${finalConfig.host})`)",
+        "line": 1089
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1090": {
+      "id": "logs::src/proxy/server.ts::line-1090",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Environment: NODE_ENV=${process.env.NODE_ENV || 'development'}, PASSTHROUGH=${!!process.env.CLAUDE_PROXY_PASSTHROUGH}`)",
+        "line": 1090
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1091": {
+      "id": "logs::src/proxy/server.ts::line-1091",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`\\nTo use with OpenCode, run:`)",
+        "line": 1091
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1092": {
+      "id": "logs::src/proxy/server.ts::line-1092",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1092
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1103": {
+      "id": "logs::src/proxy/server.ts::line-1103",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Claude Max Proxy (Anthropic API) running at http://${finalConfig.host}:${finalConfig.port} (bound to ${finalConfig.host})`)",
+        "line": 1103
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1104": {
+      "id": "logs::src/proxy/server.ts::line-1104",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`Environment: NODE_ENV=${process.env.NODE_ENV || 'development'}, PASSTHROUGH=${!!process.env.CLAUDE_PROXY_PASSTHROUGH}`)",
+        "line": 1104
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1105": {
+      "id": "logs::src/proxy/server.ts::line-1105",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`\\nTo use with OpenCode, run:`)",
+        "line": 1105
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "logs::src/proxy/server.ts::line-1106": {
+      "id": "logs::src/proxy/server.ts::line-1106",
+      "detector": "logs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Debug logging call found",
+      "detail": {
+        "content": "console.log(`  ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://${finalConfig.host}:${finalConfig.port} opencode`)",
+        "line": 1106
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::bin/claude-proxy-supervisor.sh::magic_numbers:bin/claude-proxy-supervisor.sh:19:50": {
+      "id": "magic_numbers::bin/claude-proxy-supervisor.sh::magic_numbers:bin/claude-proxy-supervisor.sh:19:50",
+      "detector": "magic_numbers",
+      "file": "bin/claude-proxy-supervisor.sh",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 6 locations — extract to a named constant",
+      "detail": {
+        "context": "MAX_RAPID_RESTARTS=50",
+        "is_test": false,
+        "line": 19,
+        "repeat_count": 6,
+        "value": "50"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::bin/claude-proxy-supervisor.sh::magic_numbers:bin/claude-proxy-supervisor.sh:20:60": {
+      "id": "magic_numbers::bin/claude-proxy-supervisor.sh::magic_numbers:bin/claude-proxy-supervisor.sh:20:60",
+      "detector": "magic_numbers",
+      "file": "bin/claude-proxy-supervisor.sh",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 60 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "RAPID_WINDOW=60",
+        "is_test": false,
+        "line": 20,
+        "repeat_count": 3,
+        "value": "60"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:106:50": {
+      "id": "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:106:50",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 6 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 10, output_tokens: 50 },",
+        "is_test": true,
+        "line": 106,
+        "repeat_count": 6,
+        "value": "50"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:171:7": {
+      "id": "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:171:7",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 7 on line 171 — consider extracting to a named constant",
+      "detail": {
+        "context": "currentEvent = line.slice(7)",
+        "is_test": true,
+        "line": 171,
+        "repeat_count": 1,
+        "value": "7"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:173:6": {
+      "id": "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:173:6",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 6 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "currentData = line.slice(6)",
+        "is_test": true,
+        "line": 173,
+        "repeat_count": 3,
+        "value": "6"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:86:50": {
+      "id": "magic_numbers::src/__tests__/helpers.ts::magic_numbers:src/__tests__/helpers.ts:86:50",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/helpers.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 6 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { output_tokens: 50 },",
+        "is_test": true,
+        "line": 86,
+        "repeat_count": 6,
+        "value": "50"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/integration.test.ts::magic_numbers:src/__tests__/integration.test.ts:285:3": {
+      "id": "magic_numbers::src/__tests__/integration.test.ts::magic_numbers:src/__tests__/integration.test.ts:285:3",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/integration.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 3 appears in 4 locations — extract to a named constant",
+      "detail": {
+        "context": "for (let i = 0; i < 3; i++) {",
+        "is_test": true,
+        "line": 285,
+        "repeat_count": 4,
+        "value": "3"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:57:30.971109Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/integration.test.ts::magic_numbers:src/__tests__/integration.test.ts:296:3": {
+      "id": "magic_numbers::src/__tests__/integration.test.ts::magic_numbers:src/__tests__/integration.test.ts:296:3",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/integration.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 3 on line 296 — consider extracting to a named constant",
+      "detail": {
+        "context": "for (let i = 0; i < 3; i++) {",
+        "is_test": true,
+        "line": 296,
+        "repeat_count": 2,
+        "value": "3"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-agent-definitions.test.ts::magic_numbers:src/__tests__/proxy-agent-definitions.test.ts:153:3": {
+      "id": "magic_numbers::src/__tests__/proxy-agent-definitions.test.ts::magic_numbers:src/__tests__/proxy-agent-definitions.test.ts:153:3",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-agent-definitions.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 3 appears in 4 locations — extract to a named constant",
+      "detail": {
+        "context": "expect(Object.keys(agents)).toHaveLength(3)",
+        "is_test": true,
+        "line": 153,
+        "repeat_count": 4,
+        "value": "3"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-agent-definitions.test.ts::magic_numbers:src/__tests__/proxy-agent-definitions.test.ts:27:6": {
+      "id": "magic_numbers::src/__tests__/proxy-agent-definitions.test.ts::magic_numbers:src/__tests__/proxy-agent-definitions.test.ts:27:6",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-agent-definitions.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 6 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "expect(agents.size).toBe(6)",
+        "is_test": true,
+        "line": 27,
+        "repeat_count": 3,
+        "value": "6"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-agent-definitions.test.ts::magic_numbers:src/__tests__/proxy-agent-definitions.test.ts:54:6": {
+      "id": "magic_numbers::src/__tests__/proxy-agent-definitions.test.ts::magic_numbers:src/__tests__/proxy-agent-definitions.test.ts:54:6",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-agent-definitions.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 6 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "expect(Object.keys(defs)).toHaveLength(6)",
+        "is_test": true,
+        "line": 54,
+        "repeat_count": 3,
+        "value": "6"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-error-handling.test.ts::magic_numbers:src/__tests__/proxy-error-handling.test.ts:115:402": {
+      "id": "magic_numbers::src/__tests__/proxy-error-handling.test.ts::magic_numbers:src/__tests__/proxy-error-handling.test.ts:115:402",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-error-handling.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 402 on line 115 — consider extracting to a named constant",
+      "detail": {
+        "context": "expect(res.status).toBe(402)",
+        "is_test": true,
+        "line": 115,
+        "repeat_count": 2,
+        "value": "402"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-error-handling.test.ts::magic_numbers:src/__tests__/proxy-error-handling.test.ts:30:5": {
+      "id": "magic_numbers::src/__tests__/proxy-error-handling.test.ts::magic_numbers:src/__tests__/proxy-error-handling.test.ts:30:5",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-error-handling.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 5 on line 30 — consider extracting to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 10, output_tokens: 5 },",
+        "is_test": true,
+        "line": 30,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:36:50": {
+      "id": "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:36:50",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 6 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 100, output_tokens: 50 },",
+        "is_test": true,
+        "line": 36,
+        "repeat_count": 6,
+        "value": "50"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:64:50": {
+      "id": "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:64:50",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 6 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 100, output_tokens: 50 },",
+        "is_test": true,
+        "line": 64,
+        "repeat_count": 6,
+        "value": "50"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:80:20": {
+      "id": "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:80:20",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Magic number 20 on line 80 — consider extracting to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 50, output_tokens: 20 },",
+        "is_test": true,
+        "line": 80,
+        "repeat_count": 1,
+        "value": "20"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:80:50": {
+      "id": "magic_numbers::src/__tests__/proxy-passthrough-concept.test.ts::magic_numbers:src/__tests__/proxy-passthrough-concept.test.ts:80:50",
+      "detector": "magic_numbers",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 50 appears in 6 locations — extract to a named constant",
+      "detail": {
+        "context": "usage: { input_tokens: 50, output_tokens: 20 },",
+        "is_test": true,
+        "line": 80,
+        "repeat_count": 6,
+        "value": "50"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/mcpTools.ts::magic_numbers:src/mcpTools.ts:113:120000": {
+      "id": "magic_numbers::src/mcpTools.ts::magic_numbers:src/mcpTools.ts:113:120000",
+      "detector": "magic_numbers",
+      "file": "src/mcpTools.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 120000 on line 113 — consider extracting to a named constant",
+      "detail": {
+        "context": "timeout: 120000",
+        "is_test": false,
+        "line": 113,
+        "repeat_count": 1,
+        "value": "120000"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/providers/grok.ts::magic_numbers:src/providers/grok.ts:42:0.7": {
+      "id": "magic_numbers::src/providers/grok.ts::magic_numbers:src/providers/grok.ts:42:0.7",
+      "detector": "magic_numbers",
+      "file": "src/providers/grok.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 0.7 on line 42 — consider extracting to a named constant",
+      "detail": {
+        "context": "temperature: 0.7,",
+        "is_test": false,
+        "line": 42,
+        "repeat_count": 1,
+        "value": "0.7"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1023:145": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1023:145",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 145 on line 1023 — consider extracting to a named constant",
+      "detail": {
+        "context": "{ name: \"claude\", status: \"healthy\", latency: 145, uptime: \"99.8%\", lastUsed: \"just now\" },",
+        "is_test": false,
+        "line": 1023,
+        "repeat_count": 1,
+        "value": "145"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1024:87": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1024:87",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 87 on line 1024 — consider extracting to a named constant",
+      "detail": {
+        "context": "{ name: \"grok\", status: \"healthy\", latency: 87, uptime: \"99.5%\", lastUsed: \"2m ago\" },",
+        "is_test": false,
+        "line": 1024,
+        "repeat_count": 1,
+        "value": "87"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1025:210": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1025:210",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 210 on line 1025 — consider extracting to a named constant",
+      "detail": {
+        "context": "{ name: \"passthrough\", status: \"active\", latency: 210, uptime: \"98.9%\", lastUsed: \"now\" }",
+        "is_test": false,
+        "line": 1025,
+        "repeat_count": 1,
+        "value": "210"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1028:3": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1028:3",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 3 appears in 4 locations — extract to a named constant",
+      "detail": {
+        "context": "total: 3",
+        "is_test": false,
+        "line": 1028,
+        "repeat_count": 4,
+        "value": "3"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1037:145": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1037:145",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 145 on line 1037 — consider extracting to a named constant",
+      "detail": {
+        "context": "{ name: \"claude\", status: \"healthy\", latency: 145, uptime: \"99.8%\", lastUsed: \"just now\" },",
+        "is_test": false,
+        "line": 1037,
+        "repeat_count": 1,
+        "value": "145"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1038:42": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1038:42",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 42 on line 1038 — consider extracting to a named constant",
+      "detail": {
+        "context": "count: 42",
+        "is_test": false,
+        "line": 1038,
+        "repeat_count": 1,
+        "value": "42"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1038:87": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1038:87",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 87 on line 1038 — consider extracting to a named constant",
+      "detail": {
+        "context": "{ name: \"grok\", status: \"healthy\", latency: 87, uptime: \"99.5%\", lastUsed: \"2m ago\" },",
+        "is_test": false,
+        "line": 1038,
+        "repeat_count": 1,
+        "value": "87"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1039:210": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1039:210",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 210 on line 1039 — consider extracting to a named constant",
+      "detail": {
+        "context": "{ name: \"passthrough\", status: \"active\", latency: 210, uptime: \"98.9%\", lastUsed: \"now\" }",
+        "is_test": false,
+        "line": 1039,
+        "repeat_count": 1,
+        "value": "210"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1042:3": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1042:3",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 3 appears in 4 locations — extract to a named constant",
+      "detail": {
+        "context": "total: 3",
+        "is_test": false,
+        "line": 1042,
+        "repeat_count": 4,
+        "value": "3"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1045:3": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1045:3",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 3 appears in 4 locations — extract to a named constant",
+      "detail": {
+        "context": "providers: 3,",
+        "is_test": false,
+        "line": 1045,
+        "repeat_count": 4,
+        "value": "3"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1052:42": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1052:42",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 42 on line 1052 — consider extracting to a named constant",
+      "detail": {
+        "context": "count: 42",
+        "is_test": false,
+        "line": 1052,
+        "repeat_count": 1,
+        "value": "42"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1059:3": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:1059:3",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 3 appears in 4 locations — extract to a named constant",
+      "detail": {
+        "context": "providers: 3,",
+        "is_test": false,
+        "line": 1059,
+        "repeat_count": 4,
+        "value": "3"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:122:402": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:122:402",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 402 on line 122 — consider extracting to a named constant",
+      "detail": {
+        "context": "status: 402,",
+        "is_test": false,
+        "line": 122,
+        "repeat_count": 2,
+        "value": "402"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:123:402": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:123:402",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 402 on line 123 — consider extracting to a named constant",
+      "detail": {
+        "context": "status: 402,",
+        "is_test": false,
+        "line": 123,
+        "repeat_count": 2,
+        "value": "402"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:128:402": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:128:402",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 402 on line 128 — consider extracting to a named constant",
+      "detail": {
+        "context": "status: 402,",
+        "is_test": false,
+        "line": 128,
+        "repeat_count": 2,
+        "value": "402"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:45:60": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:45:60",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 60 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "}, 60 * 60 * 1000)",
+        "is_test": false,
+        "line": 45,
+        "repeat_count": 3,
+        "value": "60"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:46:60": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:46:60",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Magic number 60 appears in 3 locations — extract to a named constant",
+      "detail": {
+        "context": "}, 60 * 60 * 1000)",
+        "is_test": false,
+        "line": 46,
+        "repeat_count": 3,
+        "value": "60"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 2,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:57:2000": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:57:2000",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 2000 on line 57 — consider extracting to a named constant",
+      "detail": {
+        "context": "return createHash(\"sha256\").update(text.slice(0, 2000)).digest(\"hex\").slice(0, 16)",
+        "is_test": false,
+        "line": 57,
+        "repeat_count": 1,
+        "value": "2000"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:58:2000": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:58:2000",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 2000 on line 58 — consider extracting to a named constant",
+      "detail": {
+        "context": "return createHash(\"sha256\").update(text.slice(0, 2000)).digest(\"hex\").slice(0, 16)",
+        "is_test": false,
+        "line": 58,
+        "repeat_count": 1,
+        "value": "2000"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 2,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:694:5": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:694:5",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 694 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 694,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:695:5": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:695:5",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 695 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 695,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:704:15_000": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:704:15_000",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 704 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 704,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:705:15_000": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:705:15_000",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 705 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 705,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:709:5": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:709:5",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 709 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 709,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:714:5": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:714:5",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 5 on line 714 — consider extracting to a named constant",
+      "detail": {
+        "context": "if (heartbeatCount % 5 === 0) {",
+        "is_test": false,
+        "line": 714,
+        "repeat_count": 2,
+        "value": "5"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:719:15_000": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:719:15_000",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 719 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 719,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:724:15_000": {
+      "id": "magic_numbers::src/proxy/server.ts::magic_numbers:src/proxy/server.ts:724:15_000",
+      "detector": "magic_numbers",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 15_000 on line 724 — consider extracting to a named constant",
+      "detail": {
+        "context": "}, 15_000)",
+        "is_test": false,
+        "line": 724,
+        "repeat_count": 1,
+        "value": "15_000"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "magic_numbers::src/proxy/types.ts::magic_numbers:src/proxy/types.ts:12:120": {
+      "id": "magic_numbers::src/proxy/types.ts::magic_numbers:src/proxy/types.ts:12:120",
+      "detector": "magic_numbers",
+      "file": "src/proxy/types.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Magic number 120 on line 12 — consider extracting to a named constant",
+      "detail": {
+        "context": "idleTimeoutSeconds: 120",
+        "is_test": false,
+        "line": 12,
+        "repeat_count": 1,
+        "value": "120"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "orphaned::.github/workflows/release-please.yml::": {
+      "id": "orphaned::.github/workflows/release-please.yml::",
+      "detector": "orphaned",
+      "file": ".github/workflows/release-please.yml",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 39 lines, not imported by any module",
+      "detail": {
+        "file": ".github/workflows/release-please.yml",
+        "import_count": 0,
+        "loc": 39
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::bin/claude-proxy-supervisor.sh::": {
+      "id": "orphaned::bin/claude-proxy-supervisor.sh::",
+      "detector": "orphaned",
+      "file": "bin/claude-proxy-supervisor.sh",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 62 lines, not imported by any module",
+      "detail": {
+        "file": "bin/claude-proxy-supervisor.sh",
+        "import_count": 0,
+        "loc": 62
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::bin/claude-proxy.ts::": {
+      "id": "orphaned::bin/claude-proxy.ts::",
+      "detector": "orphaned",
+      "file": "bin/claude-proxy.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 33 lines, not imported by any module",
+      "detail": {
+        "file": "bin/claude-proxy.ts",
+        "import_count": 1,
+        "loc": 33
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::docker-compose.yml::": {
+      "id": "orphaned::docker-compose.yml::",
+      "detector": "orphaned",
+      "file": "docker-compose.yml",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 28 lines, not imported by any module",
+      "detail": {
+        "file": "docker-compose.yml",
+        "import_count": 0,
+        "loc": 28
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::scanner-dashboard.html::": {
+      "id": "orphaned::scanner-dashboard.html::",
+      "detector": "orphaned",
+      "file": "scanner-dashboard.html",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 329 lines, not imported by any module",
+      "detail": {
+        "file": "scanner-dashboard.html",
+        "import_count": 0,
+        "loc": 329
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/integration.test.ts::": {
+      "id": "orphaned::src/__tests__/integration.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/integration.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 290 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/integration.test.ts",
+        "import_count": 1,
+        "loc": 290
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-agent-definitions.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-agent-definitions.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-agent-definitions.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 219 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-agent-definitions.test.ts",
+        "import_count": 1,
+        "loc": 219
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-agent-fuzzy-match.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-agent-fuzzy-match.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-agent-fuzzy-match.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 91 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-agent-fuzzy-match.test.ts",
+        "import_count": 1,
+        "loc": 91
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-error-handling.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-error-handling.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-error-handling.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 156 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-error-handling.test.ts",
+        "import_count": 0,
+        "loc": 156
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-mcp-filtering.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-mcp-filtering.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-mcp-filtering.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 150 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-mcp-filtering.test.ts",
+        "import_count": 1,
+        "loc": 150
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-passthrough-concept.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-passthrough-concept.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 245 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+        "import_count": 0,
+        "loc": 245
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-pretooluse-hook.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-pretooluse-hook.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 300 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+        "import_count": 1,
+        "loc": 300
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-session-resume.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-session-resume.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-session-resume.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 366 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-session-resume.test.ts",
+        "import_count": 1,
+        "loc": 366
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-streaming-message.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-streaming-message.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-streaming-message.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 192 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-streaming-message.test.ts",
+        "import_count": 1,
+        "loc": 192
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-subagent-support.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-subagent-support.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-subagent-support.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 305 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-subagent-support.test.ts",
+        "import_count": 1,
+        "loc": 305
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-tool-forwarding.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-tool-forwarding.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-tool-forwarding.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 330 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-tool-forwarding.test.ts",
+        "import_count": 1,
+        "loc": 330
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-transparent-tools.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-transparent-tools.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-transparent-tools.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 195 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-transparent-tools.test.ts",
+        "import_count": 1,
+        "loc": 195
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/__tests__/proxy-working-directory.test.ts::": {
+      "id": "orphaned::src/__tests__/proxy-working-directory.test.ts::",
+      "detector": "orphaned",
+      "file": "src/__tests__/proxy-working-directory.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Orphaned file: 111 lines, not imported by any module",
+      "detail": {
+        "file": "src/__tests__/proxy-working-directory.test.ts",
+        "import_count": 1,
+        "loc": 111
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/plugin/claude-max-headers.ts::": {
+      "id": "orphaned::src/plugin/claude-max-headers.ts::",
+      "detector": "orphaned",
+      "file": "src/plugin/claude-max-headers.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 52 lines, not imported by any module",
+      "detail": {
+        "file": "src/plugin/claude-max-headers.ts",
+        "import_count": 0,
+        "loc": 52
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/providers/grok.ts::": {
+      "id": "orphaned::src/providers/grok.ts::",
+      "detector": "orphaned",
+      "file": "src/providers/grok.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 107 lines, not imported by any module",
+      "detail": {
+        "file": "src/providers/grok.ts",
+        "import_count": 5,
+        "loc": 107
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T01:00:56.872358Z",
+      "resolved_at": "2026-03-21T02:32:52.317886Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "orphaned::src/providers/registry.ts::": {
+      "id": "orphaned::src/providers/registry.ts::",
+      "detector": "orphaned",
+      "file": "src/providers/registry.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Orphaned file: 41 lines, not imported by any module",
+      "detail": {
+        "file": "src/providers/registry.ts",
+        "import_count": 4,
+        "loc": 41
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "scaffold::.opencode/package.json::nested-package-json-.opencode": {
+      "id": "scaffold::.opencode/package.json::nested-package-json-.opencode",
+      "detector": "scaffold",
+      "file": ".opencode/package.json",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Nested package.json at '.opencode/package.json' — may indicate incorrect project nesting",
+      "detail": {
+        "check": "nested_repo",
+        "path": ".opencode/package.json",
+        "type": "package_json"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "security::src/proxy/server.ts::sensitive_log-line-1031": {
+      "id": "security::src/proxy/server.ts::sensitive_log-line-1031",
+      "detector": "security",
+      "file": "src/proxy/server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1031
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "security::src/proxy/server.ts::sensitive_log-line-1032": {
+      "id": "security::src/proxy/server.ts::sensitive_log-line-1032",
+      "detector": "security",
+      "file": "src/proxy/server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1032
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "security::src/proxy/server.ts::sensitive_log-line-1092": {
+      "id": "security::src/proxy/server.ts::sensitive_log-line-1092",
+      "detector": "security",
+      "file": "src/proxy/server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1092
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "security::src/proxy/server.ts::sensitive_log-line-1106": {
+      "id": "security::src/proxy/server.ts::sensitive_log-line-1106",
+      "detector": "security",
+      "file": "src/proxy/server.ts",
+      "tier": 2,
+      "confidence": "medium",
+      "summary": "Sensitive field 'api_key' may be exposed in log output",
+      "detail": {
+        "check": "sensitive_log",
+        "field": "api_key",
+        "line": 1106
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "signature::src/__tests__/proxy-subagent-support.test.ts::signature_variance::postMessages": {
+      "id": "signature::src/__tests__/proxy-subagent-support.test.ts::signature_variance::postMessages",
+      "detector": "signature",
+      "file": "src/__tests__/proxy-subagent-support.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Signature variance: 'postMessages' has 2 param signatures across 3 files",
+      "detail": {
+        "file_count": 3,
+        "files": [
+          "src/__tests__/proxy-subagent-support.test.ts",
+          "src/__tests__/proxy-tool-forwarding.test.ts",
+          "src/__tests__/proxy-transparent-tools.test.ts"
+        ],
+        "group_type": "name",
+        "has_param_variance": true,
+        "has_return_variance": false,
+        "name": "postMessages",
+        "occurrences": 3,
+        "return_signature_count": 0,
+        "signature_count": 2
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "smells::src/logger.ts::sanitize-line-25": {
+      "id": "smells::src/logger.ts::sanitize-line-25",
+      "detector": "smells",
+      "file": "src/logger.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'sanitize': deep nesting (5 > 4)",
+      "detail": {
+        "end_line": 58,
+        "function": "sanitize",
+        "line": 25,
+        "loc": 34,
+        "nesting": 5,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (5 > 4)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "smells::src/providers/grok.ts::createQueryHandler-line-11": {
+      "id": "smells::src/providers/grok.ts::createQueryHandler-line-11",
+      "detector": "smells",
+      "file": "src/providers/grok.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createQueryHandler': deep nesting (7 > 4), excessive length (81 > 55)",
+      "detail": {
+        "end_line": 91,
+        "function": "createQueryHandler",
+        "line": 11,
+        "loc": 81,
+        "nesting": 7,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (7 > 4)",
+          "excessive length (81 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::classifyError-line-105": {
+      "id": "smells::src/proxy/server.ts::classifyError-line-105",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'classifyError': excessive length (89 > 55)",
+      "detail": {
+        "end_line": 193,
+        "function": "classifyError",
+        "line": 105,
+        "loc": 89,
+        "nesting": 4,
+        "param_count": 1,
+        "smells": [
+          "excessive length (89 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::classifyError-line-98": {
+      "id": "smells::src/proxy/server.ts::classifyError-line-98",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'classifyError': excessive length (85 > 55)",
+      "detail": {
+        "end_line": 182,
+        "function": "classifyError",
+        "line": 98,
+        "loc": 85,
+        "nesting": 3,
+        "param_count": 1,
+        "smells": [
+          "excessive length (85 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::classifyError-line-99": {
+      "id": "smells::src/proxy/server.ts::classifyError-line-99",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Code smell in function 'classifyError': excessive length (85 > 55)",
+      "detail": {
+        "end_line": 183,
+        "function": "classifyError",
+        "line": 99,
+        "loc": 85,
+        "nesting": 3,
+        "param_count": 1,
+        "smells": [
+          "excessive length (85 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::createProxyServer-line-264": {
+      "id": "smells::src/proxy/server.ts::createProxyServer-line-264",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (740 > 55)",
+      "detail": {
+        "end_line": 1003,
+        "function": "createProxyServer",
+        "line": 264,
+        "loc": 740,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (740 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::createProxyServer-line-265": {
+      "id": "smells::src/proxy/server.ts::createProxyServer-line-265",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (740 > 55)",
+      "detail": {
+        "end_line": 1004,
+        "function": "createProxyServer",
+        "line": 265,
+        "loc": 740,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (740 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::createProxyServer-line-270": {
+      "id": "smells::src/proxy/server.ts::createProxyServer-line-270",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (785 > 55)",
+      "detail": {
+        "end_line": 1054,
+        "function": "createProxyServer",
+        "line": 270,
+        "loc": 785,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (785 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::createProxyServer-line-284": {
+      "id": "smells::src/proxy/server.ts::createProxyServer-line-284",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'createProxyServer': deep nesting (13 > 4), excessive length (785 > 55)",
+      "detail": {
+        "end_line": 1068,
+        "function": "createProxyServer",
+        "line": 284,
+        "loc": 785,
+        "nesting": 13,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (13 > 4)",
+          "excessive length (785 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::handleMessages-line-307": {
+      "id": "smells::src/proxy/server.ts::handleMessages-line-307",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (650 > 55)",
+      "detail": {
+        "end_line": 956,
+        "function": "handleMessages",
+        "line": 307,
+        "loc": 650,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (650 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::handleMessages-line-308": {
+      "id": "smells::src/proxy/server.ts::handleMessages-line-308",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (650 > 55)",
+      "detail": {
+        "end_line": 957,
+        "function": "handleMessages",
+        "line": 308,
+        "loc": 650,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (650 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::handleMessages-line-321": {
+      "id": "smells::src/proxy/server.ts::handleMessages-line-321",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (651 > 55)",
+      "detail": {
+        "end_line": 971,
+        "function": "handleMessages",
+        "line": 321,
+        "loc": 651,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (651 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::handleMessages-line-335": {
+      "id": "smells::src/proxy/server.ts::handleMessages-line-335",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'handleMessages': deep nesting (12 > 4), excessive length (651 > 55)",
+      "detail": {
+        "end_line": 985,
+        "function": "handleMessages",
+        "line": 335,
+        "loc": 651,
+        "nesting": 12,
+        "param_count": 0,
+        "smells": [
+          "deep nesting (12 > 4)",
+          "excessive length (651 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::start-line-620": {
+      "id": "smells::src/proxy/server.ts::start-line-620",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (308 > 55)",
+      "detail": {
+        "end_line": 927,
+        "function": "start",
+        "line": 620,
+        "loc": 308,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (308 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::start-line-621": {
+      "id": "smells::src/proxy/server.ts::start-line-621",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (308 > 55)",
+      "detail": {
+        "end_line": 928,
+        "function": "start",
+        "line": 621,
+        "loc": 308,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (308 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::start-line-635": {
+      "id": "smells::src/proxy/server.ts::start-line-635",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (308 > 55)",
+      "detail": {
+        "end_line": 942,
+        "function": "start",
+        "line": 635,
+        "loc": 308,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (308 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "smells::src/proxy/server.ts::start-line-640": {
+      "id": "smells::src/proxy/server.ts::start-line-640",
+      "detector": "smells",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Code smell in function 'start': deep nesting (8 > 4), excessive length (317 > 55)",
+      "detail": {
+        "end_line": 956,
+        "function": "start",
+        "line": 640,
+        "loc": 317,
+        "nesting": 8,
+        "param_count": 1,
+        "smells": [
+          "deep nesting (8 > 4)",
+          "excessive length (317 > 55)"
+        ],
+        "thresholds": {
+          "max_loc": 55,
+          "max_nesting": 4,
+          "max_params": 5
+        }
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::src/proxy/passthroughTools.ts::fn-createPassthroughMcpServer-line-58": {
+      "id": "stubs::src/proxy/passthroughTools.ts::fn-createPassthroughMcpServer-line-58",
+      "detector": "stubs",
+      "file": "src/proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "createPassthroughMcpServer",
+        "language": "javascript",
+        "line": 58,
+        "stub_kind": "empty_body"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::src/proxy/passthroughTools.ts::fn-createPassthroughMcpServer-line-76": {
+      "id": "stubs::src/proxy/passthroughTools.ts::fn-createPassthroughMcpServer-line-76",
+      "detector": "stubs",
+      "file": "src/proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "createPassthroughMcpServer",
+        "language": "javascript",
+        "line": 76,
+        "stub_kind": "empty_body"
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::src/proxy/server.ts::fn-lookupSession-line-61": {
+      "id": "stubs::src/proxy/server.ts::fn-lookupSession-line-61",
+      "detector": "stubs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "lookupSession",
+        "language": "javascript",
+        "line": 61,
+        "stub_kind": "empty_body"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::src/proxy/server.ts::fn-lookupSession-line-62": {
+      "id": "stubs::src/proxy/server.ts::fn-lookupSession-line-62",
+      "detector": "stubs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "lookupSession",
+        "language": "javascript",
+        "line": 62,
+        "stub_kind": "empty_body"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 2,
+      "suppressed": false
+    },
+    "stubs::src/proxy/server.ts::fn-storeSession-line-76": {
+      "id": "stubs::src/proxy/server.ts::fn-storeSession-line-76",
+      "detector": "stubs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "storeSession",
+        "language": "javascript",
+        "line": 76,
+        "stub_kind": "empty_body"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "stubs::src/proxy/server.ts::fn-storeSession-line-77": {
+      "id": "stubs::src/proxy/server.ts::fn-storeSession-line-77",
+      "detector": "stubs",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "high",
+      "summary": "Function has an empty body — likely unfinished implementation",
+      "detail": {
+        "body_lines": 0,
+        "function": "storeSession",
+        "language": "javascript",
+        "line": 77,
+        "stub_kind": "empty_body"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 2,
+      "suppressed": false
+    },
+    "test_coverage::bin/claude-proxy.ts::no-test-evidence": {
+      "id": "test_coverage::bin/claude-proxy.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "bin/claude-proxy.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "bin/claude-proxy.ts",
+        "source_stem": "claude-proxy"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/logger.ts::no-test-evidence": {
+      "id": "test_coverage::src/logger.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/logger.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/logger.ts",
+        "source_stem": "logger"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/mcpTools.ts::no-test-evidence": {
+      "id": "test_coverage::src/mcpTools.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/mcpTools.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/mcpTools.ts",
+        "source_stem": "mcpTools"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/plugin/claude-max-headers.ts::no-test-evidence": {
+      "id": "test_coverage::src/plugin/claude-max-headers.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/plugin/claude-max-headers.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/plugin/claude-max-headers.ts",
+        "source_stem": "claude-max-headers"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/providers/base.ts::no-test-evidence": {
+      "id": "test_coverage::src/providers/base.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/providers/base.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/providers/base.ts",
+        "source_stem": "base"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/providers/claude.ts::no-test-evidence": {
+      "id": "test_coverage::src/providers/claude.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/providers/claude.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/providers/claude.ts",
+        "source_stem": "claude"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/providers/grok.ts::no-test-evidence": {
+      "id": "test_coverage::src/providers/grok.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/providers/grok.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/providers/grok.ts",
+        "source_stem": "grok"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/providers/registry.ts::no-test-evidence": {
+      "id": "test_coverage::src/providers/registry.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/providers/registry.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/providers/registry.ts",
+        "source_stem": "registry"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/proxy/passthroughTools.ts::no-test-evidence": {
+      "id": "test_coverage::src/proxy/passthroughTools.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/proxy/passthroughTools.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/proxy/passthroughTools.ts",
+        "source_stem": "passthroughTools"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/proxy/server.ts::no-test-evidence": {
+      "id": "test_coverage::src/proxy/server.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/proxy/server.ts",
+        "source_stem": "server"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "test_coverage::src/proxy/types.ts::no-test-evidence": {
+      "id": "test_coverage::src/proxy/types.ts::no-test-evidence",
+      "detector": "test_coverage",
+      "file": "src/proxy/types.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "No test coverage evidence: no paired test file and no test import references",
+      "detail": {
+        "has_paired_test_file": false,
+        "has_test_import_reference": false,
+        "source_file": "src/proxy/types.ts",
+        "source_stem": "types"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-acquireSession-line-287": {
+      "id": "uncalled::src/proxy/server.ts::fn-acquireSession-line-287",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 287 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 287
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-acquireSession-line-288": {
+      "id": "uncalled::src/proxy/server.ts::fn-acquireSession-line-288",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 288 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 288
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-acquireSession-line-301": {
+      "id": "uncalled::src/proxy/server.ts::fn-acquireSession-line-301",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 301 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 301
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-acquireSession-line-315": {
+      "id": "uncalled::src/proxy/server.ts::fn-acquireSession-line-315",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `acquireSession` at line 315 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "acquireSession",
+        "line": 315
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-releaseSession-line-298": {
+      "id": "uncalled::src/proxy/server.ts::fn-releaseSession-line-298",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 298 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 298
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T16:31:54.374437Z",
+      "last_seen": "2026-03-20T17:02:17.401127Z",
+      "resolved_at": "2026-03-21T00:41:11.861745Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-releaseSession-line-299": {
+      "id": "uncalled::src/proxy/server.ts::fn-releaseSession-line-299",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 299 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 299
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T16:06:24.625350Z",
+      "resolved_at": "2026-03-20T16:31:54.374437Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-releaseSession-line-312": {
+      "id": "uncalled::src/proxy/server.ts::fn-releaseSession-line-312",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 312 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 312
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T00:47:52.048533Z",
+      "resolved_at": "2026-03-21T00:49:18.605497Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "uncalled::src/proxy/server.ts::fn-releaseSession-line-326": {
+      "id": "uncalled::src/proxy/server.ts::fn-releaseSession-line-326",
+      "detector": "uncalled",
+      "file": "src/proxy/server.ts",
+      "tier": 3,
+      "confidence": "low",
+      "summary": "Function `releaseSession` at line 326 appears uncalled in the scanned codebase",
+      "detail": {
+        "function": "releaseSession",
+        "line": 326
+      },
+      "status": "open",
+      "first_seen": "2026-03-21T01:00:56.872358Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/integration.test.ts::line-11-afterAll": {
+      "id": "unused_imports::src/__tests__/integration.test.ts::line-11-afterAll",
+      "detector": "unused_imports",
+      "file": "src/__tests__/integration.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'afterAll' is never used",
+      "detail": {
+        "line": 11,
+        "symbol": "afterAll"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-passthrough-concept.test.ts::line-16-beforeEach": {
+      "id": "unused_imports::src/__tests__/proxy-passthrough-concept.test.ts::line-16-beforeEach",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'beforeEach' is never used",
+      "detail": {
+        "line": 16,
+        "symbol": "beforeEach"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-passthrough-concept.test.ts::line-16-mock": {
+      "id": "unused_imports::src/__tests__/proxy-passthrough-concept.test.ts::line-16-mock",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-passthrough-concept.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'mock' is never used",
+      "detail": {
+        "line": 16,
+        "symbol": "mock"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-blockStop": {
+      "id": "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-blockStop",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'blockStop' is never used",
+      "detail": {
+        "line": 15,
+        "symbol": "blockStop"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-messageDelta": {
+      "id": "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-messageDelta",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'messageDelta' is never used",
+      "detail": {
+        "line": 15,
+        "symbol": "messageDelta"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-messageStart": {
+      "id": "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-messageStart",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'messageStart' is never used",
+      "detail": {
+        "line": 15,
+        "symbol": "messageStart"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-messageStop": {
+      "id": "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-messageStop",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'messageStop' is never used",
+      "detail": {
+        "line": 15,
+        "symbol": "messageStop"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-textBlockStart": {
+      "id": "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-textBlockStart",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'textBlockStart' is never used",
+      "detail": {
+        "line": 15,
+        "symbol": "textBlockStart"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-textDelta": {
+      "id": "unused_imports::src/__tests__/proxy-pretooluse-hook.test.ts::line-15-textDelta",
+      "detector": "unused_imports",
+      "file": "src/__tests__/proxy-pretooluse-hook.test.ts",
+      "tier": 4,
+      "confidence": "medium",
+      "summary": "Imported symbol 'textDelta' is never used",
+      "detail": {
+        "line": 15,
+        "symbol": "textDelta"
+      },
+      "status": "fixed",
+      "first_seen": "2026-03-20T15:51:47.187804Z",
+      "last_seen": "2026-03-20T15:54:18.478648Z",
+      "resolved_at": "2026-03-20T15:57:30.971109Z",
+      "reopen_count": 0,
+      "suppressed": false
+    },
+    "unused_imports::src/providers/claude.ts::line-4-buildAgentDefinitions": {
+      "id": "unused_imports::src/providers/claude.ts::line-4-buildAgentDefinitions",
+      "detector": "unused_imports",
+      "file": "src/providers/claude.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Imported symbol 'buildAgentDefinitions' is never used",
+      "detail": {
+        "line": 4,
+        "symbol": "buildAgentDefinitions"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    },
+    "unused_imports::src/providers/registry.ts::line-2-ProxyConfig": {
+      "id": "unused_imports::src/providers/registry.ts::line-2-ProxyConfig",
+      "detector": "unused_imports",
+      "file": "src/providers/registry.ts",
+      "tier": 3,
+      "confidence": "medium",
+      "summary": "Imported symbol 'ProxyConfig' is never used",
+      "detail": {
+        "line": 2,
+        "symbol": "ProxyConfig"
+      },
+      "status": "reopened",
+      "first_seen": "2026-03-21T00:41:11.861745Z",
+      "last_seen": "2026-03-21T02:33:16.313727Z",
+      "reopen_count": 1,
+      "suppressed": false
+    }
+  },
+  "scan_history": [
+    {
+      "timestamp": "2026-03-20T16:06:24.625350Z",
+      "total_findings": 89,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 87.5,
+        "objective": 87.5,
+        "strict": 87.5,
+        "verified_strict": 87.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-20T16:31:54.374437Z",
+      "total_findings": 91,
+      "new_findings": 40,
+      "resolved_findings": 38,
+      "scores": {
+        "overall": 87.5,
+        "objective": 87.5,
+        "strict": 87.5,
+        "verified_strict": 87.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-20T17:02:17.401127Z",
+      "total_findings": 91,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 87.5,
+        "objective": 87.5,
+        "strict": 87.5,
+        "verified_strict": 87.5,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:41:11.861745Z",
+      "total_findings": 112,
+      "new_findings": 39,
+      "resolved_findings": 27,
+      "scores": {
+        "overall": 90.7,
+        "objective": 90.7,
+        "strict": 90.7,
+        "verified_strict": 90.7,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:47:16.144026Z",
+      "total_findings": 112,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 91.3,
+        "objective": 91.3,
+        "strict": 91.3,
+        "verified_strict": 91.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:47:26.644826Z",
+      "total_findings": 112,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 91.3,
+        "objective": 91.3,
+        "strict": 91.3,
+        "verified_strict": 91.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:47:33.957001Z",
+      "total_findings": 112,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 91.3,
+        "objective": 91.3,
+        "strict": 91.3,
+        "verified_strict": 91.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:47:41.770643Z",
+      "total_findings": 112,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 91.3,
+        "objective": 91.3,
+        "strict": 91.3,
+        "verified_strict": 91.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:47:52.048533Z",
+      "total_findings": 112,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 91.3,
+        "objective": 91.3,
+        "strict": 91.3,
+        "verified_strict": 91.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:49:18.605497Z",
+      "total_findings": 0,
+      "new_findings": 0,
+      "resolved_findings": 111,
+      "scores": {
+        "overall": 100.0,
+        "objective": 100.0,
+        "strict": 100.0,
+        "verified_strict": 100.0,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:49:21.872950Z",
+      "total_findings": 0,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 100.0,
+        "objective": 100.0,
+        "strict": 100.0,
+        "verified_strict": 100.0,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:50:19.621932Z",
+      "total_findings": 4,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 99.3,
+        "objective": 99.3,
+        "strict": 99.3,
+        "verified_strict": 99.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:51:18.815105Z",
+      "total_findings": 4,
+      "new_findings": 4,
+      "resolved_findings": 4,
+      "scores": {
+        "overall": 99.3,
+        "objective": 99.3,
+        "strict": 99.3,
+        "verified_strict": 99.3,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:52:25.316006Z",
+      "total_findings": 0,
+      "new_findings": 0,
+      "resolved_findings": 4,
+      "scores": {
+        "overall": 100.0,
+        "objective": 100.0,
+        "strict": 100.0,
+        "verified_strict": 100.0,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T00:52:26.265356Z",
+      "total_findings": 0,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 100.0,
+        "objective": 100.0,
+        "strict": 100.0,
+        "verified_strict": 100.0,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T01:00:56.872358Z",
+      "total_findings": 111,
+      "new_findings": 28,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 91.4,
+        "objective": 91.4,
+        "strict": 91.4,
+        "verified_strict": 91.4,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T02:32:52.317886Z",
+      "total_findings": 110,
+      "new_findings": 0,
+      "resolved_findings": 1,
+      "scores": {
+        "overall": 92.1,
+        "objective": 92.1,
+        "strict": 92.1,
+        "verified_strict": 92.1,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T02:32:55.742474Z",
+      "total_findings": 110,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 92.1,
+        "objective": 92.1,
+        "strict": 92.1,
+        "verified_strict": 92.1,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T02:33:13.084325Z",
+      "total_findings": 110,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 92.1,
+        "objective": 92.1,
+        "strict": 92.1,
+        "verified_strict": 92.1,
+        "score_confidence": "low"
+      }
+    },
+    {
+      "timestamp": "2026-03-21T02:33:16.313727Z",
+      "total_findings": 110,
+      "new_findings": 0,
+      "resolved_findings": 0,
+      "scores": {
+        "overall": 92.1,
+        "objective": 92.1,
+        "strict": 92.1,
+        "verified_strict": 92.1,
+        "score_confidence": "low"
+      }
+    }
+  ]
+}
