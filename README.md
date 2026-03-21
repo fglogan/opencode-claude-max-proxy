@@ -87,6 +87,45 @@ The `ANTHROPIC_API_KEY` can be any non-empty string — the proxy doesn't use it
 alias oc='ANTHROPIC_API_KEY=dummy ANTHROPIC_BASE_URL=http://127.0.0.1:3456 opencode'
 ```
 
+## Deployment
+
+### Docker (recommended for production/standalone)
+
+```bash
+# Build and run
+docker build -t opencode-claude-max-proxy .
+docker run -d --name claude-proxy \
+  -p 3456:3456 \
+  -e CLAUDE_PROXY_PASSTHROUGH=1 \
+  -e CLAUDE_PROXY_HOST=0.0.0.0 \
+  -v ~/.config/claude:/root/.config/claude \
+  --restart unless-stopped \
+  opencode-claude-max-proxy
+```
+
+Or use `docker-compose up -d` (see docker-compose.yml).
+
+**Auth**: The volume mount shares your `claude login` credentials. Alternatively, run `docker exec claude-proxy claude login`.
+
+**Health check**: `curl http://localhost:3456/health`
+
+### npm Global Install
+
+```bash
+npm install -g opencode-claude-max-proxy
+# Then run with supervisor
+CLAUDE_PROXY_PASSTHROUGH=1 claude-max-proxy
+```
+
+### VPS/Cloud
+
+- Use systemd service wrapping the supervisor script
+- Set `CLAUDE_PROXY_HOST=0.0.0.0` for external access
+- Firewall: open port 3456
+- For Vercel/serverless: not recommended (Bun.serve + long-lived sessions)
+
+See config vars below for production tuning.
+
 ## Modes
 
 ### Passthrough Mode (recommended)
@@ -151,9 +190,9 @@ Sessions are cached for 24 hours.
 |----------|---------|-------------|
 | `CLAUDE_PROXY_PASSTHROUGH` | (unset) | Enable passthrough mode — forward all tools to OpenCode |
 | `CLAUDE_PROXY_PORT` | 3456 | Proxy server port |
-| `CLAUDE_PROXY_HOST` | 127.0.0.1 | Proxy server host |
+| `CLAUDE_PROXY_HOST` | 127.0.0.1 (0.0.0.0 in production) | Proxy server host (respects NODE_ENV=production) |
 | `CLAUDE_PROXY_WORKDIR` | (cwd) | Working directory for Claude and tools |
-| `CLAUDE_PROXY_MAX_CONCURRENT` | 1 | Max concurrent SDK sessions (increase with caution) |
+| `CLAUDE_PROXY_MAX_CONCURRENT` | 10 | Max concurrent SDK sessions (increase with caution) |
 | `CLAUDE_PROXY_IDLE_TIMEOUT_SECONDS` | 120 | Connection idle timeout |
 
 ## Concurrency

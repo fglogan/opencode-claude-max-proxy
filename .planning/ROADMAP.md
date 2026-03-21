@@ -86,7 +86,7 @@ Phases execute in numeric order.
 | 3. Parity Hardening and Grok Integration | 1/1 | Complete    | 2026-03-20 |
 | 4. Automated Maintenance and Documentation | 0/1 | Complete    | 2026-03-20 |
 | 5. Multi-Provider Proxy and Dashboard | 1/1 | Complete | 2026-03-20 |
-| 6. Standalone Proxy Deployment | 0/1 | In Progress | - |
+| 6. Standalone Proxy Deployment | 1/1 | Complete | 2026-03-20 |
 
 *Last updated: 2026-03-20*
 
@@ -115,4 +115,4 @@ All 9 v1 requirements mapped:
   4. Authentication and credential handling for deployed environments is documented (volume mounts for claude auth, or API key support).
   5. Production logging, health checks, and basic security (CORS, rate limiting if applicable) are configured.
 **Plans**: 1 plan
-- [ ] 06-standalone-proxy-deployment-01-PLAN.md — Create Dockerfile, update server for prod host binding, add deployment docs to README (completed upon execution)
+- [x] 06-standalone-proxy-deployment-01-PLAN.md — Create Dockerfile, update server for prod host binding, add deployment docs to README (completed 2026-03-20)
